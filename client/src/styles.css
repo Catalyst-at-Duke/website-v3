@@ -1,0 +1,18 @@
+.dark-theme {
+	background-color: #121212;
+	color: #ffffff;
+	-webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 0.5s;
+}
+
+.light-theme {
+	background-color: #ffffff;
+	color: #2b2d2f; 
+	-webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.5s;
+}
+
+.react-switch {
+	vertical-align: middle;
+	margin-left: 4px;
+}
