@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import "./styles.css";
+import "../styles.css";
 
 export default class MembersComponent extends React.Component {
   constructor() {

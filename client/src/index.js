@@ -2,19 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Home from "./home";
-import Members from "./MembersComponent";
-import Faq from "./FaqComponent";
-import Recruitment from "./RecruitmentComponent";
+import Members from "./components/Members";
+import Faq from "./components/Faq";
+import Recruitment from "./components/Recruitment";
 import * as serviceWorker from "./serviceWorker";
 import { Router } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import NavBarComponent from "./NavBarComponent";
+import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBarComponent />
+    <NavBar />
     <Router>
       <Home path="/" />
       <Members path="members" />
