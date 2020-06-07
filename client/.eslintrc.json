@@ -1,23 +1,21 @@
 {
-    "parser": "babel-eslint",
-    "env": {
-        "browser": true,
-        "es2020": true
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["plugin:react/recommended", "google"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "google"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-invalid-this": "off",
+    "require-jsdoc": "warn",
+    "react/prop-types": "warn"
+  }
 }
