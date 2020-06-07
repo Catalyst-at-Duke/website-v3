@@ -1,6 +1,7 @@
 .app {
-	font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 150%;
+  font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 150%;
 }
 
 /* .app-nav {
@@ -12,46 +13,28 @@
 } */
 
 .home-body {
-	min-height: 100vh;
-	text-align: center;
-	flex-direction: column;
-	display: flex;
-	font-size: calc(10px + 2vmin);
-	align-items: center;
-	justify-content: center; /* for now */
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  align-items: center;
+  justify-content: center; /* for now */
 }
 
 .catalyst-logo-text {
-	position: relative;
-	text-align: center;
-	width: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .catalyst-text {
-	/* font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-	font-size: 450%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-.dark-theme {
-	background-color: #26272C;
-	color: #ffffff;
-	-webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
-  transition: background-color 0.5s;
-}
-
-.light-theme {
-	background-color: #ffffff;
-	color: #696969; 
-	-webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 0.5s;
-}
-
-.react-switch {
-	vertical-align: middle;
-	margin-left: 4px;
+  /* font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  font-size: 450%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes glitch-anim {
@@ -127,8 +110,8 @@
 
 .glitch,
 .glitch-letter {
-	display: inline-block;
-	/* content: attr(data-text);
+  display: inline-block;
+  /* content: attr(data-text);
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
