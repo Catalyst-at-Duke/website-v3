@@ -6,7 +6,7 @@ import './styles.css';
 
 import CatalystLogo from './images/logoNoTextNoBack.png';
 
-export default class App extends React.Component {
+export default class HomeComponent extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -27,18 +27,6 @@ export default class App extends React.Component {
 
     return (
       <div className={headerClass}>
-        <div flex-direction="row">
-          <ReactBootstrap.Navbar fixed="top" sticky="top" expand="lg">
-            <ReactBootstrap.Navbar.Brand href="#home">
-              <img src={CatalystLogo} alt={'logo'} height="50px" width="50px"/>
-            </ReactBootstrap.Navbar.Brand>
-            <ReactBootstrap.Nav class="d-flex justify-content-end">
-              <ReactBootstrap.Nav class="mr-auto p-2">members</ReactBootstrap.Nav>
-              <ReactBootstrap.Nav class="mr-auto p-2">recruitment</ReactBootstrap.Nav>
-              <ReactBootstrap.Nav class="mr-auto p-2">faq</ReactBootstrap.Nav>
-            </ReactBootstrap.Nav>
-          </ReactBootstrap.Navbar>
-        </div>
         <div className='home-body'>
           <div className='catalyst-logo-text'>
             <img src={CatalystLogo} alt={'logo'}/>
