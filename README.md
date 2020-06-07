@@ -8,4 +8,4 @@ Make sure to run `npm i` inside the main dir **AND** client dir to install the a
 ## Connecting with Airtable
 
 ## Internal Catalyst Permission
-Ask the president to be added to Catalyst-at-Duke organization. This is owned by Samantha Whitt.
+Ask the president to be added to Catalyst-at-Duke organization. This organization is currently owned by Samantha Whitt.
