@@ -1,10 +1,6 @@
 import React from 'react';
-import Switch from 'react-switch';
 import classNames from 'classnames';
-import * as ReactBootstrap from 'react-bootstrap';
 import './styles.css';
-
-import CatalystLogo from './images/logoNoTextNoBack.png';
 
 export default class MembersComponent extends React.Component {
   constructor() {
@@ -13,12 +9,6 @@ export default class MembersComponent extends React.Component {
       checked: true, // y dark, n light
     };
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange = () => {
-    this.setState(state => ({
-      checked: !this.state.checked
-    }));
   }
 
   render() {

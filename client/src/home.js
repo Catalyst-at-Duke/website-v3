@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from 'react-switch';
 import classNames from 'classnames';
-import * as ReactBootstrap from 'react-bootstrap';
+// import * as ReactBootstrap from 'react-bootstrap';
 import './styles.css';
 
 import CatalystLogo from './images/logoNoTextNoBack.png';
@@ -12,12 +12,11 @@ export default class HomeComponent extends React.Component {
     this.state = {
       checked: true, // y dark, n light
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = () => {
-    this.setState(state => ({
-      checked: !this.state.checked
+    this.setState((state) => ({
+      checked: !this.state.checked,
     }));
   }
 
@@ -38,7 +37,7 @@ export default class HomeComponent extends React.Component {
           <div>
             <ToggleSwitch
               checked={this.state.checked}
-              handleChange={this.handleChange} 
+              handleChange={this.handleChange}
             />
           </div>
         </div>
@@ -51,7 +50,7 @@ class ToggleSwitch extends React.Component {
   render() {
     return (
       <div className='example'>
-        <Switch 
+        <Switch
           onChange={this.props.handleChange}
           checked={!this.props.checked}
           onColor='#83dae8'
@@ -72,10 +71,10 @@ class TextGlitch extends React.Component {
     return (
       <div className='glitch-wrapper' role='p'>
         {
-          letters.map(l => (
-            l === ' '
-              ? <span className='glitch-letter'>&nbsp;</span>
-              : (
+          letters.map((l) => (
+            l === ' ' ?
+              <span className='glitch-letter'>&nbsp;</span> :
+              (
                 <div className='glitch-wrapper'>
                   <span className='glitch-letter' data-text={l}>{ l }</span>
                 </div>

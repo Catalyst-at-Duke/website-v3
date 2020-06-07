@@ -2,29 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './home';
-import Members from './MembersComponent'
-import Faq from './FaqComponent'
-import Recruitment from './RecruitmentComponent'
+import Members from './MembersComponent';
+import Faq from './FaqComponent';
+import Recruitment from './RecruitmentComponent';
 import * as serviceWorker from './serviceWorker';
-import { Router, Link } from '@reach/router';
-import "bootstrap/dist/css/bootstrap.min.css";
-import * as ReactBootstrap from 'react-bootstrap';
+import {Router} from '@reach/router';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import NavBarComponent from './NavBarComponent';
-import CatalystLogo from './images/logoNoTextNoBack.png';
-import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-  	<NavBarComponent />
-  	<Router>
-    	<Home path='/'/>
-    	<Members path='members'/>
-    	<Recruitment path='recruitment'/>
-    	<Faq path='faq'/>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+      <NavBarComponent />
+      <Router>
+        <Home path='/'/>
+        <Members path='members'/>
+        <Recruitment path='recruitment'/>
+        <Faq path='faq'/>
+      </Router>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

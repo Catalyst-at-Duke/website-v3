@@ -1,10 +1,6 @@
 import React from 'react';
-import Switch from 'react-switch';
 import classNames from 'classnames';
-import * as ReactBootstrap from 'react-bootstrap';
 import './styles.css';
-
-import CatalystLogo from './images/logoNoTextNoBack.png';
 
 export default class FaqComponent extends React.Component {
   constructor() {
@@ -12,13 +8,6 @@ export default class FaqComponent extends React.Component {
     this.state = {
       checked: true, // y dark, n light
     };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange = () => {
-    this.setState(state => ({
-      checked: !this.state.checked
-    }));
   }
 
   render() {
