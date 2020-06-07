@@ -37,7 +37,7 @@
   transform: translate(-50%, -50%);
 }
 
-@keyframes glitch-anim {
+/* @keyframes glitch-anim {
   0% {
     clip: rect(40px, 9999px, 35px, 0);
   }
@@ -116,7 +116,7 @@
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-name: glitch-anim; */
-}
+/* } */
 
 .glitch:before,
 .glitch-letter:hover:before {
@@ -127,4 +127,97 @@
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+*/ .glitch {
+  color: rgb(223, 191, 191);
+  position: relative;
+  font-size: 9vw;
+  /* // margin: 70px 200px; */
+  animation: glitch 5s 5s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -5px 0 magenta;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 3s linear infinite alternate-reverse,
+    glitch 5s 5.05s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+}
+
+@keyframes glitch {
+  1% {
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2% {
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes noise-1 {
+  0% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  25% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  50% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  75% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  100% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+}
+
+@keyframes noise-2 {
+  0% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  25% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  50% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  75% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
+  100% {
+    --top: random(100);
+    --bottom: random(101-var(top));
+    clip-path: inset(var(top) px 0 var(bottom) px 0);
+  }
 }
