@@ -21,12 +21,7 @@ export default class HomeComponent extends React.Component {
         >
           <div className="catalyst-logo-text">
             <img src={CatalystLogo} alt={"logo"} />
-            <div className="catalyst-text">
-              <div class="glitch" data-text="C A T A L Y S T">
-                C A T A L Y S T
-              </div>
-              <div class="glow">C A T A L Y S T</div>
-            </div>
+            <div class="glitch" data-text="CATALYST"></div>
           </div>
         </div>
       </div>
