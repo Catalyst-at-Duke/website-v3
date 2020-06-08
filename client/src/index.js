@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   changeColor = (color) => {
-    this.setState({ color: color });
+    this.setState({ navBarColor: color });
   };
 
   render() {
