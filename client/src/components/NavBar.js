@@ -33,17 +33,13 @@ export default class NavBarComponent extends React.Component {
       <div
         className="transition page"
         style={{
-          background: this.state.color,
+          background: this.props.color,
           position: "absolute",
           width: "100%",
+          overflow: "hidden",
         }}
       >
-        <ReactBootstrap.Navbar
-          fixed="top"
-          sticky="top"
-          expand="lg"
-          style={{ width: "100%" }}
-        >
+        <ReactBootstrap.Navbar>
           <ReactBootstrap.Navbar.Brand>
             <Link to="/">
               <img src={CatalystLogo} alt={"logo"} height="50px" width="50px" />

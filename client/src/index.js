@@ -31,18 +31,14 @@ class App extends React.Component {
       <React.StrictMode>
         <Location>
           {({ location }) => (
-            <TransitionGroup className="transition-group">
-              <CSSTransition timeout={500} key={location.key} classNames="fade">
-                <div style={{ height: "100%" }}>
+            <TransitionGroup>
+              <CSSTransition timeout={400} key={location.key} classNames="fade">
+                <div>
                   <NavBar
                     location={location.pathname}
                     changeColor={this.changeColor}
                   />
-                  <Router
-                    primary={false}
-                    location={location}
-                    className="router"
-                  >
+                  <Router primary={false} location={location}>
                     <Home path="/" color={colors.darkGray} />
                     <Members path="members" color={colors.purple} />
                     <Recruitment path="recruitment" color={colors.pink} />

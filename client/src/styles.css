@@ -4,15 +4,13 @@
   font-size: 150%;
 }
 
-.fade-enter .page {
+.fade-enter {
   opacity: 0;
-  z-index: 1;
 }
 
-.fade-enter.fade-enter-active .page {
+.fade-enter.fade-enter-active {
   opacity: 1;
-  background-color: black;
-  transition: opacity 450ms ease-in;
+  transition: opacity 450ms linear;
 }
 
 /* .app-nav {
