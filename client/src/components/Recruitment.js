@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import "../styles.css";
-import { colors, fonts } from "../theme.js";
+import "../styles/styles.css";
+import { colors, fonts } from "../styles/theme.js";
 export default class MembersComponent extends React.Component {
   render() {
     return (

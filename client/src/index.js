@@ -8,10 +8,10 @@ import Recruitment from "./components/Recruitment";
 import * as serviceWorker from "./serviceWorker";
 import { Location, Router } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
+import "./styles/styles.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
-import { colors, fonts } from "./theme.js";
+import { colors, fonts } from "./styles/theme.js";
 
 class App extends React.Component {
   constructor(props) {

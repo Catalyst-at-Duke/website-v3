@@ -1,7 +1,7 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
-import "../styles.css";
-import { colors, fonts } from "../theme.js";
+import "../styles/styles.css";
+import { colors, fonts } from "../styles/theme.js";
 
 import CatalystLogo from "../images/logoNoTextNoBack.png";
 
@@ -36,7 +36,13 @@ export default class NavBarComponent extends React.Component {
           style={{ display: "flex", width: "100%" }}
         >
           <ReactBootstrap.Navbar.Brand href="/">
-            <img src={CatalystLogo} alt={"logo"} height="50px" width="50px" />
+            <img
+              src={CatalystLogo}
+              alt={"logo"}
+              class="ml-2"
+              height="50px"
+              width="50px"
+            />
           </ReactBootstrap.Navbar.Brand>
 
           <ReactBootstrap.Nav

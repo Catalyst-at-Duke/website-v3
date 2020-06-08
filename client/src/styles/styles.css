@@ -1,0 +1,23 @@
+.app {
+  font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* .app-footer {
+
+} */
+
+.body {
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.catalyst-logo-text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+}
