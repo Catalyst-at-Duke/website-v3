@@ -6,10 +6,8 @@ import { colors, fonts } from "../theme.js";
 export default class MembersComponent extends React.Component {
   render() {
     return (
-      <div className="app">
-        <div className="home-body" style={{ backgroundColor: colors.purple }}>
-          This will be the members page
-        </div>
+      <div className="app transition" style={{ background: colors.purple }}>
+        <div className="home-body">This will be the members page</div>
       </div>
     );
   }

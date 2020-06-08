@@ -4,6 +4,19 @@
   font-size: 150%;
 }
 
+.transition {
+  background-color: #ffffff;
+}
+.fade-enter .transition {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active .transition {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
 /* .app-nav {
 
 } */

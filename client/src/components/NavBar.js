@@ -2,7 +2,9 @@ import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "../styles.css";
 import { colors, fonts } from "../theme.js";
+import { Link } from "@reach/router";
 
+import "../styles.css";
 import CatalystLogo from "../images/logoNoTextNoBack.png";
 
 export default class NavBarComponent extends React.Component {
@@ -28,45 +30,51 @@ export default class NavBarComponent extends React.Component {
 
   render() {
     return (
-      <div style={{ background: this.state.color, display: "flex" }}>
+      <div
+        className="transition"
+        style={{
+          background: this.state.color,
+          display: "flex",
+          height: "auto !important",
+        }}
+      >
         <ReactBootstrap.Navbar
           fixed="top"
           sticky="top"
           expand="lg"
           style={{ display: "flex", width: "100%" }}
         >
-          <ReactBootstrap.Navbar.Brand href="/">
-            <img src={CatalystLogo} alt={"logo"} height="50px" width="50px" />
+          <ReactBootstrap.Navbar.Brand>
+            <Link to="/">
+              <img src={CatalystLogo} alt={"logo"} height="50px" width="50px" />
+            </Link>
           </ReactBootstrap.Navbar.Brand>
 
           <ReactBootstrap.Nav
             className="d-flex flex-row"
             style={{ position: "absolute", right: 0, marginRight: "10px" }}
           >
-            <ReactBootstrap.Nav.Link
+            <ReactBootstrap.Nav
               className="p-2"
-              href="/members"
               style={{ color: colors.white, fontSize: fonts.size.small }}
               onClick={() => this.props.changeColor(colors.purple)}
             >
-              members
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link
+              <Link to="/members">members</Link>
+            </ReactBootstrap.Nav>
+            <ReactBootstrap.Nav
               className="p-2"
-              href="/recruitment"
               style={{ color: colors.white, fontSize: fonts.size.small }}
               onClick={() => this.props.changeColor(colors.pink)}
             >
-              recruitment
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link
+              <Link to="/recruitment">recruitment</Link>
+            </ReactBootstrap.Nav>
+            <ReactBootstrap.Nav
               className="p-2"
-              href="/faq"
               style={{ color: colors.white, fontSize: fonts.size.small }}
               onClick={() => this.props.changeColor(colors.yellow)}
             >
-              faq
-            </ReactBootstrap.Nav.Link>
+              <Link to="/faq">faq</Link>
+            </ReactBootstrap.Nav>
           </ReactBootstrap.Nav>
         </ReactBootstrap.Navbar>
       </div>

@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { colors, fonts } from "./theme.js";
 
 class App extends React.Component {
@@ -22,7 +23,6 @@ class App extends React.Component {
   }
 
   changeColor = (color) => {
-    console.log("changed color");
     this.setState({ color: color });
   };
 
@@ -31,15 +31,22 @@ class App extends React.Component {
       <React.StrictMode>
         <Location>
           {({ location }) => (
-            <div>
-              <NavBar location={location.pathname} />
-              <Router>
-                <Home path="/" />
-                <Members path="members" />
-                <Recruitment path="recruitment" />
-                <Faq path="faq" />
-              </Router>
-            </div>
+            <TransitionGroup>
+              <CSSTransition timeout={300} key={location.key} classNames="fade">
+                <div>
+                  <NavBar
+                    location={location.pathname}
+                    changeColor={this.changeColor}
+                  />
+                  <Router location={location}>
+                    <Home path="/" />
+                    <Members path="members" />
+                    <Recruitment path="recruitment" />
+                    <Faq path="faq" />
+                  </Router>
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
           )}
         </Location>
       </React.StrictMode>

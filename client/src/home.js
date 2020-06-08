@@ -10,12 +10,12 @@ import CatalystLogo from "./images/logoNoTextNoBack.png";
 export default class HomeComponent extends React.Component {
   render() {
     return (
-      <div className="app">
-        <div className="home-body" style={{ backgroundColor: colors.darkGray }}>
+      <div className="app transition" style={{ background: colors.darkGray }}>
+        <div className="home-body">
           <div className="catalyst-logo-text">
             <img src={CatalystLogo} alt={"logo"} />
             <div style={{ top: "50%", left: "50%" }}>
-              <div class="glitch" data-text="CATALYST"></div>
+              <div className="glitch" data-text="CATALYST"></div>
             </div>
           </div>
         </div>
