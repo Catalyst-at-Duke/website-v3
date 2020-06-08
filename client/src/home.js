@@ -22,6 +22,7 @@ export default class HomeComponent extends React.Component {
               <div class="glow">CATALYST</div>
             </div>
           </div>
+          <div class="arrow-down"></div>
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ export default class MembersComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="home-body" style={{ backgroundColor: colors.purple }}>
+        <div className="body" style={{ backgroundColor: colors.purple }}>
           This will be the members page
         </div>
       </div>

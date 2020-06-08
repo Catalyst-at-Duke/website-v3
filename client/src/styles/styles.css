@@ -8,7 +8,7 @@
 } */
 
 .body {
-  min-height: 100vh;
+  min-height: 95vh;
   text-align: center;
   flex-direction: column;
   display: flex;
@@ -16,8 +16,53 @@
 }
 
 .catalyst-logo-text {
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 100%;
-  top: 25%;
+  margin-top: 5%;
+}
+
+.arrow-down {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 75px;
+}
+
+.arrow-down::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  animation: 3s arrow infinite ease;
+  -webkit-animation: 3s arrow infinite ease;
+}
+
+@-webkit-keyframes arrow {
+  0%,
+  100% {
+    top: 50px;
+  }
+  50% {
+    top: 80px;
+  }
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    top: 50px;
+  }
+  50% {
+    top: 80px;
+  }
 }
