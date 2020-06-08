@@ -33,7 +33,7 @@ class App extends React.Component {
           {({ location }) => (
             <TransitionGroup className="transition-group">
               <CSSTransition timeout={500} key={location.key} classNames="fade">
-                <div>
+                <div style={{ height: "100%" }}>
                   <NavBar
                     location={location.pathname}
                     changeColor={this.changeColor}

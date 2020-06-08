@@ -34,14 +34,15 @@ export default class NavBarComponent extends React.Component {
         className="transition page"
         style={{
           background: this.state.color,
-          display: "flex",
+          position: "absolute",
+          width: "100%",
         }}
       >
         <ReactBootstrap.Navbar
           fixed="top"
           sticky="top"
           expand="lg"
-          style={{ display: "flex", width: "100%" }}
+          style={{ width: "100%" }}
         >
           <ReactBootstrap.Navbar.Brand>
             <Link to="/">
