@@ -4,17 +4,15 @@
   font-size: 150%;
 }
 
-.transition {
-  background-color: #ffffff;
-}
-.fade-enter .transition {
+.fade-enter .page {
   opacity: 0;
   z-index: 1;
 }
 
-.fade-enter.fade-enter-active .transition {
+.fade-enter.fade-enter-active .page {
   opacity: 1;
-  transition: opacity 300ms ease-in;
+  background-color: black;
+  transition: opacity 450ms ease-in;
 }
 
 /* .app-nav {
@@ -33,7 +31,6 @@
   font-size: calc(10px + 2vmin);
   align-items: center;
   justify-content: center; /* for now */
-  color: white;
 }
 
 .catalyst-logo-text {

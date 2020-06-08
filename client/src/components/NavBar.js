@@ -31,11 +31,10 @@ export default class NavBarComponent extends React.Component {
   render() {
     return (
       <div
-        className="transition"
+        className="transition page"
         style={{
           background: this.state.color,
           display: "flex",
-          height: "auto !important",
         }}
       >
         <ReactBootstrap.Navbar
@@ -57,23 +56,20 @@ export default class NavBarComponent extends React.Component {
             <ReactBootstrap.Nav
               className="p-2"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.props.changeColor(colors.purple)}
             >
-              <Link to="/members">members</Link>
+              <Link to="members">members</Link>
             </ReactBootstrap.Nav>
             <ReactBootstrap.Nav
               className="p-2"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.props.changeColor(colors.pink)}
             >
-              <Link to="/recruitment">recruitment</Link>
+              <Link to="recruitment">recruitment</Link>
             </ReactBootstrap.Nav>
             <ReactBootstrap.Nav
               className="p-2"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.props.changeColor(colors.yellow)}
             >
-              <Link to="/faq">faq</Link>
+              <Link to="faq">faq</Link>
             </ReactBootstrap.Nav>
           </ReactBootstrap.Nav>
         </ReactBootstrap.Navbar>

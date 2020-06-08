@@ -6,7 +6,7 @@ import Members from "./components/Members";
 import Faq from "./components/Faq";
 import Recruitment from "./components/Recruitment";
 import * as serviceWorker from "./serviceWorker";
-import { Location, Router } from "@reach/router";
+import { Location, Router, Link } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import NavBar from "./components/NavBar";
@@ -31,18 +31,22 @@ class App extends React.Component {
       <React.StrictMode>
         <Location>
           {({ location }) => (
-            <TransitionGroup>
-              <CSSTransition timeout={300} key={location.key} classNames="fade">
+            <TransitionGroup className="transition-group">
+              <CSSTransition timeout={500} key={location.key} classNames="fade">
                 <div>
                   <NavBar
                     location={location.pathname}
                     changeColor={this.changeColor}
                   />
-                  <Router location={location}>
-                    <Home path="/" />
-                    <Members path="members" />
-                    <Recruitment path="recruitment" />
-                    <Faq path="faq" />
+                  <Router
+                    primary={false}
+                    location={location}
+                    className="router"
+                  >
+                    <Home path="/" color={colors.darkGray} />
+                    <Members path="members" color={colors.purple} />
+                    <Recruitment path="recruitment" color={colors.pink} />
+                    <Faq path="faq" color={colors.yellow} />
                   </Router>
                 </div>
               </CSSTransition>
