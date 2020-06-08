@@ -8,10 +8,6 @@ import "./styles.css";
 import CatalystLogo from "./images/logoNoTextNoBack.png";
 
 export default class HomeComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div className="app">

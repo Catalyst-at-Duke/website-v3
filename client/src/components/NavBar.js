@@ -9,12 +9,21 @@ export default class NavBarComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: colors.darkGray,
+      color: this.getColor(),
     };
   }
 
-  changeColor = (color) => {
-    this.setState({ color });
+  getColor = () => {
+    switch (this.props.location) {
+      case "/faq":
+        return colors.yellow;
+      case "/recruitment":
+        return colors.pink;
+      case "/members":
+        return colors.purple;
+      default:
+        return colors.darkGray;
+    }
   };
 
   render() {
@@ -26,29 +35,26 @@ export default class NavBarComponent extends React.Component {
           </ReactBootstrap.Navbar.Brand>
           <ReactBootstrap.Nav class="d-flex">
             <ReactBootstrap.Nav.Link
-              className="justify-content-end"
-              class="p-2"
+              className="justify-content-end p-2"
               href="/members"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.changeColor(colors.purple)}
+              onClick={() => this.props.changeColor(colors.purple)}
             >
               members
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
-              className="justify-content-end"
-              class="p-2"
+              className="justify-content-end p-2"
               href="/recruitment"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.changeColor(colors.pink)}
+              onClick={() => this.props.changeColor(colors.pink)}
             >
               recruitment
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
-              className="justify-content-end"
-              class="p-2"
+              className="justify-content-end p-2"
               href="/faq"
               style={{ color: colors.white, fontSize: fonts.size.small }}
-              onClick={() => this.changeColor(colors.yellow)}
+              onClick={() => this.props.changeColor(colors.yellow)}
             >
               faq
             </ReactBootstrap.Nav.Link>
