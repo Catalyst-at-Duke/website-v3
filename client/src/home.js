@@ -15,37 +15,14 @@ export default class HomeComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div
-          className="home-body"
-          style={{ backgroundColor: colors.darkGray, color: colors.white }}
-        >
+        <div className="home-body" style={{ backgroundColor: colors.darkGray }}>
           <div className="catalyst-logo-text">
             <img src={CatalystLogo} alt={"logo"} />
-            <div class="glitch" data-text="CATALYST"></div>
+            <div style={{ top: "50%", left: "50%" }}>
+              <div class="glitch" data-text="CATALYST"></div>
+            </div>
           </div>
         </div>
-      </div>
-    );
-  }
-}
-
-class TextGlitch extends React.Component {
-  render() {
-    const letters = this.props.word.split("");
-
-    return (
-      <div className="glitch-wrapper" role="p">
-        {letters.map((l) =>
-          l === " " ? (
-            <span className="glitch-letter">&nbsp;</span>
-          ) : (
-            <div className="glitch-wrapper">
-              <span className="glitch-letter" data-text={l}>
-                {l}
-              </span>
-            </div>
-          )
-        )}
       </div>
     );
   }

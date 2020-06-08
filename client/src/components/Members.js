@@ -1,22 +1,15 @@
 import React from "react";
 import classNames from "classnames";
 import "../styles.css";
+import { colors, fonts } from "../theme.js";
 
 export default class MembersComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      checked: true, // y dark, n light
-    };
-  }
-
   render() {
-    const themeClass = this.state.checked ? "dark-theme" : "light-theme";
-    const headerClass = classNames("app", themeClass);
-
     return (
-      <div className={headerClass}>
-        <div className="home-body">This will be the members page</div>
+      <div className="app">
+        <div className="home-body" style={{ backgroundColor: colors.purple }}>
+          This will be the members page
+        </div>
       </div>
     );
   }

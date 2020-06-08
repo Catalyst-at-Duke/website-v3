@@ -20,6 +20,7 @@
   font-size: calc(10px + 2vmin);
   align-items: center;
   justify-content: center; /* for now */
+  color: white;
 }
 
 .catalyst-logo-text {
@@ -31,8 +32,8 @@
 .glitch {
   color: white;
   position: absolute;
-  top: 15%;
-  left: 20%;
+  top: 10%;
+  left: 22%;
   font-size: 800%;
   animation: glitch 5s 5s infinite;
 }
@@ -69,66 +70,66 @@
 
 @keyframes noise-1 {
   0% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   20% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   40% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   60% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   80% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   100% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
 }
 
 @keyframes noise-2 {
   0% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   20% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   40% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   60% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   80% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
   100% {
-    --top: random(100);
-    --bottom: random(101-var(top));
+    --top: random(50);
+    --bottom: random(51-var(top));
     clip-path: inset(var(top) px 0 var(bottom) px 0);
   }
 }
