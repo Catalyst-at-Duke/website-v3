@@ -9,7 +9,7 @@ export default class MembersComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="body" style={{ backgroundColor: colors.yellow }}>
+        <div className="body" style={{ backgroundColor: colors.pink }}>
           <div class="title">
             <TypistLoop interval={100}>
               {["recruitment", ""].map((text) => (

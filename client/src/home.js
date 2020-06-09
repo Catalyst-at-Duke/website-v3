@@ -32,7 +32,7 @@ export default class HomeComponent extends React.Component {
                 position: "absolute",
                 top: 0,
                 justifyContent: "center",
-                marginLeft: 55,
+                marginLeft: 25,
                 height: "100%",
                 opacity: "30%",
               }}
@@ -44,7 +44,7 @@ export default class HomeComponent extends React.Component {
               >
                 <img
                   src={"./mail.png"}
-                  style={{ width: "80px", marginBottom: 30 }}
+                  style={{ width: "50px", marginBottom: 30 }}
                 />
               </a>
               <a
@@ -54,7 +54,7 @@ export default class HomeComponent extends React.Component {
               >
                 <img
                   src={"./facebook.png"}
-                  style={{ width: "80px", marginBottom: 30 }}
+                  style={{ width: "50px", marginBottom: 30 }}
                 />
               </a>
               <a
@@ -64,7 +64,7 @@ export default class HomeComponent extends React.Component {
               >
                 <img
                   src={"./instagram.png"}
-                  style={{ width: "80px", marginBottom: 30 }}
+                  style={{ width: "50px", marginBottom: 30 }}
                 />
               </a>
               <a
@@ -72,7 +72,7 @@ export default class HomeComponent extends React.Component {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <img src={"./linkedin.png"} style={{ width: "80px" }} />
+                <img src={"./linkedin.png"} style={{ width: "50px" }} />
               </a>
             </div>
           </div>

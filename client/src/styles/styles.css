@@ -35,9 +35,8 @@
 
 .arrow-down {
   width: 100%;
-  margin: 0 auto;
-  position: relative;
-  top: 75px;
+  position: absolute;
+  bottom: 10%;
 }
 
 .arrow-down::after {

@@ -38,20 +38,18 @@ export default class NavBarComponent extends React.Component {
           expand="lg"
           style={{ display: "flex", width: "100%" }}
         >
-          <ReactBootstrap.Navbar.Brand href="/">
-            <img
-              src={CatalystLogo}
-              alt={"logo"}
-              class="ml-2"
-              height="50px"
-              width="50px"
-            />
-          </ReactBootstrap.Navbar.Brand>
-
           <ReactBootstrap.Nav
-            className="d-flex flex-row"
+            className="d-flex flex-row m-4"
             style={{ position: "absolute", right: 0, marginRight: "10px" }}
           >
+            <ReactBootstrap.Nav.Link
+              className="p-2"
+              href="/"
+              style={{ color: colors.white, fontSize: fonts.size.normal }}
+              onClick={() => this.props.changeColor(colors.black)}
+            >
+              home
+            </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/members"
