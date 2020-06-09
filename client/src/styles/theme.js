@@ -13,16 +13,17 @@ export const colors = {
 };
 
 export const fonts = {
-  family: {
-    body: "Lato",
-  },
   weights: {
-    thin: "300",
-    normal: "500",
+    thin: "100",
+    light: "300",
+    regular: "400",
     bold: "700",
-    extraBold: "900",
+    black: "900",
   },
   size: {
-    small: "1.5em",
+    small: "0.75em",
+    normal: "1.125em",
+    regular: "1.5em",
+    large: "2em",
   },
 };

@@ -22,13 +22,16 @@ export default class NavBarComponent extends React.Component {
       case "/members":
         return colors.purple;
       default:
-        return colors.darkGray;
+        return colors.black;
     }
   };
 
   render() {
     return (
-      <div style={{ background: this.state.color, display: "flex" }}>
+      <div
+        className="app"
+        style={{ background: this.state.color, display: "flex" }}
+      >
         <ReactBootstrap.Navbar
           fixed="top"
           sticky="top"
@@ -52,7 +55,7 @@ export default class NavBarComponent extends React.Component {
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/members"
-              style={{ color: colors.white, fontSize: fonts.size.small }}
+              style={{ color: colors.white, fontSize: fonts.size.normal }}
               onClick={() => this.props.changeColor(colors.purple)}
             >
               members
@@ -60,7 +63,7 @@ export default class NavBarComponent extends React.Component {
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/recruitment"
-              style={{ color: colors.white, fontSize: fonts.size.small }}
+              style={{ color: colors.white, fontSize: fonts.size.normal }}
               onClick={() => this.props.changeColor(colors.pink)}
             >
               recruitment
@@ -68,7 +71,7 @@ export default class NavBarComponent extends React.Component {
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/faq"
-              style={{ color: colors.white, fontSize: fonts.size.small }}
+              style={{ color: colors.white, fontSize: fonts.size.normal }}
               onClick={() => this.props.changeColor(colors.yellow)}
             >
               faq

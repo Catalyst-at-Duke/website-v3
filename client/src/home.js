@@ -12,7 +12,10 @@ export default class HomeComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="body" style={{ backgroundColor: colors.darkGray }}>
+        <div
+          className="body"
+          style={{ backgroundColor: colors.black, justifyContent: "center" }}
+        >
           <div className="catalyst-logo-text">
             <img src={CatalystLogo} alt={"logo"} />
             <div class="container">
