@@ -3,7 +3,7 @@ export const colors = {
   catalightblue: "#97D8E6",
   catablue: "#50B3CE",
   lightblue: "#85C4FF",
-  yellow: "#F6D86B",
+  yellow: "#EEC55C",
   cherry: "#CD2553",
   green: "#689271",
   purple: "#6974B2",
