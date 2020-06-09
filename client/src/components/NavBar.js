@@ -40,7 +40,12 @@ export default class NavBarComponent extends React.Component {
         >
           <ReactBootstrap.Nav
             className="d-flex flex-row m-4"
-            style={{ position: "absolute", right: 0, marginRight: "10px" }}
+            style={{
+              position: "absolute",
+              right: 0,
+              marginRight: "10px",
+              opacity: "80%",
+            }}
           >
             <ReactBootstrap.Nav.Link
               className="p-2"

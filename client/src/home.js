@@ -34,7 +34,7 @@ export default class HomeComponent extends React.Component {
                 justifyContent: "center",
                 marginLeft: 25,
                 height: "100%",
-                opacity: "30%",
+                opacity: "80%",
               }}
             >
               <a
@@ -76,7 +76,7 @@ export default class HomeComponent extends React.Component {
               </a>
             </div>
           </div>
-          <div className="arrow-down"></div>
+          <div className="arrow-down" style={{ opacity: "80%" }}></div>
         </div>
       </div>
     );
