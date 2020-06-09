@@ -18,14 +18,65 @@ export default class HomeComponent extends React.Component {
         >
           <div className="catalyst-logo-text">
             <img src={CatalystLogo} alt={"logo"} />
-            <div class="container">
-              <div class="glitch" data-text="CATALYST">
+            <div className="container">
+              <div className="glitch" data-text="CATALYST">
                 CATALYST
               </div>
-              <div class="glow">CATALYST</div>
+              <div className="glow">CATALYST</div>
+            </div>
+            <div
+              className="sidebar"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                position: "absolute",
+                top: 0,
+                justifyContent: "center",
+                marginLeft: 55,
+                height: "100%",
+                opacity: "30%",
+              }}
+            >
+              <a
+                href="mailto:dukecatalyst@gmail.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  src={"./mail.png"}
+                  style={{ width: "80px", marginBottom: 30 }}
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/dukecatalyst/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={"./facebook.png"}
+                  style={{ width: "80px", marginBottom: 30 }}
+                />
+              </a>
+              <a
+                href="https://instagram.com/dukecatalyst"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  src={"./instagram.png"}
+                  style={{ width: "80px", marginBottom: 30 }}
+                />
+              </a>
+              <a
+                href="https://linkedin.com/company/duke-catalyst"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img src={"./linkedin.png"} style={{ width: "80px" }} />
+              </a>
             </div>
           </div>
-          <div class="arrow-down"></div>
+          <div className="arrow-down"></div>
         </div>
       </div>
     );
