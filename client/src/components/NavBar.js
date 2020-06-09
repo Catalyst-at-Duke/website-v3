@@ -44,38 +44,58 @@ export default class NavBarComponent extends React.Component {
               position: "absolute",
               right: 0,
               marginRight: "10px",
-              opacity: "80%",
+              opacity: "50%",
             }}
           >
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/"
-              style={{ color: colors.white, fontSize: fonts.size.normal }}
+              style={{
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+              }}
               onClick={() => this.props.changeColor(colors.black)}
+              activeClassName="navbar__link--active"
             >
               home
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/members"
-              style={{ color: colors.white, fontSize: fonts.size.normal }}
+              style={{
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+              }}
               onClick={() => this.props.changeColor(colors.purple)}
+              activeClassName="navbar__link--active"
             >
               members
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/recruitment"
-              style={{ color: colors.white, fontSize: fonts.size.normal }}
+              style={{
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+              }}
               onClick={() => this.props.changeColor(colors.pink)}
+              activeClassName="navbar__link--active"
             >
               recruitment
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link
               className="p-2"
               href="/faq"
-              style={{ color: colors.white, fontSize: fonts.size.normal }}
+              style={{
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+              }}
               onClick={() => this.props.changeColor(colors.yellow)}
+              activeClassName="navbar__link--active"
             >
               faq
             </ReactBootstrap.Nav.Link>

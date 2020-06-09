@@ -9,7 +9,7 @@ export default class FaqComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="body" style={{ backgroundColor: colors.yellow }}>
+        <div className="body" style={{ backgroundColor: colors.lightblue }}>
           <div class="title">
             <TypistLoop interval={100}>
               {["frequently asked questions", ""].map((text) => (

@@ -1,7 +1,8 @@
 export const colors = {
   pink: "#EE8380",
-  lightblue: "#97D8E6",
-  blue: "#50B3CE",
+  catalightblue: "#97D8E6",
+  catablue: "#50B3CE",
+  lightblue: "#85C4FF",
   yellow: "#F6D86B",
   cherry: "#CD2553",
   green: "#689271",
