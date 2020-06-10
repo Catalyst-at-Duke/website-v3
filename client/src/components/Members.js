@@ -1,7 +1,6 @@
 import React from "react";
-import classNames from "classnames";
 import "../styles/styles.css";
-import { colors, fonts } from "../styles/theme.js";
+import { colors } from "../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import PolaroidFrame from "./cards/PolaroidFrame";

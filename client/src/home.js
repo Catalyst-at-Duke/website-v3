@@ -1,8 +1,6 @@
 import React from "react";
-import Switch from "react-switch";
-import classNames from "classnames";
-import { colors, fonts } from "./styles/theme.js";
-// import * as ReactBootstrap from 'react-bootstrap';
+import { colors } from "./styles/theme.js";
+import About from "./components/About";
 import "./styles/styles.css";
 import "./styles/glitch.scss";
 
@@ -78,6 +76,7 @@ export default class HomeComponent extends React.Component {
           </div>
           <div className="arrow-down" style={{ opacity: "80%" }}></div>
         </div>
+        <About></About>
       </div>
     );
   }
