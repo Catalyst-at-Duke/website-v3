@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Catalyst-at-Duke/website-v3/issues"
   },
-  "homepage": "https://github.com/Catalyst-at-Duke/website-v3#readme"
+  "homepage": "https://github.com/Catalyst-at-Duke/website-v3#readme",
+  "dependencies": {
+    "firebase": "^7.15.0"
+  }
 }

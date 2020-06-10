@@ -4,6 +4,7 @@ import { colors } from "../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import PolaroidFrame from "./cards/PolaroidFrame";
+import { FirebaseContext } from "./Firebase";
 
 export default class MembersComponent extends React.Component {
   render() {
@@ -31,35 +32,30 @@ export default class MembersComponent extends React.Component {
               ))}
             </TypistLoop>
           </div>
-          <div
-            class="content"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              marginTop: "10%",
-              flexWrap: "wrap",
-            }}
-          >
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-            <PolaroidFrame></PolaroidFrame>
-          </div>
+          <ExecComponent />
         </div>
+      </div>
+    );
+  }
+}
+
+class ExecComponent extends React.Component {
+  render() {
+    return (
+      <div
+        className="content"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: "10%",
+          flexWrap: "wrap",
+        }}
+      >
+        <PolaroidFrame
+          name="Long name exampleeee"
+          position="Alumni Relations Chair"
+        />
       </div>
     );
   }

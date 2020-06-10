@@ -9,7 +9,7 @@ const getAirtable = require("./retrieveAirtable").getAirtable;
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
-  databaseURL: "https://catadeploy-standardenv.firebaseio.com",
+  databaseURL: config.database_url,
 });
 
 let db = firebase.database();
