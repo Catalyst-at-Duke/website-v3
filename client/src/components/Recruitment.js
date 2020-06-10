@@ -1,11 +1,10 @@
 import React from "react";
-import classNames from "classnames";
 import "../styles/styles.css";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { colors, fonts } from "../styles/theme.js";
+import { colors } from "../styles/theme.js";
 
-export default class MembersComponent extends React.Component {
+export default class RecruitmentComponent extends React.Component {
   render() {
     return (
       <div className="app">

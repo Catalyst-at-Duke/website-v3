@@ -18,6 +18,14 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .title {
@@ -27,17 +35,16 @@
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 10%;
+  top: 10vh;
 }
 
 .content {
   width: 100%;
-  height: 100%;
-  top: 20%;
+  height: 80vh;
+  top: 20vh;
   position: absolute;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .navbar__link--active {
@@ -54,7 +61,7 @@
 .arrow-down {
   width: 100%;
   position: absolute;
-  bottom: 10%;
+  bottom: 10vh;
 }
 
 .arrow-down::after {

@@ -5,13 +5,13 @@ import Home from "./home";
 import Members from "./components/Members";
 import Faq from "./components/Faq";
 import Recruitment from "./components/Recruitment";
+import NavBar from "./components/NavBar";
 import * as serviceWorker from "./serviceWorker";
 import { Location, Router } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.css";
-import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
-import { colors, fonts } from "./styles/theme.js";
+import { colors } from "./styles/theme.js";
 
 class App extends React.Component {
   constructor(props) {
