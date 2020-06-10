@@ -1,5 +1,6 @@
 .app {
   font-family: Roboto, sans-serif;
+  height: "100%";
 }
 
 /* .app-footer {
@@ -7,19 +8,24 @@
 } */
 
 .body {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   text-align: center;
   flex-direction: column;
   display: flex;
-  width: 100%;
-  height: 100vh;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
+}
+
+.body-members {
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .page {
@@ -40,9 +46,7 @@
 
 .content {
   width: 100%;
-  height: 80vh;
-  top: 20vh;
-  position: absolute;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
 }

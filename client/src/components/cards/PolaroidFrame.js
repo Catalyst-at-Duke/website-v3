@@ -11,14 +11,14 @@ export default class PolaroidFrame extends React.Component {
           class="polaroid-inner"
           style={{ backgroundColor: colors.black }}
         ></div>
-        <div style={{ fontSize: fonts.size.normal }}>Nathan Ostrowski</div>
+        <div style={{ fontSize: fonts.size.normal }}>Long name exampleeeee</div>
         <div
           style={{
             fontSize: fonts.size.normal,
             fontWeight: fonts.weights.light,
           }}
         >
-          President
+          Alumni Relations Chair
         </div>
       </div>
     );

@@ -9,7 +9,12 @@ export default class MembersComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="body" style={{ backgroundColor: colors.purple }}>
+        <div
+          className="body-members"
+          style={{
+            backgroundColor: colors.purple,
+          }}
+        >
           <div class="title">
             <TypistLoop interval={100}>
               {["executive team", ""].map((text) => (
@@ -31,9 +36,16 @@ export default class MembersComponent extends React.Component {
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "center",
+              marginTop: "10%",
+              flexWrap: "wrap",
             }}
           >
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
             <PolaroidFrame></PolaroidFrame>
             <PolaroidFrame></PolaroidFrame>
             <PolaroidFrame></PolaroidFrame>
