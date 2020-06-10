@@ -7,10 +7,17 @@ export default class PolaroidFrame extends React.Component {
   render() {
     return (
       <div className="polaroid-outer" style={{ backgroundColor: colors.white }}>
-        <div
-          className="polaroid-inner"
-          style={{ backgroundColor: colors.black }}
-        ></div>
+        <div className="polaroid-inner">
+          <img
+            style={{
+              backgroundColor: colors.black,
+              width: "200px",
+              height: "190px",
+              objectFit: "cover",
+            }}
+            src={this.props.photo}
+          />
+        </div>
         <div style={{ fontSize: fonts.size.normal }}>{this.props.name}</div>
         <div
           style={{

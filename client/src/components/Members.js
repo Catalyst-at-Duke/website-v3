@@ -32,7 +32,13 @@ export default class MembersComponent extends React.Component {
               ))}
             </TypistLoop>
           </div>
-          <ExecComponent />
+          {
+            <FirebaseContext.Consumer>
+              {(firebase) => {
+                return <ExecComponent firebase={firebase} />;
+              }}
+            </FirebaseContext.Consumer>
+          }
         </div>
       </div>
     );
@@ -40,34 +46,45 @@ export default class MembersComponent extends React.Component {
 }
 
 class ExecComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      members: null,
+    };
+  }
+
+  componentDidMount() {
+    const db = this.props.firebase.db;
+    const execRef = db.ref("exec");
+    execRef.on("value", (snapshot) => {
+      this.setState({ members: snapshot.val() });
+      console.log(this.state.members);
+    });
+  }
   render() {
     return (
-      <FirebaseContext.Consumer>
-        {(firebase) => {
-          const db = firebase.db;
-          const execRef = db.ref("members");
-          execRef.on("value", (snapshot) => {
-            console.log(snapshot.val());
-          });
-          return (
-            <div
-              className="content"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                marginTop: "10%",
-                flexWrap: "wrap",
-              }}
-            >
-              <PolaroidFrame
-                name="Long name exampleeee"
-                position="Alumni Relations Chair"
-              />
-            </div>
-          );
+      <div
+        className="content"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: "10%",
+          flexWrap: "wrap",
         }}
-      </FirebaseContext.Consumer>
+      >
+        {this.state.members &&
+          this.state.members.map((person) => {
+            return (
+              <PolaroidFrame
+                name={person.Name}
+                key={person.Name}
+                position={person.Position}
+                photo={person.Photo ? person.Photo[0].url : ""}
+              />
+            );
+          })}
+      </div>
     );
   }
 }

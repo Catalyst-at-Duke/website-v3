@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Catalyst-at-Duke/website-v3#readme",
   "dependencies": {
-    "firebase": "^7.15.0"
+    "airtable": "^0.8.1",
+    "firebase-admin": "^8.12.1"
   }
 }

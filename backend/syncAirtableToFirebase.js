@@ -5,7 +5,7 @@ const serviceAccount = require(path.resolve(
   __dirname,
   config.firebase_credentials
 ));
-const getAirtable = require("./retrieveAirtable").getAirtable;
+const airtable = require("./retrieveAirtable");
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
@@ -14,19 +14,21 @@ firebase.initializeApp({
 
 let db = firebase.database();
 
-let ref = db.ref("members/");
+let ref = db.ref("/");
 
 // ref.on('value', (snapshot) => {
 // 	console.log(snapshot.val());
 // })
 
-ref.set({});
-
-getAirtable()
+airtable
+  .getMembers()
   .then((members) => {
-    for (let i = 0; i < members.length; i++) {
-      ref.push(members[i]);
-    }
-    console.log("Successfully updated Firebase!");
+    ref.update({ members });
+    console.log("Successfully updated Members!");
   })
   .catch(console.error);
+
+airtable.getExec().then((exec) => {
+  ref.update({ exec });
+  console.log("Successfully updated Exec!");
+});
