@@ -30,11 +30,13 @@
 }
 
 .content {
-  position: relative;
-  margin-top: 1.5em;
-  top: 15%;
   width: 100%;
   height: 100%;
+  top: 20%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .navbar__link--active {

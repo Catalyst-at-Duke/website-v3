@@ -23,7 +23,7 @@ export const fonts = {
     black: "900",
   },
   size: {
-    small: "0.75em",
+    small: "0.9em",
     normal: "1.125em",
     regular: "1.5em",
     large: "2em",
