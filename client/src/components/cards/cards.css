@@ -1,13 +1,13 @@
 /* regular dimensions are 250px x 292px */
 .polaroid-outer {
   box-shadow: 1.5px 1.5px 4px;
-  max-width: 214px;
-  min-height: 250px;
+  width: 214px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Permanent Marker", cursive;
-  margin-left: 5px; /* TAKE THIS OUT LATER @KEVIN */
+  margin: 5px; /* TAKE THIS OUT LATER @KEVIN */
 }
 
 .polaroid-inner {

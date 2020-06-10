@@ -27,7 +27,25 @@ export default class MembersComponent extends React.Component {
               ))}
             </TypistLoop>
           </div>
-          <div class="content">
+          <div
+            class="content"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
+            <PolaroidFrame></PolaroidFrame>
             <PolaroidFrame></PolaroidFrame>
           </div>
         </div>
