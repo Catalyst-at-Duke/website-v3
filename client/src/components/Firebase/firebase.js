@@ -1,4 +1,5 @@
 import app from "firebase/app";
+import "firebase/database";
 const config = require("./config.json");
 
 const devConfig = {
@@ -8,7 +9,8 @@ const devConfig = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(config);
+    app.initializeApp(devConfig);
+    this.db = app.database();
   }
 }
 

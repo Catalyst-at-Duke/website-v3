@@ -16,7 +16,7 @@ export default class MembersComponent extends React.Component {
             backgroundColor: colors.purple,
           }}
         >
-          <div class="title">
+          <div className="title">
             <TypistLoop interval={100}>
               {["executive team", ""].map((text) => (
                 <Typist
@@ -42,21 +42,32 @@ export default class MembersComponent extends React.Component {
 class ExecComponent extends React.Component {
   render() {
     return (
-      <div
-        className="content"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: "10%",
-          flexWrap: "wrap",
+      <FirebaseContext.Consumer>
+        {(firebase) => {
+          const db = firebase.db;
+          const execRef = db.ref("members");
+          execRef.on("value", (snapshot) => {
+            console.log(snapshot.val());
+          });
+          return (
+            <div
+              className="content"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                marginTop: "10%",
+                flexWrap: "wrap",
+              }}
+            >
+              <PolaroidFrame
+                name="Long name exampleeee"
+                position="Alumni Relations Chair"
+              />
+            </div>
+          );
         }}
-      >
-        <PolaroidFrame
-          name="Long name exampleeee"
-          position="Alumni Relations Chair"
-        />
-      </div>
+      </FirebaseContext.Consumer>
     );
   }
 }
