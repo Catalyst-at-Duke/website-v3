@@ -45,6 +45,11 @@
   flex-direction: column;
 }
 
+.about-content {
+  width: 80%;
+  height: 50vh;
+}
+
 .navbar__link--active {
   border-bottom: 3px solid white;
   transition: border-bottom 0.5s ease-in-out;
