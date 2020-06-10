@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import { colors, fonts } from "../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
+import PolaroidFrame from "./cards/PolaroidFrame";
 
 export default class MembersComponent extends React.Component {
   render() {
@@ -25,6 +26,9 @@ export default class MembersComponent extends React.Component {
                 </Typist>
               ))}
             </TypistLoop>
+          </div>
+          <div class="content">
+            <PolaroidFrame></PolaroidFrame>
           </div>
         </div>
       </div>

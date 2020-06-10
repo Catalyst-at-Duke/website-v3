@@ -34,7 +34,7 @@ export default class HomeComponent extends React.Component {
                 justifyContent: "center",
                 marginLeft: 25,
                 height: "100%",
-                opacity: "30%",
+                opacity: "50%",
               }}
             >
               <a

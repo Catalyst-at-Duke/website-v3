@@ -3,8 +3,6 @@ import * as ReactBootstrap from "react-bootstrap";
 import "../styles/styles.css";
 import { colors, fonts } from "../styles/theme.js";
 
-import CatalystLogo from "../images/logoNoTextNoBack.png";
-
 export default class NavBarComponent extends React.Component {
   constructor(props) {
     super(props);
