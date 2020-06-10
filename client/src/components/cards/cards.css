@@ -1,0 +1,13 @@
+/* regular dimensions are 250px x 292px */
+.polaroid-outer {
+  box-shadow: 1px 1px 2px;
+  max-width: 214px;
+  min-height: 250px;
+}
+
+.polaroid-inner {
+  position: relative;
+  max-width: 80px;
+  min-height: 80px;
+  height: 100%;
+}

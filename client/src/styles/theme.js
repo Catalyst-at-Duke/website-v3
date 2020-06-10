@@ -1,11 +1,13 @@
 export const colors = {
   pink: "#EE8380",
-  lightblue: "#97D8E6",
-  blue: "#50B3CE",
-  yellow: "#F6D86B",
+  catalightblue: "#97D8E6",
+  catablue: "#50B3CE",
+  lightblue: "#85C4FF",
+  yellow: "#EEC55C",
   cherry: "#CD2553",
   green: "#689271",
   purple: "#6974B2",
+  lightGray: "#D3D3D3",
   gray: "#555555",
   darkGray: "#26272C",
   black: "#000",
@@ -13,16 +15,17 @@ export const colors = {
 };
 
 export const fonts = {
-  family: {
-    body: "Lato",
-  },
   weights: {
-    thin: "300",
-    normal: "500",
+    thin: "100",
+    light: "300",
+    regular: "400",
     bold: "700",
-    extraBold: "900",
+    black: "900",
   },
   size: {
-    small: "1.5em",
+    small: "0.75em",
+    normal: "1.125em",
+    regular: "1.5em",
+    large: "2em",
   },
 };
