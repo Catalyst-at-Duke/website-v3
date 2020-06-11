@@ -19,6 +19,12 @@
   margin-top: 12px;
 }
 
+.tape {
+  /* width: 100px;
+	height: 10px; */
+  transform: rotate(-43deg);
+}
+
 .phone-outer {
   display: flex;
   flex-direction: column;
@@ -27,6 +33,9 @@
   border-radius: 25px;
   width: 350px;
   height: 500px;
+  position: relative;
+  bottom: 150px;
+  left: 150px;
 }
 
 .phone-inner {
