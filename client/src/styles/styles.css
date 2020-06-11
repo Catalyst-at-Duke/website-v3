@@ -53,9 +53,16 @@
 
 .content {
   width: 100%;
-  min-height: 80vh;
+  height: 80vh;
+  top: 18vh;
+  position: absolute;
   display: flex;
   flex-direction: column;
+}
+
+.about-content {
+  width: 80%;
+  height: 50vh;
 }
 
 .navbar__link--active {

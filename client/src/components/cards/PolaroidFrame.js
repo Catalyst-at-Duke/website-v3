@@ -1,7 +1,7 @@
 import React from "react";
 import { colors, fonts } from "../../styles/theme.js";
 import "./cards.css";
-import * as ReactBootstrap from "react-bootstrap";
+import Tape from "../../images/tape.png";
 
 export default class PolaroidFrame extends React.Component {
   constructor(props) {
