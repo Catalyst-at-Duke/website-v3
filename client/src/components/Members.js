@@ -93,7 +93,7 @@ class ExecComponent extends React.Component {
   render() {
     return (
       <div
-        className="content"
+        className="content-members"
         style={{
           display: "flex",
           flexDirection: "row",

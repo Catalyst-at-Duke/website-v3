@@ -28,6 +28,13 @@
   min-height: 100vh;
 }
 
+.content-members {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .page {
   position: relative;
   width: 100%;
