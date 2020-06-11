@@ -34,13 +34,16 @@ export default class AboutComponent extends React.Component {
           }}
         >
           <div
-            style={{ display: "flex", width: "50%", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              width: "50%",
+              justifyContent: "flex-end",
+              marginRight: "100px",
+            }}
           >
             <PhoneFrame></PhoneFrame>
           </div>
-          <div
-            style={{ display: "flex", width: "50%", justifyContent: "center" }}
-          >
+          <div style={{ display: "flex", width: "50%", marginLeft: "100px" }}>
             <div
               class="about-content"
               style={{ backgroundColor: colors.white }}
