@@ -6,6 +6,8 @@ import TypistLoop from "react-typist-loop";
 import PolaroidFrame from "./cards/PolaroidFrame";
 import { FirebaseContext } from "./Firebase";
 
+const DEBUG = true;
+
 export default class MembersComponent extends React.Component {
   render() {
     return (
@@ -54,12 +56,39 @@ class ExecComponent extends React.Component {
   }
 
   componentDidMount() {
-    const db = this.props.firebase.db;
-    const execRef = db.ref("exec");
-    execRef.on("value", (snapshot) => {
-      this.setState({ members: snapshot.val() });
-      console.log(this.state.members);
-    });
+    if (!DEBUG) {
+      const db = this.props.firebase.db;
+      const execRef = db.ref("exec");
+      execRef.on("value", (snapshot) => {
+        let membersArr = snapshot.val();
+        membersArr.sort((a, b) => {
+          if (a.Order < b.Order) {
+            return -1;
+          } else if (a.Order > b.Order) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        this.setState({ members: membersArr });
+        console.log(this.state.members);
+      });
+    } else {
+      this.setState({
+        members: [
+          {
+            Name: "Test User",
+            Position: "President",
+            Message: "hi hi hi hi hi",
+          },
+          {
+            Name: "Test User 2",
+            Position: "President",
+            Message: "The mission of the president is to blank",
+          },
+        ],
+      });
+    }
   }
   render() {
     return (
@@ -81,6 +110,7 @@ class ExecComponent extends React.Component {
                 key={person.Name}
                 position={person.Position}
                 photo={person.Photo ? person.Photo[0].url : ""}
+                message={person.Message}
               />
             );
           })}
