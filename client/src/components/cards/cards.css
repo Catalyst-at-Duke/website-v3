@@ -9,6 +9,9 @@
   font-family: "Permanent Marker", cursive;
   margin-left: 60px; /* TAKE THIS OUT LATER @KEVIN */
   margin-bottom: 30px;
+  /* position: relative;
+  bottom: 150px;
+  left: 150px; */
 }
 
 .polaroid-inner {
@@ -34,9 +37,6 @@
   border-radius: 25px;
   width: 350px;
   height: 500px;
-  position: relative;
-  bottom: 150px;
-  left: 150px;
 }
 
 .phone-inner {
