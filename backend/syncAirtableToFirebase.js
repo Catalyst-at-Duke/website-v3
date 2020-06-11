@@ -12,23 +12,25 @@ firebase.initializeApp({
   databaseURL: config.database_url,
 });
 
-let db = firebase.database();
+let updateDatabase = async () => {
+  let db = firebase.database();
 
-let ref = db.ref("/");
+  let ref = db.ref("/");
 
-// ref.on('value', (snapshot) => {
-// 	console.log(snapshot.val());
-// })
+  ref.once("value", (snapshot) => {
+    console.log(snapshot.val());
+  });
 
-airtable
-  .getMembers()
-  .then((members) => {
+  try {
+    let members = await airtable.getMembers();
     ref.update({ members });
-    console.log("Successfully updated Members!");
-  })
-  .catch(console.error);
 
-airtable.getExec().then((exec) => {
-  ref.update({ exec });
-  console.log("Successfully updated Exec!");
-});
+    let exec = await airtable.getExec();
+    ref.update({ exec });
+  } catch (e) {
+    console.log(e);
+  }
+  process.exit();
+};
+
+updateDatabase();
