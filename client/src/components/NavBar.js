@@ -30,7 +30,14 @@ export default class NavBarComponent extends React.Component {
         className="app"
         style={{ background: this.state.color, display: "flex" }}
       >
-        <ReactBootstrap.Navbar style={{ display: "flex", width: "100%" }}>
+        <ReactBootstrap.Navbar
+          style={{
+            display: "flex",
+            width: "100%",
+            position: "fixed",
+            zIndex: 99,
+          }}
+        >
           <ReactBootstrap.Nav
             className="d-flex flex-row m-4"
             style={{
