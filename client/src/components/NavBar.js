@@ -40,7 +40,7 @@ export default class NavBarComponent extends React.Component {
               opacity: "50%",
             }}
           >
-            <ReactBootstrap.Nav.Link
+            <ReactBootstrap.NavLink
               className="p-2"
               href="/"
               style={{
@@ -52,8 +52,8 @@ export default class NavBarComponent extends React.Component {
               activeClassName="navbar__link--active"
             >
               home
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link
+            </ReactBootstrap.NavLink>
+            <ReactBootstrap.NavLink
               className="p-2"
               href="/members"
               style={{
@@ -65,8 +65,8 @@ export default class NavBarComponent extends React.Component {
               activeClassName="navbar__link--active"
             >
               members
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link
+            </ReactBootstrap.NavLink>
+            <ReactBootstrap.NavLink
               className="p-2"
               href="/recruitment"
               style={{
@@ -78,8 +78,8 @@ export default class NavBarComponent extends React.Component {
               activeClassName="navbar__link--active"
             >
               recruitment
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link
+            </ReactBootstrap.NavLink>
+            <ReactBootstrap.NavLink
               className="p-2"
               href="/faq"
               style={{
@@ -91,7 +91,7 @@ export default class NavBarComponent extends React.Component {
               activeClassName="navbar__link--active"
             >
               faq
-            </ReactBootstrap.Nav.Link>
+            </ReactBootstrap.NavLink>
           </ReactBootstrap.Nav>
         </ReactBootstrap.Navbar>
       </div>

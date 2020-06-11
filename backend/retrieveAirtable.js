@@ -5,14 +5,15 @@ let airtableObj = new Airtable({
   apiKey: config.airtable_api_key,
   endpointUrl: "https://api.airtable.com",
 });
-let membersTable = airtableObj.base(config.catalystdb_base_key);
+let catalystDb = airtableObj.base(config.catalystdb_base_key);
 
 const MEMBER_TABLE_NAME = "Roster";
+const EXEC_TABLE_NAME = "Exec F20";
 const MAX_BIO_LENGTH = 75;
 
-const getAirtable = async (data) => {
+const getMembers = async (data) => {
   return new Promise((resolve, reject) => {
-    membersTable(MEMBER_TABLE_NAME)
+    catalystDb(MEMBER_TABLE_NAME)
       .select()
       .all((err, data) => {
         if (err) reject(err);
@@ -35,6 +36,19 @@ const getAirtable = async (data) => {
   });
 };
 
+const getExec = async (data) => {
+  return new Promise((resolve, reject) => {
+    catalystDb(EXEC_TABLE_NAME)
+      .select()
+      .all((err, data) => {
+        if (err) reject(err);
+        let exec = data.map((member) => member.fields);
+        resolve(exec);
+      });
+  });
+};
+
 module.exports = {
-  getAirtable: getAirtable,
+  getMembers,
+  getExec,
 };

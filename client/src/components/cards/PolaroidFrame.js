@@ -4,30 +4,54 @@ import "./cards.css";
 import Tape from "../../images/tape.png";
 
 export default class PolaroidFrame extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hovered: false,
+    };
+  }
   render() {
     return (
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
+        className="polaroid-outer"
+        style={{ backgroundColor: colors.white }}
+        onMouseLeave={() => this.setState({ hovered: false })}
+        onMouseEnter={() => this.setState({ hovered: true })}
       >
-        <div class="tape" style={{ background: `url(${Tape})` }} />
-        <div class="polaroid-outer" style={{ backgroundColor: colors.white }}>
-          <div
-            class="polaroid-inner"
-            style={{ backgroundColor: colors.black }}
-          ></div>
-          <div style={{ fontSize: fonts.size.normal }}>Nathan Ostrowski</div>
-          <div
+        <div className="polaroid-inner">
+          <img
             style={{
-              fontSize: fonts.size.normal,
-              fontWeight: fonts.weights.light,
+              backgroundColor: colors.black,
+              width: "200px",
+              height: "190px",
+              objectFit: "cover",
             }}
-          >
-            President
-          </div>
+            src={this.props.photo}
+          />
+        </div>
+        <div style={{ fontSize: fonts.size.normal }}>{this.props.name}</div>
+        <div
+          style={{
+            fontSize: fonts.size.normal,
+            fontWeight: fonts.weights.light,
+          }}
+        >
+          {this.props.position}
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+            width: "230px",
+            overflow: "auto",
+            height: "280px",
+            backgroundColor: colors.white,
+            padding: "5px",
+            transition: "opacity .2s",
+            opacity: this.state.hovered ? "95%" : "0%",
+          }}
+        >
+          {this.props.message}
         </div>
       </div>
     );

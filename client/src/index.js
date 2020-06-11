@@ -13,6 +13,8 @@ import "./styles/styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { colors } from "./styles/theme.js";
 
+import Firebase, { FirebaseContext } from "./components/Firebase";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,19 +31,21 @@ class App extends React.Component {
   render() {
     return (
       <React.StrictMode>
-        <Location>
-          {({ location }) => (
-            <div>
-              <NavBar location={location.pathname} />
-              <Router>
-                <Home path="/" />
-                <Members path="members" />
-                <Recruitment path="recruitment" />
-                <Faq path="faq" />
-              </Router>
-            </div>
-          )}
-        </Location>
+        <FirebaseContext.Provider value={new Firebase()}>
+          <Location>
+            {({ location }) => (
+              <div>
+                <NavBar location={location.pathname} />
+                <Router>
+                  <Home path="/" />
+                  <Members path="members" />
+                  <Recruitment path="recruitment" />
+                  <Faq path="faq" />
+                </Router>
+              </div>
+            )}
+          </Location>
+        </FirebaseContext.Provider>
       </React.StrictMode>
     );
   }
