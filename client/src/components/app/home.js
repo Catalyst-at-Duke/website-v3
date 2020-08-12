@@ -1,10 +1,10 @@
 import React from "react";
-import { colors } from "./styles/theme.js";
-import About from "./components/app/About";
-import "./styles/styles.css";
-import "./styles/glitch.scss";
+import { colors } from "../../styles/theme.js";
+import { About } from ".";
+import "../../styles/styles.css";
+import "../../styles/glitch.scss";
 
-import CatalystLogo from "./images/logoNoTextNoBack.png";
+import CatalystLogo from "../../images/logoNoTextNoBack.png";
 
 export default class HomeComponent extends React.Component {
   render() {

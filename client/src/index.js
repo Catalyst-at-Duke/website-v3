@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Home from "./home";
-import { Faq, Members } from "./components/app";
-import Recruitment from "./components/app/Recruitment";
-import NavBar from "./components/app/NavBar";
+
+import { Faq, Home, Members, NavBar, Recruitment } from "./components/app";
+import Firebase, { FirebaseContext } from "./components/Firebase";
+
 import * as serviceWorker from "./serviceWorker";
 import { Location, Router } from "@reach/router";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { colors } from "./styles/theme.js";
-
-import Firebase, { FirebaseContext } from "./components/Firebase";
 
 class App extends React.Component {
   constructor(props) {
