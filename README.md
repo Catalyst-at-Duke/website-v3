@@ -1,9 +1,14 @@
 # Catalyst website-v3
 
 ## Running
-This assumes that you have node already installed. If not, download [here](https://nodejs.org/en/download/).
+be sure to run `yarn` inside the main dir **AND** the client dir to install necessary modules.
 
-Make sure to run `npm i` inside the main dir **AND** client dir to install the appropriate npm packages.
+run `yarn start` to serve the app locally
+
+## Testing
+run `yarn test` to test all components
+
+run `yarn test <FILE_NAME> to test a singular component
 
 ## Connecting with Airtable
 
