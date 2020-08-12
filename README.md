@@ -8,7 +8,7 @@ run `yarn start` to serve the app locally
 ## Testing
 run `yarn test` to test all components
 
-run `yarn test <FILE_NAME> to test a singular component
+run `yarn test <FILE_NAME>` to test a singular component
 
 ## Connecting with Airtable
 
