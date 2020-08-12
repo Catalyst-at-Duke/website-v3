@@ -7,10 +7,14 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
-    "moment": "^2.26.0",
     "firebase": "^7.15.0",
+    "moment": "^2.26.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -18,7 +22,8 @@
     "react-scripts": "3.4.1",
     "react-switch": "^5.0.1",
     "react-typist": "^2.0.5",
-    "react-typist-loop": "0.0.5"
+    "react-typist-loop": "0.0.5",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
