@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneFrame with no props should match the snapshot 1`] = `"<div><div class=\\"polaroid-outer\\" style=\\"background-color:#ffffff\\"><div class=\\"polaroid-inner\\"><img style=\\"background-color:#000;width:200px;height:190px;object-fit:cover\\" src=\\"img-src\\"/></div><div style=\\"font-size:1.125em\\">First Last</div><div style=\\"font-size:1.125em;font-weight:lighter\\">supreme chairman</div><div style=\\"position:absolute;width:230px;overflow:auto;height:280px;background-color:#ffffff;padding:5px;transition:opacity .2s;opacity:0%\\">testing</div></div></div>"`;
