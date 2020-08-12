@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
-import PolaroidFrame, { PublicProps } from "./PolaroidFrame";
+import { PolaroidFrame } from ".";
 
 describe("PhoneFrame with no props", () => {
   const polaroid = shallow(
