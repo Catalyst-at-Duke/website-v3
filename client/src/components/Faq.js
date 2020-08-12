@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/styles.css";
-import { colors, fonts } from "../styles/theme.js";
+import { colors } from "../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 

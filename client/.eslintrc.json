@@ -2,7 +2,7 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "es2020": true
+    "es6": true
   },
   "extends": ["plugin:react/recommended", "google"],
   "parserOptions": {
