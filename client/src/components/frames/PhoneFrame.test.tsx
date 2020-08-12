@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
-import PhoneFrame from "./PhoneFrame";
+import { PhoneFrame } from ".";
 
 describe("PhoneFrame with no props", () => {
   const phone = shallow(<PhoneFrame />);
