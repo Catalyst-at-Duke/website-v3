@@ -1,6 +1,6 @@
 import React from "react";
 import { colors } from "./styles/theme.js";
-import About from "./components/About";
+import About from "./components/app/About";
 import "./styles/styles.css";
 import "./styles/glitch.scss";
 

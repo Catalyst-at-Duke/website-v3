@@ -1,7 +1,7 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
-import "../styles/styles.css";
-import { colors, fonts } from "../styles/theme.js";
+import "../../styles/styles.css";
+import { colors, fonts } from "../../styles/theme.js";
 
 export default class NavBarComponent extends React.Component {
   constructor(props) {
