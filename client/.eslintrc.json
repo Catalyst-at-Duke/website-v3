@@ -4,7 +4,7 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["plugin:react/recommended", "google"],
+  "extends": ["plugin:react/recommended", "airbnb"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true

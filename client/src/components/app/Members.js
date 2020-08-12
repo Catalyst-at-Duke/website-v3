@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/styles.css";
-import { colors } from "../styles/theme.js";
+import "../../styles/styles.css";
+import { colors } from "../../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import PolaroidFrame from "./cards/PolaroidFrame";
-import { FirebaseContext } from "./Firebase";
+import { PolaroidFrame } from "../frames";
+import { FirebaseContext } from "../Firebase";
 
 const DEBUG = true;
 
