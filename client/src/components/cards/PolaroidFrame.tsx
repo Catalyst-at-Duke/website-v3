@@ -3,7 +3,7 @@ import { colors, fonts } from "../../styles/theme.js";
 import "./style.css";
 // import Tape from "../../images/tape.png";
 
-interface PublicProps {
+export interface PublicProps {
   message: string;
   name: string;
   photo: string;
