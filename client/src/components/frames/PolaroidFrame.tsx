@@ -25,6 +25,7 @@ const PolaroidFrame = (props: PublicProps) => {
       >
         <div className="polaroid-inner">
           <img
+            alt="Catalyst member"
             style={{
               backgroundColor: colors.black,
               width: "200px",

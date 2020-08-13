@@ -1,15 +1,16 @@
 import React from "react";
-import "../../styles/styles.css";
-import { colors } from "../../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { PhoneFrame } from "../frames";
+import { PhoneFrame } from "components/frames";
+
+import { colors } from "styles/theme.js";
+import "styles/styles.css";
 
 export default class AboutComponent extends React.Component {
   render() {
     return (
       <div className="page" style={{ backgroundColor: colors.green }}>
-        <div class="title">
+        <div className="title">
           <TypistLoop interval={100}>
             {["about us", ""].map((text) => (
               <Typist
@@ -26,7 +27,7 @@ export default class AboutComponent extends React.Component {
           </TypistLoop>
         </div>
         <div
-          class="content"
+          className="content"
           style={{
             alignItems: "center",
             display: "flex",
@@ -45,7 +46,7 @@ export default class AboutComponent extends React.Component {
           </div>
           <div style={{ display: "flex", width: "50%", marginLeft: "100px" }}>
             <div
-              class="about-content"
+              className="about-content"
               style={{ backgroundColor: colors.white }}
             >
               {" "}

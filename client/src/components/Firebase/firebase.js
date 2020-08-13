@@ -1,6 +1,6 @@
 import app from "firebase/app";
 import "firebase/database";
-const config = require("./config.json");
+import * as config from "./config.json";
 
 const devConfig = {
   apiKey: config.firebase_credentials,

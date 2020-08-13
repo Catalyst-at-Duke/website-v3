@@ -1,12 +1,13 @@
 import React from "react";
-import "../../styles/styles.css";
-import { colors } from "../../styles/theme.js";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { PolaroidFrame } from "../frames";
-import { FirebaseContext } from "../Firebase";
+import { PolaroidFrame } from "components/frames";
+import { FirebaseContext } from "components/firebase";
 
-const DEBUG = true;
+import { colors } from "styles/theme.js";
+import "styles/styles.css";
+
+const DEBUG_MODE = true;
 
 export default class MembersComponent extends React.Component {
   render() {
@@ -56,7 +57,7 @@ class ExecComponent extends React.Component {
   }
 
   componentDidMount() {
-    if (!DEBUG) {
+    if (!DEBUG_MODE) {
       const db = this.props.firebase.db;
       const execRef = db.ref("exec");
       execRef.on("value", (snapshot) => {

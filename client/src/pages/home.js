@@ -1,10 +1,10 @@
 import React from "react";
-import { colors } from "../../styles/theme.js";
 import { About } from ".";
-import "../../styles/styles.css";
-import "../../styles/glitch.scss";
 
-import CatalystLogo from "../../images/logoNoTextNoBack.png";
+import { colors } from "styles/theme.js";
+import CatalystLogo from "images/logoNoTextNoBack.png";
+import "styles/styles.css";
+import "styles/glitch.scss";
 
 export default class HomeComponent extends React.Component {
   render() {
@@ -41,6 +41,7 @@ export default class HomeComponent extends React.Component {
                 target="_blank"
               >
                 <img
+                  alt="email Catalyst"
                   src={"./mail.png"}
                   style={{ width: "50px", marginBottom: 30 }}
                 />
@@ -51,6 +52,7 @@ export default class HomeComponent extends React.Component {
                 rel="noopener noreferrer"
               >
                 <img
+                  alt="visit Catalyst's Facebook page"
                   src={"./facebook.png"}
                   style={{ width: "50px", marginBottom: 30 }}
                 />
@@ -61,6 +63,7 @@ export default class HomeComponent extends React.Component {
                 target="_blank"
               >
                 <img
+                  alt="visit Catalyst's Instagram page"
                   src={"./instagram.png"}
                   style={{ width: "50px", marginBottom: 30 }}
                 />
@@ -70,7 +73,11 @@ export default class HomeComponent extends React.Component {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <img src={"./linkedin.png"} style={{ width: "50px" }} />
+                <img
+                  alt="visit Catalyst's LinkedIn page"
+                  src={"./linkedin.png"}
+                  style={{ width: "50px" }}
+                />
               </a>
             </div>
           </div>

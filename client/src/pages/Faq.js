@@ -1,17 +1,18 @@
 import React from "react";
-import "../../styles/styles.css";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { colors } from "../../styles/theme.js";
 
-export default class RecruitmentComponent extends React.Component {
+import { colors } from "styles/theme.js";
+import "styles/styles.css";
+
+export default class FaqComponent extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="body" style={{ backgroundColor: colors.pink }}>
+        <div className="body" style={{ backgroundColor: colors.yellow }}>
           <div class="title">
             <TypistLoop interval={100}>
-              {["recruitment", ""].map((text) => (
+              {["frequently asked questions", ""].map((text) => (
                 <Typist
                   repeat
                   avgTypingDelay={100}
@@ -34,7 +35,7 @@ export default class RecruitmentComponent extends React.Component {
             }}
           >
             {" "}
-            recruitment goes here
+            faq q's
           </div>
         </div>
       </div>
