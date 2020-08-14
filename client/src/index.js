@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Home from "./home";
-import Members from "./components/Members";
-import Faq from "./components/Faq";
-import Recruitment from "./components/Recruitment";
-import NavBar from "./components/NavBar";
-import * as serviceWorker from "./serviceWorker";
-import { Location, Router } from "@reach/router";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/styles.css";
-import "bootstrap/dist/css/bootstrap.css";
-import { colors } from "./styles/theme.js";
 
-import Firebase, { FirebaseContext } from "./components/Firebase";
+import { Faq, Home, Members, Recruitment } from "pages";
+import { NavBar } from "components/navbar";
+import Firebase, { FirebaseContext } from "components/firebase";
+
+import * as serviceWorker from "serviceWorker";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import { colors } from "styles/theme.js";
+import "styles/styles.css";
+import "index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,35 +22,31 @@ class App extends React.Component {
     };
   }
 
-  changeColor = (color) => {
-    console.log("changed color");
-    this.setState({ color: color });
-  };
-
   render() {
     return (
       <React.StrictMode>
         <FirebaseContext.Provider value={new Firebase()}>
-          <Location>
-            {({ location }) => (
-              <div>
-                <NavBar location={location.pathname} />
-                <Router>
-                  <Home path="/" />
-                  <Members path="members" />
-                  <Recruitment path="recruitment" />
-                  <Faq path="faq" />
-                </Router>
-              </div>
-            )}
-          </Location>
+          <Switch>
+            <div>
+              <NavBar location={window.location.pathname} />
+              <Route exact path="/" component={Home} />
+              <Route path="/members" component={Members} />
+              <Route path="/recruitment" component={Recruitment} />
+              <Route path="/faq" component={Faq} />
+            </div>
+          </Switch>
         </FirebaseContext.Provider>
       </React.StrictMode>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
