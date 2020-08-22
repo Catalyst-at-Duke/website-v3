@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { Faq, Home, Members, Recruitment } from "pages";
+import { Faq, Home, Exec, Members, Recruitment } from "pages";
 import { NavBar } from "components/navbar";
 import Firebase, { FirebaseContext } from "components/Firebase";
 
@@ -30,6 +30,7 @@ class App extends React.Component {
             <div>
               <NavBar location={window.location.pathname} />
               <Route exact path="/" component={Home} />
+              <Route path="/exec" component={Exec} />
               <Route path="/members" component={Members} />
               <Route path="/recruitment" component={Recruitment} />
               <Route path="/faq" component={Faq} />

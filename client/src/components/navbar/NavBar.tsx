@@ -28,9 +28,6 @@ const NavBar = (props: PublicProps) => {
           width: "100%",
           position: "fixed",
           zIndex: 99,
-          color: colors.white,
-          fontSize: fonts.size.normal,
-          fontWeight: "bold",
         }}
       >
         <ReactBootstrap.Nav
@@ -49,32 +46,38 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.black)}
           >
             home
           </ReactBootstrap.NavLink>
           <ReactBootstrap.NavDropdown
+            onClick={() => {
+              window.location.replace("/exec");
+            }}
             className="p-2"
             id="members-nav"
-            title="members"
+            renderMenuOnMount={true}
+            title={
+              <span
+                style={{
+                  color: colors.white,
+                  fontSize: fonts.size.normal,
+                  fontWeight: "bold",
+                }}
+              >
+                people
+              </span>
+            }
           >
-            <ReactBootstrap.NavDropdown.Item>
-              Exec
+            <ReactBootstrap.NavDropdown.Item href="/exec">
+              exec
+            </ReactBootstrap.NavDropdown.Item>
+            <ReactBootstrap.NavDropdown.Item href="/members">
+              members
             </ReactBootstrap.NavDropdown.Item>
           </ReactBootstrap.NavDropdown>
-          <ReactBootstrap.NavLink
-            className="p-2"
-            href="/members"
-            style={{
-              color: colors.white,
-              fontSize: fonts.size.normal,
-              fontWeight: "bold",
-            }}
-            onClick={() => changeColor(colors.purple)}
-          >
-            members
-          </ReactBootstrap.NavLink>
           <ReactBootstrap.NavLink
             className="p-2"
             href="/recruitment"
@@ -82,6 +85,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.pink)}
           >
@@ -94,6 +98,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.yellow)}
           >

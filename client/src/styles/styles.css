@@ -3,6 +3,13 @@
   height: "100%";
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-toggle::after {
+  content: none !important;
+}
+
 /* .app-footer {
 
 } */

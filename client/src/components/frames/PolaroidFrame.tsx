@@ -20,8 +20,8 @@ const PolaroidFrame = (props: PublicProps) => {
       <div
         className="polaroid-outer"
         style={{ backgroundColor: colors.white }}
-        onMouseLeave={() => setIsHovered(false)}
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => message && setIsHovered(false)}
+        onMouseEnter={() => message && setIsHovered(true)}
       >
         <div className="polaroid-inner">
           <img
