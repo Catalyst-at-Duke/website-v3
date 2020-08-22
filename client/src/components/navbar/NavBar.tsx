@@ -28,6 +28,9 @@ const NavBar = (props: PublicProps) => {
           width: "100%",
           position: "fixed",
           zIndex: 99,
+          color: colors.white,
+          fontSize: fonts.size.normal,
+          fontWeight: "bold",
         }}
       >
         <ReactBootstrap.Nav
@@ -51,6 +54,15 @@ const NavBar = (props: PublicProps) => {
           >
             home
           </ReactBootstrap.NavLink>
+          <ReactBootstrap.NavDropdown
+            className="p-2"
+            id="members-nav"
+            title="members"
+          >
+            <ReactBootstrap.NavDropdown.Item>
+              Exec
+            </ReactBootstrap.NavDropdown.Item>
+          </ReactBootstrap.NavDropdown>
           <ReactBootstrap.NavLink
             className="p-2"
             href="/members"

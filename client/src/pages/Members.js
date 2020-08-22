@@ -2,12 +2,12 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
-import { FirebaseContext } from "components/firebase";
+import { FirebaseContext } from "components/Firebase";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
 
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 
 export default class MembersComponent extends React.Component {
   render() {
@@ -99,7 +99,7 @@ class ExecComponent extends React.Component {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
-          marginTop: "10%",
+          marginTop: "15vh",
           flexWrap: "wrap",
         }}
       >
