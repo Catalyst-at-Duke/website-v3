@@ -17,20 +17,32 @@ let updateDatabase = async () => {
 
   let ref = db.ref("/");
 
-  ref.once("value", (snapshot) => {
-    console.log(snapshot.val());
-  });
+  // ref.once("value", (snapshot) => {
+  //   console.log(snapshot.val());
+  // });
 
   try {
     let members = await airtable.getMembers();
-    ref.update({ members });
+    ref.update({ members }, (err) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log("Successfully updated members on Firebase");
+      }
+    });
 
     let exec = await airtable.getExec();
-    ref.update({ exec });
+    ref.update({ exec }, (err) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log("Successfully updated exec on Firebase");
+        process.exit();
+      }
+    });
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
-  process.exit();
 };
 
 updateDatabase();
