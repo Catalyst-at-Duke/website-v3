@@ -2,7 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
-import { FirebaseContext } from "components/Firebase";
+import { FirebaseContext } from "components/firebase";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
