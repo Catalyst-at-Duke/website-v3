@@ -3,8 +3,8 @@ import "firebase/database";
 import * as config from "./config.json";
 
 const devConfig = {
-  apiKey: config.firebase_credentials,
-  databaseURL: config.database_url,
+  apiKey: config.apiKey,
+  databaseURL: config.databaseURL,
 };
 
 class Firebase {
