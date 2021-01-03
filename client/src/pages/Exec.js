@@ -21,7 +21,7 @@ export default class MembersComponent extends React.Component {
         >
           <div className="title">
             <TypistLoop interval={100}>
-              {["members", ""].map((text) => (
+              {["executive team", ""].map((text) => (
                 <Typist
                   repeat
                   avgTypingDelay={100}
@@ -59,11 +59,17 @@ class ExecComponent extends React.Component {
   componentDidMount() {
     if (!DEBUG_MODE) {
       const db = this.props.firebase.db;
-      const execRef = db.ref("members");
+      const execRef = db.ref("exec");
       execRef.on("value", (snapshot) => {
         let membersArr = snapshot.val();
         membersArr.sort((a, b) => {
-          return a.year - b.year;
+          if (a.Order < b.Order) {
+            return -1;
+          } else if (a.Order > b.Order) {
+            return 1;
+          } else {
+            return 0;
+          }
         });
         this.setState({ members: membersArr });
         console.log(this.state.members);
@@ -101,11 +107,11 @@ class ExecComponent extends React.Component {
           this.state.members.map((person) => {
             return (
               <PolaroidFrame
-                name={person.name}
-                key={person.name}
-                position={`Class of ${person.year}`}
-                photo={person.photo}
-                message={person.bio}
+                name={person.Name}
+                key={person.Name}
+                position={person.Position}
+                photo={person.Photo ? person.Photo[0].url : ""}
+                message={person.Message}
               />
             );
           })}

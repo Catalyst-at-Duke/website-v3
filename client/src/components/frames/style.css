@@ -7,8 +7,8 @@
   flex-direction: column;
   align-items: center;
   font-family: "Permanent Marker", cursive;
-  margin-left: 60px; /* TAKE THIS OUT LATER @KEVIN */
-  margin-bottom: 30px;
+  /* margin-left: 60px; TAKE THIS OUT LATER @KEVIN */
+  margin: 30px;
   /* position: relative;
   bottom: 150px;
   left: 150px; */

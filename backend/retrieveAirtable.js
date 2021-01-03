@@ -7,8 +7,8 @@ let airtableObj = new Airtable({
 });
 let catalystDb = airtableObj.base(config.catalystdb_base_key);
 
-const MEMBER_TABLE_NAME = "Roster";
-const EXEC_TABLE_NAME = "Exec F20";
+const MEMBER_TABLE_NAME = "Master Database";
+const EXEC_TABLE_NAME = "Exec Database";
 const MAX_BIO_LENGTH = 75;
 
 const getMembers = async (data) => {

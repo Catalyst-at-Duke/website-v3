@@ -1,6 +1,13 @@
 .app {
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat, sans-serif;
   height: "100%";
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-toggle::after {
+  content: none !important;
 }
 
 /* .app-footer {

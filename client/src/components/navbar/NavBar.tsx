@@ -46,23 +46,38 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.black)}
           >
             home
           </ReactBootstrap.NavLink>
-          <ReactBootstrap.NavLink
-            className="p-2"
-            href="/members"
-            style={{
-              color: colors.white,
-              fontSize: fonts.size.normal,
-              fontWeight: "bold",
+          <ReactBootstrap.NavDropdown
+            onClick={() => {
+              window.location.replace("/exec");
             }}
-            onClick={() => changeColor(colors.purple)}
+            className="p-2"
+            id="members-nav"
+            renderMenuOnMount={true}
+            title={
+              <span
+                style={{
+                  color: colors.white,
+                  fontSize: fonts.size.normal,
+                  fontWeight: "bold",
+                }}
+              >
+                people
+              </span>
+            }
           >
-            members
-          </ReactBootstrap.NavLink>
+            <ReactBootstrap.NavDropdown.Item href="/exec">
+              exec
+            </ReactBootstrap.NavDropdown.Item>
+            <ReactBootstrap.NavDropdown.Item href="/members">
+              members
+            </ReactBootstrap.NavDropdown.Item>
+          </ReactBootstrap.NavDropdown>
           <ReactBootstrap.NavLink
             className="p-2"
             href="/recruitment"
@@ -70,6 +85,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.pink)}
           >
@@ -82,6 +98,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
+              marginTop: "8px",
             }}
             onClick={() => changeColor(colors.yellow)}
           >
