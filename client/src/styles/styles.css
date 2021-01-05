@@ -108,6 +108,13 @@
   -webkit-animation: 3s arrow infinite ease;
 }
 
+.faq-line {
+  display: "flex";
+  flex-direction: "row";
+  margin-left: "30px";
+  margin-right: "30px";
+}
+
 @-webkit-keyframes arrow {
   0%,
   100% {
