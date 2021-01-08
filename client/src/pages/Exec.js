@@ -3,6 +3,7 @@ import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
 import { FirebaseContext } from "components/firebase";
+import LazyLoad from "react-lazyload";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
@@ -106,13 +107,15 @@ class ExecComponent extends React.Component {
         {this.state.members &&
           this.state.members.map((person) => {
             return (
-              <PolaroidFrame
-                name={person.Name}
-                key={person.Name}
-                position={person.Position}
-                photo={person.Photo ? person.Photo[0].url : ""}
-                message={person.Message}
-              />
+              <LazyLoad>
+                <PolaroidFrame
+                  name={person.Name}
+                  key={person.Name}
+                  position={person.Position}
+                  photo={person.Photo ? person.Photo[0].url : ""}
+                  message={person.Message}
+                />
+              </LazyLoad>
             );
           })}
       </div>

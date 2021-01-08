@@ -115,6 +115,14 @@
   margin-right: "30px";
 }
 
+.members-selected {
+  font-weight: 700;
+}
+
+.members-unselected {
+  font-weight: 400;
+}
+
 @-webkit-keyframes arrow {
   0%,
   100% {
