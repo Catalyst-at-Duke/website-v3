@@ -46,7 +46,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
-              marginTop: "8px",
+              marginTop: "50px",
             }}
             onClick={() => changeColor(colors.black)}
           >
@@ -59,6 +59,9 @@ const NavBar = (props: PublicProps) => {
             className="p-2"
             id="members-nav"
             renderMenuOnMount={true}
+            style={{
+              marginTop: "42px",
+            }}
             title={
               <span
                 style={{
@@ -85,7 +88,7 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
-              marginTop: "8px",
+              marginTop: "50px",
             }}
             onClick={() => changeColor(colors.pink)}
           >
@@ -98,12 +101,25 @@ const NavBar = (props: PublicProps) => {
               color: colors.white,
               fontSize: fonts.size.normal,
               fontWeight: "bold",
-              marginTop: "8px",
+              marginTop: "50px",
             }}
             onClick={() => changeColor(colors.yellow)}
           >
             faq
           </ReactBootstrap.NavLink>
+          <ReactBootstrap.Navbar.Brand href="https://catahub.ue.r.appspot.com/home">
+            <img
+              src={require("../../images/profileIcon.png")}
+              width="30px"
+              height="30px"
+              className="d-inline-block"
+              alt="Catahub"
+              style={{
+                marginTop: "51px",
+                marginLeft: "8px",
+              }}
+            />
+          </ReactBootstrap.Navbar.Brand>
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar>
     </div>

@@ -108,6 +108,21 @@
   -webkit-animation: 3s arrow infinite ease;
 }
 
+.faq-line {
+  display: "flex";
+  flex-direction: "row";
+  margin-left: "30px";
+  margin-right: "30px";
+}
+
+.members-selected {
+  font-weight: 700;
+}
+
+.members-unselected {
+  font-weight: 400;
+}
+
 @-webkit-keyframes arrow {
   0%,
   100% {
