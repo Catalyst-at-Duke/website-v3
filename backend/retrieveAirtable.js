@@ -29,7 +29,7 @@ const getMembers = async (data) => {
             bio: properties.Bio
               ? properties.Bio.substring(0, MAX_BIO_LENGTH)
               : "",
-            personalurl: properties["Personal Website"] | "",
+            personalurl: properties["Personal Website"] || "",
           }));
         resolve(members);
       });

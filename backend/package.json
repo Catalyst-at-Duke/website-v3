@@ -8,5 +8,9 @@
     "start": "node ./syncAirtableToFirebase.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.10.1",
+    "firebase-admin": "^9.4.2"
+  }
 }
