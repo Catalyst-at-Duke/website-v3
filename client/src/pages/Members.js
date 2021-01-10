@@ -3,8 +3,9 @@ import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
 import { FirebaseContext } from "components/firebase";
+import LazyLoad from "react-lazyload";
 
-import { colors } from "styles/theme.js";
+import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
 const DEBUG_MODE = false;
@@ -53,6 +54,11 @@ class ExecComponent extends React.Component {
     super(props);
     this.state = {
       members: null,
+      seniorMembers: null,
+      juniorMembers: null,
+      sophomoreMembers: null,
+      freshmenMembers: null,
+      currentClass: 4,
     };
   }
 
@@ -60,12 +66,33 @@ class ExecComponent extends React.Component {
     if (!DEBUG_MODE) {
       const db = this.props.firebase.db;
       const execRef = db.ref("members");
+      let seniorMembers = [];
+      let juniorMembers = [];
+      let sophomoreMembers = [];
+      let freshmenMembers = [];
       execRef.on("value", (snapshot) => {
         let membersArr = snapshot.val();
         membersArr.sort((a, b) => {
           return a.year - b.year;
         });
-        this.setState({ members: membersArr });
+        membersArr.forEach((member) => {
+          if (member.year === "2021") {
+            seniorMembers.push(member);
+          } else if (member.year === "2022") {
+            juniorMembers.push(member);
+          } else if (member.year === "2023") {
+            sophomoreMembers.push(member);
+          } else if (member.year === "2024") {
+            freshmenMembers.push(member);
+          }
+        });
+        this.setState({
+          members: seniorMembers,
+          seniorMembers: seniorMembers,
+          juniorMembers: juniorMembers,
+          sophomoreMembers: sophomoreMembers,
+          freshmenMembers: freshmenMembers,
+        });
         console.log(this.state.members);
       });
     } else {
@@ -85,30 +112,147 @@ class ExecComponent extends React.Component {
       });
     }
   }
+
+  selectClass(c) {
+    this.setState({ currentClass: c });
+    if (c === 4) {
+      this.setState({ members: this.state.seniorMembers });
+    } else if (c === 3) {
+      this.setState({ members: this.state.juniorMembers });
+    } else if (c === 2) {
+      this.setState({ members: this.state.sophomoreMembers });
+    } else {
+      this.setState({ members: this.state.freshmenMembers });
+    }
+  }
+
   render() {
-    return (
+    let seniorDivClass;
+    let juniorDivClass;
+    let sophomoreDivClass;
+    let freshmenDivClass;
+
+    let seniorUnderline;
+    let juniorUnderline;
+    let sophomoreUnderline;
+    let freshmenUnderline;
+    let underline = (
       <div
-        className="content-members"
         style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: "15vh",
-          flexWrap: "wrap",
+          borderTop: "2px solid white",
         }}
-      >
-        {this.state.members &&
-          this.state.members.map((person) => {
-            return (
-              <PolaroidFrame
-                name={person.name}
-                key={person.name}
-                position={`Class of ${person.year}`}
-                photo={person.photo}
-                message={person.bio}
-              />
-            );
-          })}
+      ></div>
+    );
+
+    if (this.state.currentClass === 4) {
+      seniorUnderline = underline;
+      seniorDivClass = "members-selected";
+      juniorUnderline = sophomoreUnderline = freshmenUnderline = null;
+      juniorDivClass = sophomoreDivClass = freshmenDivClass =
+        "members-unselected";
+    } else if (this.state.currentClass === 3) {
+      juniorUnderline = underline;
+      juniorDivClass = "members-selected";
+      seniorUnderline = sophomoreUnderline = freshmenUnderline = null;
+      seniorDivClass = sophomoreDivClass = freshmenDivClass =
+        "members-unselected";
+    } else if (this.state.currentClass === 2) {
+      sophomoreUnderline = underline;
+      sophomoreDivClass = "members-selected";
+      seniorUnderline = juniorUnderline = freshmenUnderline = null;
+      seniorDivClass = juniorDivClass = freshmenDivClass = "members-unselected";
+    } else if (this.state.currentClass === 1) {
+      freshmenUnderline = underline;
+      freshmenDivClass = "members-selected";
+      seniorUnderline = juniorUnderline = sophomoreUnderline = null;
+      seniorDivClass = juniorDivClass = sophomoreDivClass =
+        "members-unselected";
+    }
+
+    return (
+      <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginTop: "20vh",
+            flexWrap: "wrap",
+          }}
+        >
+          <div
+            style={{
+              marginLeft: "4vh",
+              marginRight: "4vh",
+              color: colors.white,
+              fontSize: fonts.size.normal,
+              flexDirection: "column",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+            class={seniorDivClass}
+            onClick={() => this.selectClass(4)}
+          >
+            Class of 2021
+            {seniorUnderline}
+          </div>
+          <div
+            style={{
+              marginLeft: "4vh",
+              marginRight: "4vh",
+              color: colors.white,
+              fontSize: fonts.size.normal,
+              flexDirection: "column",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+            class={juniorDivClass}
+            onClick={() => this.selectClass(3)}
+          >
+            Class of 2022
+            {juniorUnderline}
+          </div>
+          <div
+            style={{
+              marginLeft: "4vh",
+              marginRight: "4vh",
+              color: colors.white,
+              fontSize: fonts.size.normal,
+              flexDirection: "column",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+            class={sophomoreDivClass}
+            onClick={() => this.selectClass(2)}
+          >
+            Class of 2023
+            {sophomoreUnderline}
+          </div>
+        </div>
+        <div
+          className="content-members"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {this.state.members &&
+            this.state.members.map((person) => {
+              return (
+                <LazyLoad>
+                  <PolaroidFrame
+                    name={person.name}
+                    key={person.name}
+                    position={`Class of ${person.year}`}
+                    photo={person.photo}
+                    message={person.bio}
+                  />
+                </LazyLoad>
+              );
+            })}
+        </div>
       </div>
     );
   }
