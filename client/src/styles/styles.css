@@ -122,6 +122,13 @@
   font-weight: 400;
 }
 
+.img-work {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 @-webkit-keyframes arrow {
   0%,
   100% {

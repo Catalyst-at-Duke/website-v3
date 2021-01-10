@@ -1,5 +1,6 @@
 import React from "react";
 import { About } from ".";
+import { Where } from ".";
 
 import { colors } from "styles/theme.js";
 import CatalystLogo from "images/logoNoTextNoBack.png";
@@ -84,6 +85,7 @@ export default class HomeComponent extends React.Component {
           <div className="arrow-down" style={{ opacity: "80%" }}></div>
         </div>
         <About></About>
+        <Where></Where>
       </div>
     );
   }
