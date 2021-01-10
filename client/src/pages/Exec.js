@@ -131,7 +131,7 @@ class ExecComponent extends React.Component {
                 justifyContent: "center",
               }}
             >
-              Executive Leadership
+              Leadership
               <div
                 style={{
                   borderTop: "2px solid white",
@@ -183,7 +183,7 @@ class ExecComponent extends React.Component {
                 justifyContent: "center",
               }}
             >
-              Executive Chairs
+              Chairs
               <div
                 style={{
                   borderTop: "2px solid white",
