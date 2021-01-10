@@ -32,6 +32,7 @@ export default class WhereComponent extends React.Component {
           flexDirection: "row",
           justifyContent: "center",
           flexWrap: "wrap",
+          width: "100%",
         }}
       >
         <div className="title" style={{ marginBottom: "20px" }}>
@@ -50,22 +51,57 @@ export default class WhereComponent extends React.Component {
             ))}
           </TypistLoop>
         </div>
-        <div style={{ marginTop: "150px" }}>
-          <img className="img-work" src={Nvidia} alt="Nvidia" />
-          <img className="img-work" src={Deloitte} alt="Deloitte" />
-          <img className="img-work" src={Facebook} alt="Facebook" />
-          <img className="img-work" src={Microsoft} alt="Microsoft" />
-          <img className="img-work" src={Airbnb} alt="Airbnb" />
-          <img className="img-work" src={IBM} alt="IBM" />
-          <img className="img-work" src={BCG} alt="BCG" />
-          <img className="img-work" src={Google} alt="Google" />
-          <img className="img-work" src={Apple} alt="Apple" />
-          <img className="img-work" src={Dropbox} alt="Dropbox" />
-          <img className="img-work" src={IMC} alt="IMC" />
-          <img className="img-work" src={Uber} alt="Uber" />
-          <img className="img-work" src={Amazon} alt="Amazon" />
-          <img className="img-work" src={Slack} alt="Slack" />
-          <img className="img-work" src={NASA} alt="NASA" />
+        <div
+          style={{
+            marginTop: "150px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-evenly",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+            }}
+          >
+            <img className="img-work" src={Nvidia} alt="Nvidia" />
+            <img className="img-work" src={Deloitte} alt="Deloitte" />
+            <img className="img-work" src={Facebook} alt="Facebook" />
+            <img className="img-work" src={Microsoft} alt="Microsoft" />
+            <img className="img-work" src={Airbnb} alt="Airbnb" />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+            }}
+          >
+            <img className="img-work" src={IBM} alt="IBM" />
+            <img className="img-work" src={BCG} alt="BCG" />
+            <img className="img-work" src={Google} alt="Google" />
+            <img className="img-work" src={Apple} alt="Apple" />
+            <img className="img-work" src={Dropbox} alt="Dropbox" />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+            }}
+          >
+            <img className="img-work" src={IMC} alt="IMC" />
+            <img className="img-work" src={Uber} alt="Uber" />
+            <img className="img-work" src={Amazon} alt="Amazon" />
+            <img className="img-work" src={Slack} alt="Slack" />
+            <img className="img-work" src={NASA} alt="NASA" />
+          </div>
         </div>
       </div>
     );
