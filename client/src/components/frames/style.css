@@ -89,3 +89,49 @@
   width: 100%;
   align-items: center;
 }
+
+.img-box {
+  height: 70%;
+  width: 70%;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.img-work {
+  margin-top: 30px;
+  margin-left: 10%;
+}
+.app-name {
+  margin-top: 13px;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+.img-toggle {
+  height: 68%;
+  width: 68%;
+  margin-top: 17%;
+  margin-left: 17%;
+}
+.pillars {
+  /* font-size: 18px;  */
+  font-family: "Lato";
+
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+
+.about-content {
+  /* overflow: hidden; */
+  font-size: 22px;
+  overflow-y: scroll;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 5vw);
+  grid-gap: 30px;
+}

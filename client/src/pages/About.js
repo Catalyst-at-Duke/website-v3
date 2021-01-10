@@ -5,8 +5,21 @@ import { PhoneFrame } from "components/frames";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
+import Toggle from "../images/toggle.svg";
 
 export default class AboutComponent extends React.Component {
+  state = {
+    message:
+      "Catalyst is a social and pre-professional community of tech enthusiasts. We strive to connect our members to peers with similar interests and provide members with mentorship in the field of technology. As a diverse, tight-knit group on campus, we can rely on each other for not only career and academic advice, but also for social and emotional support. We wish to help members realize their potential and explore the possibilities that await in the tech world.",
+    title: "def mission():",
+  };
+  callbackFunction = (childData) => {
+    this.setState({ message: childData });
+  };
+
+  titleFunction = (childData) => {
+    this.setState({ title: childData });
+  };
   render() {
     return (
       <div className="page" style={{ backgroundColor: colors.green }}>
@@ -42,17 +55,52 @@ export default class AboutComponent extends React.Component {
               marginRight: "100px",
             }}
           >
-            <PhoneFrame></PhoneFrame>
+            <PhoneFrame
+              parentCallback={this.callbackFunction}
+              titleMessage={this.titleFunction}
+            ></PhoneFrame>
           </div>
-          <div style={{ display: "flex", width: "50%", marginLeft: "100px" }}>
+          <div
+            style={{
+              display: "flex",
+              width: "60%",
+              marginLeft: "100px",
+            }}
+          >
             <div
               className="about-content"
-              style={{ backgroundColor: colors.white }}
+              style={{
+                backgroundColor: colors.white,
+                height: "420px",
+              }}
             >
-              {" "}
+              <b>
+                <p
+                  style={{
+                    color: "#26272C",
+                    fontSize: "40px",
+                    marginLeft: "30px",
+                    marginTop: "40px",
+                  }}
+                >
+                  {this.state.title}
+                </p>
+                <p
+                  style={{
+                    color: "#696969",
+                    marginTop: "50px",
+                    marginBottom: "30px",
+                    fontFamily: "Lato",
+                  }}
+                  className="pillars"
+                >
+                  {this.state.message}{" "}
+                </p>
+              </b>
             </div>
           </div>
         </div>
+        <div className="arrow-down" style={{ opacity: "80%" }}></div>
       </div>
     );
   }
