@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Catalyst-at-Duke/website-v3#readme",
   "dependencies": {
     "airtable": "^0.8.1",
-    "firebase-admin": "^8.12.1"
+    "bootstrap": "^4.5.3",
+    "firebase-admin": "^8.12.1",
+    "react-bootstrap": "^1.4.3"
   }
 }
