@@ -35,7 +35,9 @@ const PolaroidFrame = (props: PublicProps) => {
             src={photo}
           />
         </div>
-        <div style={{ fontSize: fonts.size.normal }}>{name}</div>
+        <div style={{ fontSize: fonts.size.normal, fontWeight: "bold" }}>
+          {name}
+        </div>
         <div
           style={{
             fontSize: fonts.size.small,
@@ -43,21 +45,6 @@ const PolaroidFrame = (props: PublicProps) => {
           }}
         >
           {position}
-        </div>
-
-        <div
-          style={{
-            position: "absolute",
-            width: "230px",
-            overflow: "auto",
-            height: "280px",
-            backgroundColor: colors.white,
-            padding: "5px",
-            transition: "opacity .2s",
-            opacity: isHovered ? "95%" : "0%",
-          }}
-        >
-          {message}
         </div>
       </div>
     </div>

@@ -129,6 +129,10 @@
   margin-right: 5%;
 }
 
+.link-icon {
+  margin: 1vh;
+}
+
 @-webkit-keyframes arrow {
   0%,
   100% {

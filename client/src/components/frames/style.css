@@ -8,10 +8,14 @@
   align-items: center;
   /*font-family: "Permanent Marker", cursive;*/
   /* margin-left: 60px; TAKE THIS OUT LATER @KEVIN */
-  margin: 30px;
+  /*margin: 30px;*/
   /* position: relative;
   bottom: 150px;
   left: 150px; */
+}
+
+.polaroid-outer:hover {
+  box-shadow: 1.5px 1.5px 4px #50b3ce;
 }
 
 .polaroid-inner {
