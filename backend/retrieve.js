@@ -9,7 +9,7 @@ let catalystDb = airtableObj.base(config.catalystdb_base_key);
 
 const MEMBER_TABLE_NAME = "Master Database";
 const EXEC_TABLE_NAME = "Exec Database";
-const MAX_BIO_LENGTH = 75;
+const MAX_BIO_LENGTH = 200;
 
 const getMembers = async (data) => {
   return new Promise((resolve, reject) => {
@@ -55,7 +55,7 @@ const getExec = async (data) => {
               ? properties.PersonalUrl[0]
               : "",
             Position: properties.Position,
-            Order: properties.Order
+            Order: properties.Order,
           }));
         resolve(exec);
       });
