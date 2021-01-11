@@ -42,7 +42,21 @@ const getExec = async (data) => {
       .select()
       .all((err, data) => {
         if (err) reject(err);
-        let exec = data.map((member) => member.fields);
+        let exec = data
+          .map((member) => member.fields)
+          .map((properties) => ({
+            Name: properties.Name,
+            Photo: properties.Photo ? properties.Photo[0].url : null,
+            Year: properties.Year ? properties.Year[0] : "",
+            Github: properties.Github ? properties.Github[0] : "",
+            Linkedin: properties.Linkedin ? properties.Linkedin[0] : "",
+            Bio: properties.Bio || "",
+            PersonalUrl: properties.PersonalUrl
+              ? properties.PersonalUrl[0]
+              : "",
+            Position: properties.Position,
+            Order: properties.Order
+          }));
         resolve(exec);
       });
   });
