@@ -107,7 +107,7 @@ const NavBar = (props: PublicProps) => {
           >
             faq
           </ReactBootstrap.NavLink>
-          <ReactBootstrap.Navbar.Brand href="https://catahub.ue.r.appspot.com/home">
+          {/*<ReactBootstrap.Navbar.Brand href="https://catahub.ue.r.appspot.com/home">
             <img
               src={require("../../images/profileIcon.png")}
               width="30px"
@@ -119,7 +119,7 @@ const NavBar = (props: PublicProps) => {
                 marginLeft: "8px",
               }}
             />
-          </ReactBootstrap.Navbar.Brand>
+          </ReactBootstrap.Navbar.Brand>*/}
         </ReactBootstrap.Nav>
       </ReactBootstrap.Navbar>
     </div>
