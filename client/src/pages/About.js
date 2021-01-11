@@ -72,6 +72,7 @@ export default class AboutComponent extends React.Component {
               style={{
                 backgroundColor: colors.white,
                 height: "420px",
+                borderRadius: "20px",
               }}
             >
               <b>
@@ -80,7 +81,7 @@ export default class AboutComponent extends React.Component {
                     color: "#26272C",
                     fontSize: "40px",
                     marginLeft: "30px",
-                    marginTop: "40px",
+                    marginTop: "20px",
                   }}
                 >
                   {this.state.title}
@@ -88,8 +89,10 @@ export default class AboutComponent extends React.Component {
                 <p
                   style={{
                     color: "#696969",
-                    marginTop: "50px",
+                    marginTop: "0px",
                     marginBottom: "30px",
+                    marginLeft: "60px",
+                    marginRight: "30px",
                     fontFamily: "Lato",
                   }}
                   className="pillars"
