@@ -38,7 +38,7 @@ const PolaroidFrame = (props: PublicProps) => {
         <div style={{ fontSize: fonts.size.normal }}>{name}</div>
         <div
           style={{
-            fontSize: fonts.size.normal,
+            fontSize: fonts.size.small,
             fontWeight: "lighter",
           }}
         >

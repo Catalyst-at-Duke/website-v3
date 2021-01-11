@@ -5,7 +5,7 @@ import { PolaroidFrame } from "components/frames";
 import { FirebaseContext } from "components/firebase";
 import LazyLoad from "react-lazyload";
 
-import { colors } from "styles/theme.js";
+import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
 const DEBUG_MODE = false;
@@ -54,11 +54,15 @@ class ExecComponent extends React.Component {
     super(props);
     this.state = {
       members: null,
+      executiveLeadership: null,
+      executiveChairs: null,
     };
   }
 
   componentDidMount() {
     if (!DEBUG_MODE) {
+      let executiveLeadership = [];
+      let executiveChairs = [];
       const db = this.props.firebase.db;
       const execRef = db.ref("exec");
       execRef.on("value", (snapshot) => {
@@ -72,7 +76,18 @@ class ExecComponent extends React.Component {
             return 0;
           }
         });
-        this.setState({ members: membersArr });
+        membersArr.forEach((member) => {
+          if (member.Order <= 2) {
+            executiveLeadership.push(member);
+          } else {
+            executiveChairs.push(member);
+          }
+        });
+        this.setState({
+          members: membersArr,
+          executiveLeadership: executiveLeadership,
+          executiveChairs: executiveChairs,
+        });
         console.log(this.state.members);
       });
     } else {
@@ -94,20 +109,49 @@ class ExecComponent extends React.Component {
   }
   render() {
     return (
-      <div
-        className="content-members"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: "15vh",
-          flexWrap: "wrap",
-        }}
-      >
-        {this.state.members &&
-          this.state.members.map((person) => {
-            return (
-              <LazyLoad>
+      <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginTop: "20vh",
+            flexWrap: "wrap",
+          }}
+        >
+          {this.state.executiveLeadership && (
+            <div
+              style={{
+                marginLeft: "4vh",
+                marginRight: "4vh",
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              Leadership
+              <div
+                style={{
+                  borderTop: "2px solid white",
+                }}
+              ></div>
+            </div>
+          )}
+        </div>
+        <div
+          className="content-members"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {this.state.executiveLeadership &&
+            this.state.executiveLeadership.map((person) => {
+              return (
                 <PolaroidFrame
                   name={person.Name}
                   key={person.Name}
@@ -115,9 +159,63 @@ class ExecComponent extends React.Component {
                   photo={person.Photo ? person.Photo[0].url : ""}
                   message={person.Message}
                 />
-              </LazyLoad>
-            );
-          })}
+              );
+            })}
+        </div>
+        {this.state.executiveChairs && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              marginTop: "8vh",
+            }}
+          >
+            <div
+              style={{
+                marginLeft: "4vh",
+                marginRight: "4vh",
+                color: colors.white,
+                fontSize: fonts.size.normal,
+                fontWeight: fonts.weights.bold,
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              Chairs
+              <div
+                style={{
+                  borderTop: "2px solid white",
+                }}
+              ></div>
+            </div>
+          </div>
+        )}
+        <div
+          className="content-members"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {this.state.executiveChairs &&
+            this.state.executiveChairs.map((person) => {
+              return (
+                <LazyLoad>
+                  <PolaroidFrame
+                    name={person.Name}
+                    key={person.Name}
+                    position={person.Position}
+                    photo={person.Photo ? person.Photo[0].url : ""}
+                    message={person.Message}
+                  />
+                </LazyLoad>
+              );
+            })}
+        </div>
       </div>
     );
   }
