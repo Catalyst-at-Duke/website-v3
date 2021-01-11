@@ -46,6 +46,9 @@ const PhoneFrame = (props: any) => {
 
   const toggleDev = () => {
     setAppNum(2);
+    sendData(
+      "Our members are experienced in almost all facets of the computer science industry, from backend software development to financial technology and healthcare technology. If you want to build something, there’s a strong probability that someone in Catalyst has experience in it and is willing to take that journey with you."
+    );
     sendTitle("def dev():");
   };
 
