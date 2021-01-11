@@ -4,6 +4,13 @@ import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
 import { FirebaseContext } from "components/firebase";
 import LazyLoad from "react-lazyload";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LanguageIcon from "@material-ui/icons/Language";
+import IconButton from "@material-ui/core/IconButton";
 
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
@@ -59,6 +66,12 @@ class ExecComponent extends React.Component {
       sophomoreMembers: null,
       freshmenMembers: null,
       currentClass: 4,
+      person: {
+        Name: "",
+        Order: 0,
+        Photo: null,
+        Position: "",
+      },
     };
   }
 
@@ -92,6 +105,7 @@ class ExecComponent extends React.Component {
           juniorMembers: juniorMembers,
           sophomoreMembers: sophomoreMembers,
           freshmenMembers: freshmenMembers,
+          open: false,
         });
         console.log(this.state.members);
       });
@@ -124,6 +138,14 @@ class ExecComponent extends React.Component {
     } else {
       this.setState({ members: this.state.freshmenMembers });
     }
+  }
+
+  handleOpen(person) {
+    this.setState({ open: true, person: person });
+  }
+
+  handleClose() {
+    this.setState({ open: false });
   }
 
   render() {
@@ -242,17 +264,204 @@ class ExecComponent extends React.Component {
             this.state.members.map((person) => {
               return (
                 <LazyLoad>
-                  <PolaroidFrame
-                    name={person.name}
-                    key={person.name}
-                    position={`Class of ${person.year}`}
-                    photo={person.photo}
-                    message={person.bio}
-                  />
+                  <div
+                    onClick={() => this.handleOpen(person)}
+                    style={{
+                      margin: "30px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <PolaroidFrame
+                      name={person.name}
+                      key={person.name}
+                      position={`Class of ${person.year}`}
+                      photo={person.photo}
+                      message={person.bio}
+                    />
+                  </div>
                 </LazyLoad>
               );
             })}
         </div>
+        <Modal
+          open={this.state.open}
+          onClose={() => this.handleClose()}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Fade in={this.state.open}>
+            <div
+              style={{
+                backgroundColor: colors.white,
+                boxShadow: "1px 2px 5px",
+                borderRadius: "3px",
+                display: "flex",
+                flexDirection: "column",
+                width: "50vh",
+              }}
+            >
+              <div
+                style={{
+                  height: "7vh",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  alt={this.state.person.name}
+                  style={{
+                    backgroundColor: colors.black,
+                    width: "5vh",
+                    height: "5vh",
+                    objectFit: "cover",
+                    marginLeft: "2vh",
+                    borderRadius: "50%",
+                  }}
+                  src={this.state.person.photo ? this.state.person.photo : ""}
+                />
+                <div
+                  style={{
+                    fontSize: fonts.size.small,
+                    fontWeight: 500,
+                    color: colors.black,
+                    marginLeft: "2vh",
+                  }}
+                >
+                  {this.state.person.name}
+                </div>
+              </div>
+              <img
+                alt={this.state.person.name}
+                style={{
+                  backgroundColor: colors.black,
+                  width: "50vh",
+                  height: "54vh",
+                  objectFit: "cover",
+                }}
+                src={this.state.person.photo ? this.state.person.photo : ""}
+              />
+              <div
+                style={{
+                  height: "5vh",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  alt="Duke Catalyst"
+                  style={{
+                    width: "2.5vh",
+                    height: "2.5vh",
+                    objectFit: "cover",
+                    marginLeft: "2vh",
+                  }}
+                  src={require("images/logoNoTextNoBack.png")}
+                />
+                <div
+                  style={{
+                    fontSize: "0.8em",
+                    marginLeft: "1vh",
+                  }}
+                >
+                  Liked by
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8em",
+                    marginLeft: "0.5vh",
+                    fontWeight: fonts.weights.bold,
+                  }}
+                >
+                  dukecatalyst
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8em",
+                    marginLeft: "0.5vh",
+                  }}
+                >
+                  and
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8em",
+                    marginLeft: "0.5vh",
+                    fontWeight: fonts.weights.bold,
+                  }}
+                >
+                  others
+                </div>
+              </div>
+              {this.state.person.bio && (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "flex-start",
+                    marginBottom: "1vh",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "0.8em",
+                      marginLeft: "2vh",
+                      marginRight: "2vh",
+                    }}
+                  >
+                    {this.state.person.bio}
+                  </div>
+                </div>
+              )}
+              {(this.state.person.github ||
+                this.state.person.linkedinurl ||
+                this.state.person.personalurl) && (
+                <div
+                  style={{
+                    height: "6vh",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    margin: "1vh",
+                  }}
+                >
+                  {this.state.person.linkedinurl && (
+                    <a href={this.state.person.linkedinurl}>
+                      <IconButton aria-label="LinkedIn">
+                        <LinkedInIcon />
+                      </IconButton>
+                    </a>
+                  )}
+                  {this.state.person.github && (
+                    <a href={this.state.person.github}>
+                      <IconButton aria-label="Github">
+                        <GitHubIcon />
+                      </IconButton>
+                    </a>
+                  )}
+                  {this.state.person.personalurl && (
+                    <a href={this.state.person.personalurl}>
+                      <IconButton aria-label="Personal Website">
+                        <LanguageIcon />
+                      </IconButton>
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+          </Fade>
+        </Modal>
       </div>
     );
   }
