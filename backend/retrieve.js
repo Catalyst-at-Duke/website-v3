@@ -26,9 +26,7 @@ const getMembers = async (data) => {
             year: properties.Year || "",
             github: properties.Github || "",
             linkedinurl: properties.LinkedIn || "",
-            bio: properties.Bio
-              ? properties.Bio.substring(0, MAX_BIO_LENGTH)
-              : "",
+            bio: properties.Bio ? properties.Bio : "",
             personalurl: properties["Personal Website"] || "",
           }));
         resolve(members);
