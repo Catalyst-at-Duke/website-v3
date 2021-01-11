@@ -391,7 +391,7 @@ class ExecComponent extends React.Component {
                       marginRight: "2vh",
                     }}
                   >
-                    {this.state.person.bio}
+                    {this.state.person.Bio[0]}
                   </div>
                 </div>
               )}
