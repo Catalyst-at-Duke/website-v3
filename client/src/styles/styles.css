@@ -102,7 +102,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 50%;
+  opacity: 1;
   border-right: 4px solid white;
   border-bottom: 4px solid white;
   transform: rotate(45deg);

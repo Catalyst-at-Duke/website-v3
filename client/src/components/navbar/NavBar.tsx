@@ -48,7 +48,7 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
-              opacity: hover === "home" ? "80%" : "50%",
+              opacity: hover === "home" ? ".8" : ".5",
               transition: "opacity .1s",
             }}
             onMouseEnter={() => {
@@ -77,7 +77,7 @@ const NavBar = (props: PublicProps) => {
                   color: colors.white,
                   fontSize: fonts.size.normal,
                   fontWeight: "bold",
-                  opacity: hover === "people" ? "80%" : "50%",
+                  opacity: hover === "people" ? ".8" : ".5",
                   transition: "opacity .1s",
                 }}
               >
@@ -106,7 +106,7 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
-              opacity: hover === "recruitment" ? "80%" : "50%",
+              opacity: hover === "recruitment" ? ".8" : ".5",
               transition: "opacity .1s",
             }}
             onClick={() => changeColor(colors.pink)}
@@ -127,7 +127,7 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
-              opacity: hover === "faq" ? "80%" : "50%",
+              opacity: hover === "faq" ? ".8" : ".5",
               transition: "opacity .1s",
             }}
             onClick={() => changeColor(colors.yellow)}
