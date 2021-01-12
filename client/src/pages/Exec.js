@@ -234,23 +234,21 @@ class ExecComponent extends React.Component {
           {this.state.executiveChairs &&
             this.state.executiveChairs.map((person) => {
               return (
-                <LazyLoad>
-                  <div
-                    onClick={() => this.handleOpen(person)}
-                    style={{
-                      margin: "30px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <PolaroidFrame
-                      name={person.Name}
-                      key={person.Name}
-                      position={person.Position}
-                      photo={person.Photo ? person.Photo : ""}
-                      message={person.Message}
-                    />
-                  </div>
-                </LazyLoad>
+                <div
+                  onClick={() => this.handleOpen(person)}
+                  style={{
+                    margin: "30px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <PolaroidFrame
+                    name={person.Name}
+                    key={person.Name}
+                    position={person.Position}
+                    photo={person.Photo ? person.Photo : ""}
+                    message={person.Message}
+                  />
+                </div>
               );
             })}
         </div>

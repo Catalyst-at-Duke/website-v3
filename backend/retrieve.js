@@ -55,6 +55,7 @@ const getMembers = (forceUpdatePhotos) => {
             members[idx].photo = url;
           } else {
             console.log(`Already found ${filename} in storage. Skipping...`);
+            delete members[idx].photo;
           }
           console.log(`Finished ${idx + 1}/${members.length}`);
         }

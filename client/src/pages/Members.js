@@ -256,23 +256,21 @@ class ExecComponent extends React.Component {
           {this.state.members &&
             this.state.members.map((person) => {
               return (
-                <LazyLoad>
-                  <div
-                    onClick={() => this.handleOpen(person)}
-                    style={{
-                      margin: "30px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <PolaroidFrame
-                      name={person.name}
-                      key={person.name}
-                      position={`Class of ${person.year}`}
-                      photo={person.photo}
-                      message={person.bio}
-                    />
-                  </div>
-                </LazyLoad>
+                <div
+                  onClick={() => this.handleOpen(person)}
+                  style={{
+                    margin: "30px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <PolaroidFrame
+                    name={person.name}
+                    key={person.name}
+                    position={`Class of ${person.year}`}
+                    photo={person.photo}
+                    message={person.bio}
+                  />
+                </div>
               );
             })}
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { colors, fonts } from "../../styles/theme.js";
+import LazyLoad from "react-lazyload";
 import "./style.css";
 // import Tape from "../../images/tape.png";
 
@@ -17,16 +18,18 @@ const PolaroidFrame = (props: PublicProps) => {
       {/* <div style={{ background: `url(${Tape})` }}></div> */}
       <div className="polaroid-outer" style={{ backgroundColor: colors.white }}>
         <div className="polaroid-inner">
-          <img
-            alt="Catalyst member"
-            style={{
-              backgroundColor: colors.black,
-              width: "200px",
-              height: "190px",
-              objectFit: "cover",
-            }}
-            src={photo}
-          />
+          <LazyLoad>
+            <img
+              alt="Catalyst member"
+              style={{
+                backgroundColor: colors.black,
+                width: "200px",
+                height: "190px",
+                objectFit: "cover",
+              }}
+              src={photo}
+            />
+          </LazyLoad>
         </div>
         <div style={{ fontSize: fonts.size.normal, fontWeight: "bold" }}>
           {name}
