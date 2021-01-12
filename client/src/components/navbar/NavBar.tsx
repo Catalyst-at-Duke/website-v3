@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { NavLink } from "react-router-dom";
 import * as ReactBootstrap from "react-bootstrap";
+
 import "./utils";
 
 import { colors, fonts } from "styles/theme.js";
@@ -14,6 +15,7 @@ interface PublicProps {
 
 const NavBar = (props: PublicProps) => {
   const [color, setColor] = useState(getColor(window.location.pathname));
+  const [hover, setHover] = useState("");
 
   const changeColor = (color: any) => {
     console.log(color);
@@ -36,7 +38,6 @@ const NavBar = (props: PublicProps) => {
             position: "absolute",
             right: 0,
             marginRight: "10px",
-            opacity: "50%",
           }}
         >
           <ReactBootstrap.NavLink
@@ -47,6 +48,14 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
+              opacity: hover === "home" ? ".8" : ".5",
+              transition: "opacity .1s",
+            }}
+            onMouseEnter={() => {
+              setHover("home");
+            }}
+            onMouseLeave={() => {
+              setHover("");
             }}
             onClick={() => changeColor(colors.black)}
           >
@@ -68,11 +77,19 @@ const NavBar = (props: PublicProps) => {
                   color: colors.white,
                   fontSize: fonts.size.normal,
                   fontWeight: "bold",
+                  opacity: hover === "people" ? ".8" : ".5",
+                  transition: "opacity .1s",
                 }}
               >
                 people
               </span>
             }
+            onMouseEnter={() => {
+              setHover("people");
+            }}
+            onMouseLeave={() => {
+              setHover("");
+            }}
           >
             <ReactBootstrap.NavDropdown.Item href="/exec">
               exec
@@ -89,8 +106,16 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
+              opacity: hover === "recruitment" ? ".8" : ".5",
+              transition: "opacity .1s",
             }}
             onClick={() => changeColor(colors.pink)}
+            onMouseEnter={() => {
+              setHover("recruitment");
+            }}
+            onMouseLeave={() => {
+              setHover("");
+            }}
           >
             recruitment
           </ReactBootstrap.NavLink>
@@ -102,8 +127,16 @@ const NavBar = (props: PublicProps) => {
               fontSize: fonts.size.normal,
               fontWeight: "bold",
               marginTop: "50px",
+              opacity: hover === "faq" ? ".8" : ".5",
+              transition: "opacity .1s",
             }}
             onClick={() => changeColor(colors.yellow)}
+            onMouseEnter={() => {
+              setHover("faq");
+            }}
+            onMouseLeave={() => {
+              setHover("");
+            }}
           >
             faq
           </ReactBootstrap.NavLink>

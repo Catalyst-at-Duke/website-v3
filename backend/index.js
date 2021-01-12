@@ -4,7 +4,7 @@ const sync = require("./sync.js");
 
 exports.sync = (req, res) => {
   console.log("Starting sync");
-  sync(false).then(() => {
+  sync((forceUpdate = false)).then(() => {
     console.log("Finished updating");
     res.end();
     process.exit();
