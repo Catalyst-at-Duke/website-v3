@@ -9,7 +9,7 @@ import Microsoft from "../images/microsoft.svg";
 import Airbnb from "../images/airbnb.svg";
 import IBM from "../images/ibm.svg";
 import BCG from "../images/bcg.svg";
-import Google from "../images/google-logo.svg";
+import Google from "../images/google.svg";
 import Apple from "../images/apple.svg";
 import Dropbox from "../images/dropbox.svg";
 import IMC from "../images/imc.svg";
