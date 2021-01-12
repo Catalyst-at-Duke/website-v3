@@ -3,11 +3,11 @@
 const sync = require("./sync.js");
 
 exports.sync = (req, res) => {
-  res.write("Starting sync");
-  sync().then(() => {
+  console.log("Starting sync");
+  sync(false).then(() => {
     console.log("Finished updating");
-    res.write("Finished sync");
     res.end();
     process.exit();
   });
+  res.status(200).send("Started synchronization.");
 };

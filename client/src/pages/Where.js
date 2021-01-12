@@ -1,7 +1,6 @@
 import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { PhoneFrame } from "components/frames";
 import Nvidia from "../images/nvidia.svg";
 import Deloitte from "../images/deloitte.svg";
 import Facebook from "../images/facebook.svg";
@@ -19,7 +18,6 @@ import Slack from "../images/slack.svg";
 import NASA from "../images/nasa.svg";
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
-import { black } from "color-name";
 
 export default class WhereComponent extends React.Component {
   render() {

@@ -1,6 +1,11 @@
 const Airtable = require("airtable");
 const config = require("./config.json");
-const { downloadAndCompress, uploadToFirebase, cleanUp } = require('./processPhoto');
+const {
+  downloadAndCompress,
+  uploadToFirebase,
+  cleanUp,
+  fileExists,
+} = require("./processPhoto");
 
 let airtableObj = new Airtable({
   apiKey: config.airtable_api_key,
@@ -12,7 +17,7 @@ const MEMBER_TABLE_NAME = "Master Database";
 const EXEC_TABLE_NAME = "Exec Database";
 
 // retrieve members from airtable
-const getMembers = (data) => {
+const getMembers = (forceUpdatePhotos) => {
   return new Promise((resolve, reject) => {
     catalystDb(MEMBER_TABLE_NAME)
       .select()
@@ -35,12 +40,23 @@ const getMembers = (data) => {
         // members = members.slice(0, 10);
         // iterate through photos, download, then compress
         for (let idx = 0; idx < members.length; idx++) {
-          console.log("Compressing " + members[idx].name);
-          let [filename, photoLocation] = await downloadAndCompress(members[idx], members[idx].photo);
-          console.log("Uploading " + photoLocation);
-          let url = await uploadToFirebase(filename, photoLocation);
-          members[idx].photo = url;
-          console.log(`Finished ${idx + 1}/${members.length}`)
+          let filename =
+            members[idx].name.replace(/\s+/g, "-").toLowerCase() + ".jpg";
+          let photoExists = await fileExists(filename);
+          // if doesn't exist or force update
+          if (!photoExists || forceUpdatePhotos) {
+            console.log("Compressing " + members[idx].name);
+            let [filename, photoLocation] = await downloadAndCompress(
+              members[idx],
+              members[idx].photo
+            );
+            console.log("Uploading " + photoLocation);
+            let url = await uploadToFirebase(filename, photoLocation);
+            members[idx].photo = url;
+          } else {
+            console.log(`Already found ${filename} in storage. Skipping...`);
+          }
+          console.log(`Finished ${idx + 1}/${members.length}`);
         }
 
         cleanUp();

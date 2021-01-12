@@ -2,7 +2,8 @@
 
 const sync = require("./sync.js");
 
-sync().then(() => {
+// true = force update photos, false = don't
+sync((forceUpdate = false)).then(() => {
   console.log("Finished updating");
   process.exit();
 });
