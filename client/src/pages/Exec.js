@@ -101,7 +101,6 @@ class ExecComponent extends React.Component {
         executiveLeadership: executiveLeadership,
         executiveChairs: executiveChairs,
       });
-      console.log(this.state.members);
     } else {
       this.setState({
         members: [

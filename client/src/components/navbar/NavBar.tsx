@@ -18,7 +18,6 @@ const NavBar = (props: PublicProps) => {
   const [hover, setHover] = useState("");
 
   const changeColor = (color: any) => {
-    console.log(color);
     setColor(color);
   };
 
