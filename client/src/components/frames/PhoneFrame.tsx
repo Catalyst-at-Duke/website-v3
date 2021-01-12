@@ -112,7 +112,7 @@ const PhoneFrame = (props: any) => {
               }}
             >
               <div className={"app-box"}>
-                {appNum != 0 ? (
+                {appNum !== 0 ? (
                   <div
                     className={"app-icon"}
                     style={{
@@ -120,7 +120,7 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleMission}
                   >
-                    <img className={"img-box"} src={Mission} />
+                    <img className={"img-box"} src={Mission} alt="mission" />
                     <p className={"app-name"}>Mission</p>
                   </div>
                 ) : (
@@ -131,17 +131,21 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleMission}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleMission"
+                    />
                     <p className={"app-name"}>Mission</p>
                   </div>
                 )}
-                {appNum != 1 ? (
+                {appNum !== 1 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#EE8380" }}
                     onClick={toggleSupport}
                   >
-                    <img className={"img-box"} src={Support} />
+                    <img className={"img-box"} src={Support} alt="support" />
                     <p className={"app-name"}>Support</p>
                   </div>
                 ) : (
@@ -152,17 +156,21 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleSupport}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleSupport"
+                    />
                     <p className={"app-name"}>Support</p>
                   </div>
                 )}
-                {appNum != 2 ? (
+                {appNum !== 2 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#F6D86B" }}
                     onClick={toggleDev}
                   >
-                    <img className={"img-box"} src={Dev} />
+                    <img className={"img-box"} src={Dev} alt="dev" />
                     <p className={"app-name"}>Dev</p>
                   </div>
                 ) : (
@@ -173,17 +181,25 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleDev}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleDev"
+                    />
                     <p className={"app-name"}>Dev</p>
                   </div>
                 )}
-                {appNum != 3 ? (
+                {appNum !== 3 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#97D8E6" }}
                     onClick={toggleCompanies}
                   >
-                    <img className={"img-box"} src={Companies} />
+                    <img
+                      className={"img-box"}
+                      src={Companies}
+                      alt="companies"
+                    />
                     <p className={"app-name"}>Companies</p>
                   </div>
                 ) : (
@@ -194,17 +210,25 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleCompanies}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleCompanies"
+                    />
                     <p className={"app-name"}>Companies</p>
                   </div>
                 )}
-                {appNum != 4 ? (
+                {appNum !== 4 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#6974B2" }}
                     onClick={toggleDiversity}
                   >
-                    <img className={"img-box"} src={Diversity} />
+                    <img
+                      className={"img-box"}
+                      src={Diversity}
+                      alt="diversity"
+                    />
                     <p className={"app-name"}>Diversity</p>
                   </div>
                 ) : (
@@ -215,17 +239,21 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleDiversity}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleDiversity"
+                    />
                     <p className={"app-name"}>Diversity</p>
                   </div>
                 )}
-                {appNum != 5 ? (
+                {appNum !== 5 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#EFC2C1" }}
                     onClick={toggleSocial}
                   >
-                    <img className={"img-box"} src={Social} />
+                    <img className={"img-box"} src={Social} alt="social" />
                     <p className={"app-name"}>Social</p>
                   </div>
                 ) : (
@@ -236,17 +264,21 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleSocial}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleSocial"
+                    />
                     <p className={"app-name"}>Social</p>
                   </div>
                 )}
-                {appNum != 6 ? (
+                {appNum !== 6 ? (
                   <div
                     className={"app-icon"}
                     style={{ backgroundColor: "#26272C" }}
                     onClick={toggleMentors}
                   >
-                    <img className={"img-box"} src={Mentorship} />
+                    <img className={"img-box"} src={Mentorship} alt="mentor" />
                     <p className={"app-name"}>Mentorship</p>
                   </div>
                 ) : (
@@ -257,7 +289,11 @@ const PhoneFrame = (props: any) => {
                     }}
                     onClick={toggleMentors}
                   >
-                    <img className={"img-toggle"} src={Toggle} />
+                    <img
+                      className={"img-toggle"}
+                      src={Toggle}
+                      alt="toggleMentors"
+                    />
                     <p className={"app-name"}>Mentorship</p>
                   </div>
                 )}

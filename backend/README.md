@@ -15,7 +15,7 @@
 ```
 
 3. Download the service key for the firebase project, name it `firebase_credentials.json`.
-4. Run `yarn start`.
+4. Run `node start`.
 
 Note: these are the same credentials that belong in `client/src/components/firebase`.
 

@@ -73,37 +73,36 @@ class ExecComponent extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     if (!DEBUG_MODE) {
       let executiveLeadership = [];
       let executiveChairs = [];
       const db = this.props.firebase.db;
-      const execRef = db.ref("exec");
-      execRef.on("value", (snapshot) => {
-        let membersArr = snapshot.val();
-        membersArr.sort((a, b) => {
-          if (a.Order < b.Order) {
-            return -1;
-          } else if (a.Order > b.Order) {
-            return 1;
-          } else {
-            return 0;
-          }
-        });
-        membersArr.forEach((member) => {
-          if (member.Order <= 2) {
-            executiveLeadership.push(member);
-          } else {
-            executiveChairs.push(member);
-          }
-        });
-        this.setState({
-          members: membersArr,
-          executiveLeadership: executiveLeadership,
-          executiveChairs: executiveChairs,
-        });
-        console.log(this.state.members);
+      const execRef = db.collection("people").doc("exec");
+      let doc = await execRef.get();
+      let membersArr = Object.values(doc.data());
+      membersArr.sort((a, b) => {
+        if (a.Order < b.Order) {
+          return -1;
+        } else if (a.Order > b.Order) {
+          return 1;
+        } else {
+          return 0;
+        }
       });
+      membersArr.forEach((member) => {
+        if (member.Order <= 2) {
+          executiveLeadership.push(member);
+        } else {
+          executiveChairs.push(member);
+        }
+      });
+      this.setState({
+        members: membersArr,
+        executiveLeadership: executiveLeadership,
+        executiveChairs: executiveChairs,
+      });
+      console.log(this.state.members);
     } else {
       this.setState({
         members: [

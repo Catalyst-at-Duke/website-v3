@@ -1,9 +1,13 @@
+// Used for Google Cloud Functions
+
 const sync = require("./sync.js");
 
 exports.sync = (req, res) => {
-  sync().then(() => {
+  console.log("Starting sync");
+  sync(false).then(() => {
     console.log("Finished updating");
-    res.status(200).send("Updated Firebase");
+    res.end();
     process.exit();
   });
+  res.status(200).send("Started synchronization.");
 };
