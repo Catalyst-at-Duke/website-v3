@@ -6,6 +6,199 @@ import { colors } from "styles/theme.js";
 import { fonts } from "styles/theme.js";
 import "styles/styles.css";
 
+const faq = require("./faq.json");
+
+const openQ = () => (
+  <div
+    style={{
+      color: colors.cherry,
+      marginLeft: "24px",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
+    {"<q>"}
+  </div>
+);
+const closeQ = () => (
+  <div style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}>
+    {"</q>"}
+  </div>
+);
+
+const openA = () => (
+  <div
+    style={{
+      color: colors.catablue,
+      marginLeft: "24px",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
+    {"<a>"}
+  </div>
+);
+
+const closeA = () => (
+  <div
+    style={{
+      color: colors.catablue,
+      fontWeight: fonts.weights.bold,
+    }}
+  >
+    {"</a>"}
+  </div>
+);
+
+const number = (num) => (
+  <div
+    style={{
+      color: colors.lightGray,
+      fontFamily: "monospace",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
+    {num < 10 ? "0" : ""}
+    {num}
+  </div>
+);
+
+const question = (text) => (
+  <div style={{ color: colors.black, fontWeight: fonts.weights.bold }}>
+    {text}
+  </div>
+);
+
+const answer = (text, offset = false) => (
+  <div
+    style={{
+      color: colors.black,
+      fontWeight: fonts.weights.regular,
+      marginLeft: offset ? "24px" : "0px",
+    }}
+  >
+    {text}
+  </div>
+);
+
+const generateFaqComponent = () => {
+  const LINE_LENGTH = 12;
+  let divLines = [];
+  let currentNumber = 1;
+  for (let idx = 0; idx < faq.length; idx++) {
+    let words = faq[idx].answer.split(" ");
+    let text;
+    if (words.length > LINE_LENGTH) {
+      // split into two lines
+      let lines = [];
+      let currWord = 0;
+      while (currWord < words.length) {
+        let text = words.slice(currWord, currWord + LINE_LENGTH);
+        lines.push(text.join(" "));
+        currWord += LINE_LENGTH;
+      }
+
+      text = (
+        <div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+            {openQ()}
+            {question(faq[idx].question)}
+            {closeQ()}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+            {openA()}
+            {answer(lines[0])}
+          </div>
+          {lines.map((line, idx) => {
+            if (idx == 0 || idx == lines.length - 1) {
+              return null;
+            } else {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  {number(currentNumber++)}
+                  {answer(line, true)}
+                </div>
+              );
+            }
+          })}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+            {answer(lines[lines.length - 1], true)}
+            {closeA()}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+          </div>
+        </div>
+      );
+    } else {
+      // just one line
+      text = (
+        <div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+            {openQ()}
+            {question(faq[idx].question)}
+            {closeQ()}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+            {openA()}
+            {answer(faq[idx].answer)}
+            {closeA()}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            {number(currentNumber++)}
+          </div>
+        </div>
+      );
+    }
+
+    divLines.push(text);
+  }
+  return divLines;
+};
+
 export default class FaqComponent extends React.Component {
   render() {
     return (
@@ -20,7 +213,7 @@ export default class FaqComponent extends React.Component {
         >
           <div class="title">
             <TypistLoop interval={100}>
-              {["faq", ""].map((text) => (
+              {["faq", "frequently asked questions"].map((text) => (
                 <Typist
                   repeat
                   avgTypingDelay={100}
@@ -39,303 +232,11 @@ export default class FaqComponent extends React.Component {
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
+              fontSize: "1.3em",
               padding: "30px",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                1
-              </div>
-              <div
-                style={{
-                  color: colors.cherry,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<q>"}
-              </div>
-              <div
-                style={{ color: colors.black, fontWeight: fonts.weights.bold }}
-              >
-                I would love to work with Catalyst. How can I reach out?
-              </div>
-              <div
-                style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}
-              >
-                {"</q>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                2
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<a>"}
-              </div>
-              <div
-                style={{
-                  color: colors.black,
-                  fontWeight: fonts.weights.regular,
-                }}
-              >
-                Please email us! We're always looking to collaborate with
-                different folks around campus.
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"</a>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                3
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                4
-              </div>
-              <div
-                style={{
-                  color: colors.cherry,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<q>"}
-              </div>
-              <div
-                style={{ color: colors.black, fontWeight: fonts.weights.bold }}
-              >
-                How can I join?
-              </div>
-              <div
-                style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}
-              >
-                {"</q>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                5
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<a>"}
-              </div>
-              <div
-                style={{
-                  color: colors.black,
-                  fontWeight: fonts.weights.regular,
-                }}
-              >
-                Lucky you! We hold rush each fall and spring, but the upcoming
-                semester may be different.
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                6
-              </div>
-              <div
-                style={{
-                  color: colors.black,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.regular,
-                }}
-              >
-                Join our Facebook page for more information.
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"</a>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                7
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                8
-              </div>
-              <div
-                style={{
-                  color: colors.cherry,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<q>"}
-              </div>
-              <div
-                style={{ color: colors.black, fontWeight: fonts.weights.bold }}
-              >
-                Are your events open to everyone?
-              </div>
-              <div
-                style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}
-              >
-                {"</q>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                9
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  marginLeft: "24px",
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"<a>"}
-              </div>
-              <div
-                style={{
-                  color: colors.black,
-                  fontWeight: fonts.weights.regular,
-                }}
-              >
-                Some of our events are open to everyone at Duke, and we would
-                love to have you there.
-              </div>
-              <div
-                style={{
-                  color: colors.catablue,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                {"</a>"}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div
-                style={{
-                  color: colors.lightGray,
-                  fontWeight: fonts.weights.bold,
-                }}
-              >
-                10
-              </div>
-            </div>
+            {generateFaqComponent()}
           </div>
         </div>
         <div
