@@ -54,11 +54,17 @@ const PhoneFrame = (props: any) => {
 
   const toggleCompanies = () => {
     setAppNum(3);
+    sendData(
+      "From big tech companies to startups, Catalyst seeks to develop and maintain relationships with recruiters and alumni working at various companies. During the school year, we foster career development through organizing company events and networking events with companies Catalyst members are interested in. In the past, we’ve partnered with Glimpse (co-founded by our ’19 alumni Brian Li), Google, Facebook, Robinhood, Capital One, IMC, and more."
+    );
     sendTitle("def companies():");
   };
 
   const toggleDiversity = () => {
     setAppNum(4);
+    sendData(
+      "Catalyst is aware of the gender, racial, and socioeconomic inequality problem in the tech industry. As an organization, we are committed to intentionally encouraging inclusion and diversity within the Duke undergraduate tech community through our programming and recruitment processes. It is our priority to foster a welcoming attitude in our members, and thus we prohibit discrimination and/or harassment based upon race, color, national origin, sex, gender identity, sexual orientation, religion, or disability."
+    );
     sendTitle("def diversity():");
   };
 
