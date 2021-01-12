@@ -20,10 +20,15 @@ const PhoneFrame = (props: any) => {
     props.titleMessage(e);
   };
 
+  const toggleOnOff = (e: any) => {
+    props.toggleOnOff(e);
+  };
+
   const [isPhoneOn, setIsPhoneOn] = useState(true);
   const [appNum, setAppNum] = useState(0);
 
   const togglePhone = () => {
+    toggleOnOff(!isPhoneOn);
     setIsPhoneOn(!isPhoneOn);
   };
 

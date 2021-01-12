@@ -11,7 +11,17 @@ export default class AboutComponent extends React.Component {
     message:
       "Catalyst is a social and pre-professional community of tech enthusiasts. We strive to connect our members to peers with similar interests and provide members with mentorship in the field of technology. As a diverse, tight-knit group on campus, we can rely on each other for not only career and academic advice, but also for social and emotional support. We wish to help members realize their potential and explore the possibilities that await in the tech world.",
     title: "def mission():",
+    missionClass: "mission-text",
   };
+
+  setOnOff = (childData) => {
+    if (childData) {
+      this.setState({ missionClass: "mission-text" });
+    } else {
+      this.setState({ missionClass: "mission-text-hidden" });
+    }
+  };
+
   callbackFunction = (childData) => {
     this.setState({ message: childData });
   };
@@ -61,9 +71,11 @@ export default class AboutComponent extends React.Component {
             <PhoneFrame
               parentCallback={this.callbackFunction}
               titleMessage={this.titleFunction}
+              toggleOnOff={this.setOnOff}
             ></PhoneFrame>
           </div>
           <div
+            className={this.state.missionClass}
             style={{
               display: "flex",
               width: "60%",
