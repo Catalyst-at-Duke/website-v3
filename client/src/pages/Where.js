@@ -24,6 +24,7 @@ export default class WhereComponent extends React.Component {
     return (
       <div
         className="page"
+        id="places"
         style={{
           backgroundColor: colors.blueGrey,
           display: "flex",

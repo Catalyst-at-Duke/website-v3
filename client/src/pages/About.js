@@ -2,7 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PhoneFrame } from "components/frames";
-
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -21,7 +21,11 @@ export default class AboutComponent extends React.Component {
   };
   render() {
     return (
-      <div className="page" style={{ backgroundColor: colors.green }}>
+      <div
+        className="page"
+        id="about"
+        style={{ backgroundColor: colors.green }}
+      >
         <div className="title">
           <TypistLoop interval={100}>
             {["about us", ""].map((text) => (
@@ -102,7 +106,11 @@ export default class AboutComponent extends React.Component {
             </div>
           </div>
         </div>
-        <div className="arrow-down" style={{ opacity: "80%" }}></div>
+        <AnchorLink
+          className="arrow-down"
+          style={{ opacity: "80%" }}
+          href="#places"
+        />
       </div>
     );
   }
