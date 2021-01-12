@@ -44,7 +44,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint \"**/*.js\" --fix --ignore-pattern node_modules/",
-    "predeploy": "yarn run build",
+    "predeploy": "yarn run build ",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

@@ -2,6 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
+import { SideBar } from "components/sidebar";
 import { FirebaseContext } from "components/firebase";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -101,7 +102,7 @@ class ExecComponent extends React.Component {
         executiveLeadership: executiveLeadership,
         executiveChairs: executiveChairs,
       });
-      console.log(this.state.members);
+      // console.log(this.state.members);
     } else {
       this.setState({
         members: [
@@ -165,6 +166,8 @@ class ExecComponent extends React.Component {
           className="content-members"
           style={{
             display: "flex",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             flexDirection: "row",
             justifyContent: "center",
             flexWrap: "wrap",
@@ -226,6 +229,8 @@ class ExecComponent extends React.Component {
           style={{
             display: "flex",
             flexDirection: "row",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             justifyContent: "center",
             flexWrap: "wrap",
           }}
@@ -430,6 +435,7 @@ class ExecComponent extends React.Component {
             </div>
           </Fade>
         </Modal>
+        <SideBar />
       </div>
     );
   }

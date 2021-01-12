@@ -2,6 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
+import { SideBar } from "components/sidebar";
 import { FirebaseContext } from "components/firebase";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -248,6 +249,8 @@ class ExecComponent extends React.Component {
           style={{
             display: "flex",
             flexDirection: "row",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             justifyContent: "center",
             flexWrap: "wrap",
           }}
@@ -452,6 +455,7 @@ class ExecComponent extends React.Component {
             </div>
           </Fade>
         </Modal>
+        <SideBar />
       </div>
     );
   }
