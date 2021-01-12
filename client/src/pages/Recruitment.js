@@ -115,6 +115,21 @@ export default class RecruitmentComponent extends React.Component {
                     rush_s21
                   </div>
                 </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "96vh",
+                    height: "56vh",
+                    fontWeight: fonts.weights.regular,
+                    fontSize: fonts.size.regular,
+                    color: colors.black,
+                  }}
+                >
+                  rush coming soon!
+                </div>
               </div>
             </div>
           </div>
