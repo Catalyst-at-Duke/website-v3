@@ -75,39 +75,38 @@ class ExecComponent extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     if (!DEBUG_MODE) {
       const db = this.props.firebase.db;
-      const execRef = db.ref("members");
       let seniorMembers = [];
       let juniorMembers = [];
       let sophomoreMembers = [];
       let freshmenMembers = [];
-      execRef.on("value", (snapshot) => {
-        let membersArr = snapshot.val();
-        membersArr.sort((a, b) => {
-          return a.year - b.year;
-        });
-        membersArr.forEach((member) => {
-          if (member.year === "2021") {
-            seniorMembers.push(member);
-          } else if (member.year === "2022") {
-            juniorMembers.push(member);
-          } else if (member.year === "2023") {
-            sophomoreMembers.push(member);
-          } else if (member.year === "2024") {
-            freshmenMembers.push(member);
-          }
-        });
-        this.setState({
-          members: seniorMembers,
-          seniorMembers: seniorMembers,
-          juniorMembers: juniorMembers,
-          sophomoreMembers: sophomoreMembers,
-          freshmenMembers: freshmenMembers,
-          open: false,
-        });
-        console.log(this.state.members);
+      const execRef = db.collection("people").doc("members");
+      let doc = await execRef.get();
+      let data = doc.data();
+      let membersArr = Object.values(data);
+      membersArr.sort((a, b) => {
+        return a.year - b.year;
+      });
+      membersArr.forEach((member) => {
+        if (member.year === "2021") {
+          seniorMembers.push(member);
+        } else if (member.year === "2022") {
+          juniorMembers.push(member);
+        } else if (member.year === "2023") {
+          sophomoreMembers.push(member);
+        } else if (member.year === "2024") {
+          freshmenMembers.push(member);
+        }
+      });
+      this.setState({
+        members: seniorMembers,
+        seniorMembers: seniorMembers,
+        juniorMembers: juniorMembers,
+        sophomoreMembers: sophomoreMembers,
+        freshmenMembers: freshmenMembers,
+        open: false,
       });
     } else {
       this.setState({
@@ -152,12 +151,10 @@ class ExecComponent extends React.Component {
     let seniorDivClass;
     let juniorDivClass;
     let sophomoreDivClass;
-    let freshmenDivClass;
 
     let seniorUnderline;
     let juniorUnderline;
     let sophomoreUnderline;
-    let freshmenUnderline;
     let underline = (
       <div
         style={{
@@ -169,23 +166,19 @@ class ExecComponent extends React.Component {
     if (this.state.currentClass === 4) {
       seniorUnderline = underline;
       seniorDivClass = "members-selected";
-      juniorUnderline = sophomoreUnderline = freshmenUnderline = null;
-      juniorDivClass = sophomoreDivClass = freshmenDivClass =
-        "members-unselected";
+      juniorUnderline = sophomoreUnderline = null;
+      juniorDivClass = sophomoreDivClass = "members-unselected";
     } else if (this.state.currentClass === 3) {
       juniorUnderline = underline;
       juniorDivClass = "members-selected";
-      seniorUnderline = sophomoreUnderline = freshmenUnderline = null;
-      seniorDivClass = sophomoreDivClass = freshmenDivClass =
-        "members-unselected";
+      seniorUnderline = sophomoreUnderline = null;
+      seniorDivClass = sophomoreDivClass = "members-unselected";
     } else if (this.state.currentClass === 2) {
       sophomoreUnderline = underline;
       sophomoreDivClass = "members-selected";
-      seniorUnderline = juniorUnderline = freshmenUnderline = null;
-      seniorDivClass = juniorDivClass = freshmenDivClass = "members-unselected";
+      seniorUnderline = juniorUnderline = null;
+      seniorDivClass = juniorDivClass = "members-unselected";
     } else if (this.state.currentClass === 1) {
-      freshmenUnderline = underline;
-      freshmenDivClass = "members-selected";
       seniorUnderline = juniorUnderline = sophomoreUnderline = null;
       seniorDivClass = juniorDivClass = sophomoreDivClass =
         "members-unselected";
@@ -263,23 +256,21 @@ class ExecComponent extends React.Component {
           {this.state.members &&
             this.state.members.map((person) => {
               return (
-                <LazyLoad>
-                  <div
-                    onClick={() => this.handleOpen(person)}
-                    style={{
-                      margin: "30px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <PolaroidFrame
-                      name={person.name}
-                      key={person.name}
-                      position={`Class of ${person.year}`}
-                      photo={person.photo}
-                      message={person.bio}
-                    />
-                  </div>
-                </LazyLoad>
+                <div
+                  onClick={() => this.handleOpen(person)}
+                  style={{
+                    margin: "30px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <PolaroidFrame
+                    name={person.name}
+                    key={person.name}
+                    position={`Class of ${person.year}`}
+                    photo={person.photo}
+                    message={person.bio}
+                  />
+                </div>
               );
             })}
         </div>

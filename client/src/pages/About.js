@@ -5,7 +5,6 @@ import { PhoneFrame } from "components/frames";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
-import Toggle from "../images/toggle.svg";
 
 export default class AboutComponent extends React.Component {
   state = {
