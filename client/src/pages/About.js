@@ -64,7 +64,7 @@ export default class AboutComponent extends React.Component {
             style={{
               display: "flex",
               width: "60%",
-              marginLeft: "100px",
+              marginLeft: "50px",
             }}
           >
             <div

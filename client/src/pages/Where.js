@@ -27,7 +27,7 @@ export default class WhereComponent extends React.Component {
       <div
         className="page"
         style={{
-          backgroundColor: colors.green,
+          backgroundColor: colors.blueGrey,
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",

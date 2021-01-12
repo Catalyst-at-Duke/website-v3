@@ -12,6 +12,7 @@ export const colors = {
   darkGray: "#26272C",
   black: "#000",
   white: "#ffffff",
+  blueGrey: "#a5bfc4",
 };
 
 export const fonts = {
