@@ -2,12 +2,16 @@ const firebase = require('./firebase').firebase.get();
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
+const rimraf = require('rimraf');
 const compress_images = require('compress-images')
 
 const FULLSIZE_IMAGE_LOCATION = path.resolve(__dirname, "images_temp")
 const COMPRESSED_IMAGE_LOCATION = FULLSIZE_IMAGE_LOCATION + "/compressed/"
 
 if (!fs.existsSync(FULLSIZE_IMAGE_LOCATION)) {
+  fs.mkdirSync(FULLSIZE_IMAGE_LOCATION);
+} else {
+  rimraf.sync(FULLSIZE_IMAGE_LOCATION);
   fs.mkdirSync(FULLSIZE_IMAGE_LOCATION);
 }
 
@@ -28,7 +32,7 @@ const downloadAndCompress = (properties, url) => {
         { png: { engine: 'pngquant', command: ['--quality=20-50'] } },
         { svg: { engine: 'svgo', command: '--multipass' } },
         { gif: { engine: 'gifsicle', command: ['--colors', '64', '--use-col=web'] } }, (err, complete, stat) => {
-          if (complete) {  
+          if (complete) {
             resolve([filename, COMPRESSED_IMAGE_LOCATION + "/" + filename]);
           }
         })
@@ -58,7 +62,12 @@ const uploadToFirebase = async (filename, location) => {
   })
 }
 
+const cleanUp = () => {
+  rimraf(FULLSIZE_IMAGE_LOCATION);
+}
+
 module.exports = {
   downloadAndCompress,
-  uploadToFirebase
+  uploadToFirebase,
+  cleanUp,
 }

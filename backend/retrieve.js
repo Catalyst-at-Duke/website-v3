@@ -1,6 +1,6 @@
 const Airtable = require("airtable");
 const config = require("./config.json");
-const { downloadAndCompress, uploadToFirebase } = require('./processPhoto');
+const { downloadAndCompress, uploadToFirebase, cleanUp } = require('./processPhoto');
 
 let airtableObj = new Airtable({
   apiKey: config.airtable_api_key,
@@ -31,7 +31,7 @@ const getMembers = (data) => {
             bio: properties.Bio ? properties.Bio : "",
             personalurl: properties["Personal Website"] || "",
           }));
-        
+
         // members = members.slice(0, 10);
         // iterate through photos, download, then compress
         for (let idx = 0; idx < members.length; idx++) {
@@ -43,6 +43,7 @@ const getMembers = (data) => {
           console.log(`Finished ${idx + 1}/${members.length}`)
         }
 
+        cleanUp();
         resolve(members);
       });
   });

@@ -3,9 +3,11 @@
 const sync = require("./sync.js");
 
 exports.sync = (req, res) => {
+  res.write("Starting sync");
   sync().then(() => {
     console.log("Finished updating");
-    res.status(200).send("Updated Firebase");
+    res.write("Finished sync");
+    res.end();
     process.exit();
   });
 };

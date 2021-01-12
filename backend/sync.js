@@ -1,8 +1,5 @@
-const path = require('path');
-
 const airtable = require('./retrieve');
 const firebase = require('./firebase').firebase.get();
-
 
 let db = firebase.database();
 let updateDatabase = () => {
