@@ -1,7 +1,7 @@
 import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-
+import { SideBar } from "components/sidebar";
 import { colors } from "styles/theme.js";
 import { fonts } from "styles/theme.js";
 import "styles/styles.css";
@@ -11,6 +11,7 @@ const faq = require("./faq.json");
 const openQ = () => (
   <div
     style={{
+      fontFamily: "Roboto Mono",
       color: colors.cherry,
       marginLeft: "24px",
       fontWeight: fonts.weights.bold,
@@ -20,7 +21,13 @@ const openQ = () => (
   </div>
 );
 const closeQ = () => (
-  <div style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}>
+  <div
+    style={{
+      color: colors.cherry,
+      fontFamily: "Roboto Mono",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
     {"</q>"}
   </div>
 );
@@ -30,6 +37,7 @@ const openA = () => (
     style={{
       color: colors.catablue,
       marginLeft: "24px",
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -41,6 +49,7 @@ const closeA = () => (
   <div
     style={{
       color: colors.catablue,
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -52,7 +61,7 @@ const number = (num) => (
   <div
     style={{
       color: colors.lightGray,
-      fontFamily: "monospace",
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -62,8 +71,18 @@ const number = (num) => (
 );
 
 const question = (text) => (
-  <div style={{ color: colors.black, fontWeight: fonts.weights.bold }}>
+  <div
+    style={{
+      color: colors.black,
+      fontFamily: "Roboto Mono",
+      fontWeight: fonts.weights.bold,
+      textAlign: "left",
+      display: "flex",
+      direction: "row",
+    }}
+  >
     {text}
+    {closeQ()}
   </div>
 );
 
@@ -72,7 +91,9 @@ const answer = (text, offset = false) => (
     style={{
       color: colors.black,
       fontWeight: fonts.weights.regular,
-      marginLeft: offset ? "24px" : "0px",
+      fontFamily: "Roboto Mono",
+      textAlign: "left",
+      marginLeft: offset ? "60px" : "0px",
     }}
   >
     {text}
@@ -80,7 +101,7 @@ const answer = (text, offset = false) => (
 );
 
 const generateFaqComponent = () => {
-  const LINE_LENGTH = 12;
+  const LINE_LENGTH = 10;
   let divLines = [];
   let currentNumber = 1;
   for (let idx = 0; idx < faq.length; idx++) {
@@ -107,7 +128,6 @@ const generateFaqComponent = () => {
             {number(currentNumber++)}
             {openQ()}
             {question(faq[idx].question)}
-            {closeQ()}
           </div>
           <div
             style={{
@@ -143,8 +163,15 @@ const generateFaqComponent = () => {
             }}
           >
             {number(currentNumber++)}
-            {answer(lines[lines.length - 1], true)}
-            {closeA()}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              {answer(lines[lines.length - 1], true)}
+              {closeA()}
+            </div>
           </div>
           <div
             style={{
@@ -169,7 +196,6 @@ const generateFaqComponent = () => {
             {number(currentNumber++)}
             {openQ()}
             {question(faq[idx].question)}
-            {closeQ()}
           </div>
           <div
             style={{
@@ -232,71 +258,18 @@ export default class FaqComponent extends React.Component {
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
+              borderRadius: "5px",
               fontSize: "1.3em",
+              overflow: "scroll",
+              maxHeight: "60%",
+              maxWidth: "70%",
               padding: "30px",
             }}
           >
             {generateFaqComponent()}
           </div>
         </div>
-        <div
-          className="sidebar"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            position: "absolute",
-            top: 0,
-            justifyContent: "center",
-            marginLeft: 25,
-            height: "100%",
-            opacity: "50%",
-          }}
-        >
-          <a
-            href="mailto:dukecatalyst@gmail.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="email Catalyst"
-              src={"./mail.png"}
-              style={{ width: "50px", marginBottom: 30 }}
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/dukecatalyst/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              alt="visit Catalyst's Facebook page"
-              src={"./facebook.png"}
-              style={{ width: "50px", marginBottom: 30 }}
-            />
-          </a>
-          <a
-            href="https://instagram.com/dukecatalyst"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="visit Catalyst's Instagram page"
-              src={"./instagram.png"}
-              style={{ width: "50px", marginBottom: 30 }}
-            />
-          </a>
-          <a
-            href="https://linkedin.com/company/duke-catalyst"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="visit Catalyst's LinkedIn page"
-              src={"./linkedin.png"}
-              style={{ width: "50px" }}
-            />
-          </a>
-        </div>
+        <SideBar />
       </div>
     );
   }

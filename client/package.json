@@ -25,6 +25,7 @@
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-lazyload": "^3.1.0",
