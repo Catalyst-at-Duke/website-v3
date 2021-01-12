@@ -28,7 +28,7 @@ export default class HomeComponent extends React.Component {
           </div>
           <AnchorLink
             className="arrow-down"
-            style={{ opacity: "80%" }}
+            style={{ opacity: ".8" }}
             href="#about"
           />
         </div>

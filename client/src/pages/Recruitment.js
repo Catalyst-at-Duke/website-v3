@@ -6,12 +6,12 @@ import { SideBar } from "components/sidebar";
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
-import Options from "../images/finder_options.svg";
+// import Options from "../images/finder_options.svg";
 import Red from "../images/finder_red.svg";
 import Yellow from "../images/finder_yellow.svg";
 import Green from "../images/finder_green.svg";
 import Home from "../images/rush_home.svg";
-import Catalyst from "../images/logoNoTextNoBack.png";
+// import Catalyst from "../images/logoNoTextNoBack.png";
 import Folder from "../images/folder.png";
 
 export default class RecruitmentComponent extends React.Component {
