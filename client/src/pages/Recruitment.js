@@ -2,7 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 
-import { colors } from "styles/theme.js";
+import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
 export default class RecruitmentComponent extends React.Component {
@@ -32,10 +32,12 @@ export default class RecruitmentComponent extends React.Component {
               flexDirection: "column",
               justifyContent: "center",
               height: "100%",
+              color: colors.white,
+              fontSize: fonts.size.normal,
             }}
           >
             {" "}
-            recruitment goes here
+            rush coming soon!
           </div>
         </div>
       </div>
