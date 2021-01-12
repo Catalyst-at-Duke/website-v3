@@ -64,6 +64,9 @@ const PhoneFrame = (props: any) => {
 
   const toggleSocial = () => {
     setAppNum(5);
+    sendData(
+      "One of Catalyst's main focus is creating a warm social environment for our members. We spend time together getting meals on campus, coming to our weekly game nights, and even meeting up while working in new cities over the summer. "
+    );
     sendTitle("def social():");
   };
 
