@@ -3,6 +3,9 @@
 ### Running:
 
 1. Run `yarn` to install all dependencies
+
+- To run on a mac, you may first have to run `brew install libpng pkg-config` if you get an error about `png.h` not being found.
+
 2. Create a `config.json` in this folder that looks like this:
 
 ```json
@@ -10,12 +13,13 @@
   "firebase_credentials": "firebase_credentials.json",
   "airtable_api_key": "<Airtable API key>",
   "catalystdb_base_key": "<catalyst_db base key from Airtable>",
-  "database_url": "<Firebase Database URL>"
+  "database_url": "<Firebase Database URL>",
+  "storage_bucket": "<Storage Bucket URL>"
 }
 ```
 
 3. Download the service key for the firebase project, name it `firebase_credentials.json`.
-4. Run `node start`.
+4. Run `node start <force>`, with whether or not to force update photos.
 
 Note: these are the same credentials that belong in `client/src/components/firebase`.
 
