@@ -11,6 +11,7 @@ const faq = require("./faq.json");
 const openQ = () => (
   <div
     style={{
+      fontFamily: "Roboto Mono",
       color: colors.cherry,
       marginLeft: "24px",
       fontWeight: fonts.weights.bold,
@@ -20,7 +21,13 @@ const openQ = () => (
   </div>
 );
 const closeQ = () => (
-  <div style={{ color: colors.cherry, fontWeight: fonts.weights.bold }}>
+  <div
+    style={{
+      color: colors.cherry,
+      fontFamily: "Roboto Mono",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
     {"</q>"}
   </div>
 );
@@ -30,6 +37,7 @@ const openA = () => (
     style={{
       color: colors.catablue,
       marginLeft: "24px",
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -41,6 +49,7 @@ const closeA = () => (
   <div
     style={{
       color: colors.catablue,
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -52,7 +61,7 @@ const number = (num) => (
   <div
     style={{
       color: colors.lightGray,
-      fontFamily: "monospace",
+      fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
     }}
   >
@@ -62,7 +71,13 @@ const number = (num) => (
 );
 
 const question = (text) => (
-  <div style={{ color: colors.black, fontWeight: fonts.weights.bold }}>
+  <div
+    style={{
+      color: colors.black,
+      fontFamily: "Roboto Mono",
+      fontWeight: fonts.weights.bold,
+    }}
+  >
     {text}
   </div>
 );
@@ -72,6 +87,7 @@ const answer = (text, offset = false) => (
     style={{
       color: colors.black,
       fontWeight: fonts.weights.regular,
+      fontFamily: "Roboto Mono",
       marginLeft: offset ? "24px" : "0px",
     }}
   >
@@ -80,7 +96,7 @@ const answer = (text, offset = false) => (
 );
 
 const generateFaqComponent = () => {
-  const LINE_LENGTH = 12;
+  const LINE_LENGTH = 15;
   let divLines = [];
   let currentNumber = 1;
   for (let idx = 0; idx < faq.length; idx++) {
@@ -232,7 +248,11 @@ export default class FaqComponent extends React.Component {
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
+              borderRadius: "5px",
               fontSize: "1.3em",
+              overflow: "scroll",
+              height: "50%",
+              width: "70%",
               padding: "30px",
             }}
           >
