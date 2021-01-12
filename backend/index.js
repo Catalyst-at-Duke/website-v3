@@ -1,3 +1,5 @@
+// Used for Google Cloud Functions
+
 const sync = require("./sync.js");
 
 exports.sync = (req, res) => {

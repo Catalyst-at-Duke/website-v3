@@ -1,25 +1,13 @@
-const firebase = require("firebase-admin");
-const path = require("path");
-const config = require("./config.json");
-const serviceAccount = require(path.resolve(
-  __dirname,
-  config.firebase_credentials
-));
-const airtable = require("./retrieve");
+const path = require('path');
 
-firebase.initializeApp({
-  credential: firebase.credential.cert(serviceAccount),
-  databaseURL: config.database_url,
-});
+const airtable = require('./retrieve');
+const firebase = require('./firebase').firebase.get();
+
 
 let db = firebase.database();
 let updateDatabase = () => {
   return new Promise(async (resolve, reject) => {
-    let ref = db.ref("/");
-
-    // ref.once("value", (snapshot) => {
-    //   console.log(snapshot.val());
-    // });
+    let ref = db.ref('/');
 
     try {
       let members = await airtable.getMembers();
@@ -27,7 +15,7 @@ let updateDatabase = () => {
         if (err) {
           reject(err);
         } else {
-          console.log("Updated members on Firebase");
+          console.log('Updated members on Firebase');
         }
       });
 
@@ -36,7 +24,7 @@ let updateDatabase = () => {
         if (err) {
           reject(err);
         } else {
-          console.log("Updated exec on Firebase");
+          console.log('Updated exec on Firebase');
           resolve();
         }
       });
