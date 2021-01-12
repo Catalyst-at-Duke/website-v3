@@ -76,9 +76,13 @@ const question = (text) => (
       color: colors.black,
       fontFamily: "Roboto Mono",
       fontWeight: fonts.weights.bold,
+      textAlign: "left",
+      display: "flex",
+      direction: "row",
     }}
   >
     {text}
+    {closeQ()}
   </div>
 );
 
@@ -88,7 +92,8 @@ const answer = (text, offset = false) => (
       color: colors.black,
       fontWeight: fonts.weights.regular,
       fontFamily: "Roboto Mono",
-      marginLeft: offset ? "24px" : "0px",
+      textAlign: "left",
+      marginLeft: offset ? "60px" : "0px",
     }}
   >
     {text}
@@ -96,7 +101,7 @@ const answer = (text, offset = false) => (
 );
 
 const generateFaqComponent = () => {
-  const LINE_LENGTH = 15;
+  const LINE_LENGTH = 10;
   let divLines = [];
   let currentNumber = 1;
   for (let idx = 0; idx < faq.length; idx++) {
@@ -123,7 +128,6 @@ const generateFaqComponent = () => {
             {number(currentNumber++)}
             {openQ()}
             {question(faq[idx].question)}
-            {closeQ()}
           </div>
           <div
             style={{
@@ -159,8 +163,15 @@ const generateFaqComponent = () => {
             }}
           >
             {number(currentNumber++)}
-            {answer(lines[lines.length - 1], true)}
-            {closeA()}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              {answer(lines[lines.length - 1], true)}
+              {closeA()}
+            </div>
           </div>
           <div
             style={{
@@ -185,7 +196,6 @@ const generateFaqComponent = () => {
             {number(currentNumber++)}
             {openQ()}
             {question(faq[idx].question)}
-            {closeQ()}
           </div>
           <div
             style={{
@@ -251,8 +261,8 @@ export default class FaqComponent extends React.Component {
               borderRadius: "5px",
               fontSize: "1.3em",
               overflow: "scroll",
-              height: "50%",
-              width: "70%",
+              maxHeight: "50%",
+              maxWidth: "70%",
               padding: "30px",
             }}
           >
