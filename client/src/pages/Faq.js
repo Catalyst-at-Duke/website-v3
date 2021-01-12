@@ -261,7 +261,7 @@ export default class FaqComponent extends React.Component {
               borderRadius: "5px",
               fontSize: "1.3em",
               overflow: "scroll",
-              maxHeight: "50%",
+              maxHeight: "60%",
               maxWidth: "70%",
               padding: "30px",
             }}
