@@ -140,7 +140,7 @@ const generateFaqComponent = () => {
             {answer(lines[0])}
           </div>
           {lines.map((line, idx) => {
-            if (idx == 0 || idx == lines.length - 1) {
+            if (idx === 0 || idx === lines.length - 1) {
               return null;
             } else {
               return (

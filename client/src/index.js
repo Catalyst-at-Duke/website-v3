@@ -6,7 +6,7 @@ import { NavBar } from "components/navbar";
 import Firebase, { FirebaseContext } from "components/firebase";
 
 import * as serviceWorker from "serviceWorker";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
@@ -43,9 +43,9 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <Router>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App />
-  </Router>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

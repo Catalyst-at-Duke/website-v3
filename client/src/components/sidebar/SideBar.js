@@ -77,7 +77,6 @@ const SideBar = () => {
           style={{
             width: "50px",
             marginBottom: 30,
-            opacity: "50%",
             opacity: isHovered === "insta" ? "100%" : "50%",
             transition: "opacity .1s",
           }}
@@ -100,7 +99,6 @@ const SideBar = () => {
           style={{
             width: "50px",
             marginBottom: 30,
-            opacity: "50%",
             opacity: isHovered === "linkedin" ? "100%" : "50%",
             transition: "opacity .1s",
           }}
