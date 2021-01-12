@@ -3,7 +3,6 @@ import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import { PolaroidFrame } from "components/frames";
 import { FirebaseContext } from "components/firebase";
-import LazyLoad from "react-lazyload";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";

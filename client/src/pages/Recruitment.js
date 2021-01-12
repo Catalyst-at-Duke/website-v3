@@ -2,6 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 
+import { SideBar } from "components/sidebar";
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -219,6 +220,8 @@ export default class RecruitmentComponent extends React.Component {
             </div>
           )}
         </div>
+
+        <SideBar />
       </div>
     );
   }

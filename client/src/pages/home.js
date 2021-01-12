@@ -1,7 +1,8 @@
 import React from "react";
 import { About } from ".";
 import { Where } from ".";
-
+import { SideBar } from "components/sidebar";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { colors } from "styles/theme.js";
 import CatalystLogo from "images/logoNoTextNoBack.png";
 import "styles/styles.css";
@@ -23,69 +24,16 @@ export default class HomeComponent extends React.Component {
               </div>
               <div className="glow">CATALYST</div>
             </div>
-            <div
-              className="sidebar"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                position: "absolute",
-                top: 0,
-                justifyContent: "center",
-                marginLeft: 25,
-                height: "100%",
-                opacity: "50%",
-              }}
-            >
-              <a
-                href="mailto:dukecatalyst@gmail.com"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt="email Catalyst"
-                  src={"./mail.png"}
-                  style={{ width: "50px", marginBottom: 30 }}
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/dukecatalyst/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  alt="visit Catalyst's Facebook page"
-                  src={"./facebook.png"}
-                  style={{ width: "50px", marginBottom: 30 }}
-                />
-              </a>
-              <a
-                href="https://instagram.com/dukecatalyst"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt="visit Catalyst's Instagram page"
-                  src={"./instagram.png"}
-                  style={{ width: "50px", marginBottom: 30 }}
-                />
-              </a>
-              <a
-                href="https://linkedin.com/company/duke-catalyst"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt="visit Catalyst's LinkedIn page"
-                  src={"./linkedin.png"}
-                  style={{ width: "50px" }}
-                />
-              </a>
-            </div>
+            <SideBar />
           </div>
-          <div className="arrow-down" style={{ opacity: "80%" }}></div>
+          <AnchorLink
+            className="arrow-down"
+            style={{ opacity: "80%" }}
+            href="#about"
+          />
         </div>
-        <About></About>
-        <Where></Where>
+        <About />
+        <Where />
       </div>
     );
   }
