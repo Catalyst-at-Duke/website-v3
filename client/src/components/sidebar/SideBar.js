@@ -8,11 +8,12 @@ const SideBar = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        position: "absolute",
+        position: "fixed",
         top: 0,
         justifyContent: "center",
         marginLeft: 25,
         height: "100%",
+        zIndex: "100",
       }}
     >
       <a

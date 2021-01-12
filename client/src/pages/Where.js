@@ -53,7 +53,7 @@ export default class WhereComponent extends React.Component {
         <div
           style={{
             marginTop: "150px",
-            width: "100%",
+            width: "90%",
             display: "flex",
             justifyContent: "space-evenly",
             flexDirection: "column",
