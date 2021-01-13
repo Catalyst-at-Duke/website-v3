@@ -197,7 +197,7 @@ export default class RecruitmentComponent extends React.Component {
                         src={Folder}
                         alt="Folder"
                         style={{
-                          width: "18vh",
+                          width: "16vh",
                           textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
                         }}
                       />
