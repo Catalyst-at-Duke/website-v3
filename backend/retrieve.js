@@ -60,7 +60,7 @@ const getMembers = (forceUpdatePhotos) => {
           console.log(`Finished ${idx + 1}/${members.length}`);
         }
 
-        cleanUp();
+        // cleanUp();
         resolve(members);
       });
   });
