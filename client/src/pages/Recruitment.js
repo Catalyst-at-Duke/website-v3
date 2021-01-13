@@ -94,7 +94,7 @@ export default class RecruitmentComponent extends React.Component {
                         alt="Close"
                         style={{
                           marginRight: "0.8vh",
-                          width: "2.3vw",
+                          height: "30px",
                         }}
                       />
                     </div>
@@ -104,7 +104,7 @@ export default class RecruitmentComponent extends React.Component {
                       style={{
                         marginLeft: "0.8vh",
                         marginRight: "0.8vh",
-                        width: "2.3vw",
+                        height: "30px",
                       }}
                     />
                     <img
@@ -113,7 +113,7 @@ export default class RecruitmentComponent extends React.Component {
                       style={{
                         marginLeft: "0.8vh",
                         marginRight: "0.8vh",
-                        width: "2.3vw",
+                        height: "30px",
                       }}
                     />
                   </div>
