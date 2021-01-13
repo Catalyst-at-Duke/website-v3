@@ -72,7 +72,7 @@ export default class RecruitmentComponent extends React.Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "24vh",
+                    width: "20vh",
                     height: "100%",
                     backgroundColor: "#EBEBEB",
                     borderRadius: "10px 0px 0px 10px",
@@ -82,11 +82,10 @@ export default class RecruitmentComponent extends React.Component {
                     style={{
                       display: "flex",
                       flexDirection: "row",
-                      width: "24vh",
+                      width: "20vh",
                       height: "8vh",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginTop: "0.5vh",
                     }}
                   >
                     <div onClick={() => this.closeFinder()}>
@@ -94,9 +93,8 @@ export default class RecruitmentComponent extends React.Component {
                         src={Red}
                         alt="Close"
                         style={{
-                          marginLeft: "0.8vh",
                           marginRight: "0.8vh",
-                          width: "4vh",
+                          width: "2.3vw",
                         }}
                       />
                     </div>
@@ -106,7 +104,7 @@ export default class RecruitmentComponent extends React.Component {
                       style={{
                         marginLeft: "0.8vh",
                         marginRight: "0.8vh",
-                        width: "4vh",
+                        width: "2.3vw",
                       }}
                     />
                     <img
@@ -115,7 +113,7 @@ export default class RecruitmentComponent extends React.Component {
                       style={{
                         marginLeft: "0.8vh",
                         marginRight: "0.8vh",
-                        width: "4vh",
+                        width: "2.3vw",
                       }}
                     />
                   </div>
@@ -123,9 +121,9 @@ export default class RecruitmentComponent extends React.Component {
                     style={{
                       color: "#A0A0A0",
                       fontWeight: fonts.weights.bold,
-                      marginTop: "4vh",
+                      marginTop: "2vh",
                       alignSelf: "flex-start",
-                      marginLeft: "4vh",
+                      marginLeft: "2vh",
                     }}
                   >
                     Favorites
@@ -133,7 +131,7 @@ export default class RecruitmentComponent extends React.Component {
                   <div
                     style={{
                       marginTop: "1vh",
-                      width: "22vh",
+                      width: "18vh",
                       marginLeft: "1vh",
                       backgroundColor: "#CBCAC9",
                       borderRadius: "5px",
@@ -157,7 +155,7 @@ export default class RecruitmentComponent extends React.Component {
                       justifyContent: "flex-start",
                       alignItems: "center",
                       height: "8vh",
-                      width: "96vh",
+                      width: "100vh",
                       backgroundColor: "#D8D8D8",
                       borderRadius: "0px 10px 0px 0px",
                     }}
@@ -165,9 +163,9 @@ export default class RecruitmentComponent extends React.Component {
                     <div
                       style={{
                         color: colors.black,
-                        fontWeight: fonts.weights.regular,
+                        fontWeight: 600,
                         fontSize: fonts.size.regular,
-                        marginLeft: "6vh",
+                        marginLeft: "4vh",
                       }}
                     >
                       rush_s21
@@ -199,19 +197,18 @@ export default class RecruitmentComponent extends React.Component {
                         src={Folder}
                         alt="Folder"
                         style={{
-                          height: "8vh",
-                          width: "10vh",
+                          width: "18vh",
                           textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
                         }}
                       />
                       <div
                         style={{
-                          fontSize: "0.4em",
+                          fontSize: "0.8em",
                           marginTop: "1vh",
-                          fontWeight: 600,
+                          fontWeight: 300,
                         }}
                       >
-                        ComingSoon
+                        Coming Soon
                       </div>
                     </div>
                   </div>
