@@ -93,8 +93,9 @@ export default class RecruitmentComponent extends React.Component {
                         src={Red}
                         alt="Close"
                         style={{
-                          marginRight: "0.8vh",
-                          height: "30px",
+                          marginLeft: "6px",
+                          marginRight: "6px",
+                          width: "25px",
                         }}
                       />
                     </div>
@@ -102,18 +103,18 @@ export default class RecruitmentComponent extends React.Component {
                       src={Yellow}
                       alt="Minimize"
                       style={{
-                        marginLeft: "0.8vh",
-                        marginRight: "0.8vh",
-                        height: "30px",
+                        marginLeft: "6px",
+                        marginRight: "6px",
+                        width: "25px",
                       }}
                     />
                     <img
                       src={Green}
                       alt="Maximize"
                       style={{
-                        marginLeft: "0.8vh",
-                        marginRight: "0.8vh",
-                        height: "30px",
+                        marginLeft: "6px",
+                        marginRight: "6px",
+                        width: "25px",
                       }}
                     />
                   </div>
