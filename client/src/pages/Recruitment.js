@@ -14,17 +14,33 @@ import Home from "../images/rush_home.svg";
 // import Catalyst from "../images/logoNoTextNoBack.png";
 import Folder from "../images/folder.png";
 
+const HOME = "";
+const SCHEDULE = "schedule";
+
 export default class RecruitmentComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: true,
+      currPage: HOME,
     };
   }
 
-  closeFinder() {
+  closeFinder = () => {
     this.setState({ open: false });
-  }
+  };
+
+  setPage = (pageName) => {
+    this.setState({ currPage: pageName });
+  };
+
+  getPage = () => {
+    if (this.state.currPage == HOME) {
+      return <HomePage setPage={this.setPage} />;
+    } else if (this.state.currPage == SCHEDULE) {
+      return <SchedulePage setPage={this.setPage} />;
+    }
+  };
 
   render() {
     return (
@@ -130,12 +146,14 @@ export default class RecruitmentComponent extends React.Component {
                     Favorites
                   </div>
                   <div
+                    onClick={() => this.setState({ currPage: "" })}
                     style={{
                       marginTop: "1vh",
                       width: "18vh",
                       marginLeft: "1vh",
                       backgroundColor: "#CBCAC9",
                       borderRadius: "5px",
+                      cursor: "pointer",
                     }}
                   >
                     <img src={Home} alt="Home" style={{ height: "4vh" }} />
@@ -145,7 +163,7 @@ export default class RecruitmentComponent extends React.Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "96vh",
+                    width: "100%",
                     height: "100%",
                   }}
                 >
@@ -169,7 +187,7 @@ export default class RecruitmentComponent extends React.Component {
                         marginLeft: "4vh",
                       }}
                     >
-                      rush_s21
+                      rush_s21 / {this.state.currPage}
                     </div>
                   </div>
                   <div
@@ -178,44 +196,14 @@ export default class RecruitmentComponent extends React.Component {
                       flexDirection: "row",
                       alignItems: "flex-start",
                       justifyContent: "flex-start",
-                      width: "96vh",
+                      width: "100%",
                       height: "56vh",
                       fontWeight: fonts.weights.regular,
                       fontSize: fonts.size.regular,
                       color: colors.black,
                     }}
                   >
-                    <div
-                      onClick={() => {
-                        window.open("https://tinyurl.com/cata-notion");
-                      }}
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        margin: "3vh",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <img
-                        src={Folder}
-                        alt="Folder"
-                        style={{
-                          width: "16vh",
-                          textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                        }}
-                      />
-                      <div
-                        style={{
-                          fontSize: "0.8em",
-                          marginTop: "1vh",
-                          fontWeight: 300,
-                        }}
-                      >
-                        Notion.link
-                      </div>
-                    </div>
+                    {this.getPage()}
                   </div>
                 </div>
               </div>
@@ -228,3 +216,91 @@ export default class RecruitmentComponent extends React.Component {
     );
   }
 }
+
+const HomePage = (props) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+      }}
+    >
+      <div
+        onClick={() => {
+          window.open("https://tinyurl.com/cata-notion");
+        }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "3vh",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src={Folder}
+          alt="Folder"
+          style={{
+            width: "16vh",
+            textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+        />
+        <div
+          style={{
+            fontSize: "0.8em",
+            marginTop: "1vh",
+            fontWeight: 300,
+          }}
+        >
+          Notion.link
+        </div>
+      </div>
+      <div
+        onClick={() => {
+          props.setPage(SCHEDULE);
+        }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "3vh",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src={Folder}
+          alt="Folder"
+          style={{
+            width: "16vh",
+            textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+        />
+        <div
+          style={{
+            fontSize: "0.8em",
+            marginTop: "1vh",
+            fontWeight: 300,
+          }}
+        >
+          Schedule
+        </div>
+      </div>
+    </div>
+  );
+};
+const SchedulePage = (props) => {
+  return (
+    <iframe
+      src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23B39DDB&amp;ctz=America%2FNew_York&amp;src=Y3NwajNzM3ZkMDY3dm4wdW43Z2lnZ2I0cmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23009688&amp;mode=MONTH"
+      style={{ border: "solid 1px #777" }}
+      width="100%"
+      height="100%"
+      frameBorder="0"
+      scrolling="no"
+    ></iframe>
+  );
+};
