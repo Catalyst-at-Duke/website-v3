@@ -186,12 +186,16 @@ export default class RecruitmentComponent extends React.Component {
                     }}
                   >
                     <div
+                      onClick={() => {
+                        window.open("https://tinyurl.com/cata-notion");
+                      }}
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
                         margin: "3vh",
+                        cursor: "pointer",
                       }}
                     >
                       <img
@@ -209,7 +213,7 @@ export default class RecruitmentComponent extends React.Component {
                           fontWeight: 300,
                         }}
                       >
-                        Coming Soon
+                        Notion.link
                       </div>
                     </div>
                   </div>
