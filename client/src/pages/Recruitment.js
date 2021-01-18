@@ -187,7 +187,15 @@ export default class RecruitmentComponent extends React.Component {
                         marginLeft: "4vh",
                       }}
                     >
-                      rush_s21 / {this.state.currPage}
+                      <span
+                        onClick={() => {
+                          this.setPage(HOME);
+                        }}
+                        style={{ cursor: "pointer" }}
+                      >
+                        rush_s21
+                      </span>{" "}
+                      / {this.state.currPage}
                     </div>
                   </div>
                   <div
@@ -295,11 +303,11 @@ const HomePage = (props) => {
 const SchedulePage = (props) => {
   return (
     <iframe
-      src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23B39DDB&amp;ctz=America%2FNew_York&amp;src=Y3NwajNzM3ZkMDY3dm4wdW43Z2lnZ2I0cmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23009688&amp;mode=MONTH"
-      style={{ border: "solid 1px #777" }}
-      width="100%"
-      height="100%"
-      frameBorder="0"
+      src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=NXI0azk5dGRhb2U2aG44ZW8zZjkxaXI3MmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%234285F4&amp;mode=WEEK"
+      style={{ border: "solid 1px #777", margin: "1%" }}
+      width="98%"
+      height="95%"
+      frameborder="0"
       scrolling="no"
     ></iframe>
   );
