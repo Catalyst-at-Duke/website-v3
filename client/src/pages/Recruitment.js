@@ -13,6 +13,7 @@ import Green from "../images/finder_green.svg";
 import Home from "../images/rush_home.svg";
 // import Catalyst from "../images/logoNoTextNoBack.png";
 import Folder from "../images/folder.png";
+import Document from "../images/document.png";
 
 const HOME = "";
 const SCHEDULE = "schedule";
@@ -249,10 +250,10 @@ const HomePage = (props) => {
         }}
       >
         <img
-          src={Folder}
-          alt="Folder"
+          src={Document}
+          alt="Document"
           style={{
-            width: "16vh",
+            width: "10.5vh",
             textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
           }}
         />
@@ -263,7 +264,7 @@ const HomePage = (props) => {
             fontWeight: 300,
           }}
         >
-          Notion.link
+          Notion.url
         </div>
       </div>
       <div
