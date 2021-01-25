@@ -11,8 +11,10 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 import { colors } from "styles/theme.js";
 import "styles/styles.css";
 import "index.css";
+import { SideBar } from "components/sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
+import MediaQuery from "react-responsive";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +36,9 @@ class App extends React.Component {
               <Route path="/members" component={Members} />
               <Route path="/recruitment" component={Recruitment} />
               <Route path="/faq" component={Faq} />
+              <MediaQuery minDeviceWidth={1224}>
+                <SideBar />
+              </MediaQuery>
             </div>
           </Switch>
         </FirebaseContext.Provider>

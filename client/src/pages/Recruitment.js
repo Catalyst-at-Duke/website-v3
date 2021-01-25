@@ -2,7 +2,6 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 
-import { SideBar } from "components/sidebar";
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -36,9 +35,9 @@ export default class RecruitmentComponent extends React.Component {
   };
 
   getPage = () => {
-    if (this.state.currPage == HOME) {
+    if (this.state.currPage === HOME) {
       return <HomePage setPage={this.setPage} />;
-    } else if (this.state.currPage == SCHEDULE) {
+    } else if (this.state.currPage === SCHEDULE) {
       return <SchedulePage setPage={this.setPage} />;
     }
   };
@@ -219,8 +218,6 @@ export default class RecruitmentComponent extends React.Component {
             </div>
           )}
         </div>
-
-        <SideBar />
       </div>
     );
   }
@@ -304,6 +301,7 @@ const HomePage = (props) => {
 const SchedulePage = (props) => {
   return (
     <iframe
+      title="Rush Calendar"
       src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=NXI0azk5dGRhb2U2aG44ZW8zZjkxaXI3MmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%234285F4&amp;mode=WEEK"
       style={{ border: "solid 1px #777", margin: "1%" }}
       width="98%"
