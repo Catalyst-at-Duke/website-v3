@@ -266,7 +266,11 @@ class ExecComponent extends React.Component {
                   <PolaroidFrame
                     name={person.name}
                     key={person.name}
-                    position={`Class of ${person.year}`}
+                    position={`${
+                      person.catalystclass[0] +
+                      "'" +
+                      person.catalystclass.substring(1)
+                    } Rush Class`}
                     photo={person.photo}
                     message={person.bio}
                   />
