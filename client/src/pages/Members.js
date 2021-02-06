@@ -267,7 +267,7 @@ class ExecComponent extends React.Component {
                     name={person.name}
                     key={person.name}
                     position={`${
-                      person.catalystclass[0] +
+                      (person.catalystclass[0] === "F" ? "Fall " : "Spring ") +
                       "'" +
                       person.catalystclass.substring(1)
                     } Rush Class`}
