@@ -235,7 +235,7 @@ const HomePage = (props) => {
     >
       <div
         onClick={() => {
-          window.open("https://tinyurl.com/cata-notion");
+          window.open("https://tinyurl.com/round2-cata-notion");
         }}
         style={{
           display: "flex",

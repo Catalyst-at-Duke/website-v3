@@ -312,6 +312,15 @@ class ExecComponent extends React.Component {
                   alignItems: "center",
                 }}
               >
+                <div
+                  className="heart"
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "40%",
+                    fontSize: "3em",
+                  }}
+                ></div>
                 <img
                   alt={this.state.person.name}
                   style={{
@@ -337,6 +346,9 @@ class ExecComponent extends React.Component {
               </div>
               <img
                 alt={this.state.person.name}
+                onDoubleClick={() => {
+                  // this.animateLike();
+                }}
                 style={{
                   backgroundColor: colors.black,
                   width: "50vh",
