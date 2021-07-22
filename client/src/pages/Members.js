@@ -312,7 +312,7 @@ class ExecComponent extends React.Component {
                   alignItems: "center",
                 }}
               >
-                <div
+                {/* <div
                   className="heart"
                   style={{
                     position: "absolute",
@@ -320,7 +320,7 @@ class ExecComponent extends React.Component {
                     top: "40%",
                     fontSize: "3em",
                   }}
-                ></div>
+                ></div> */}
                 <img
                   alt={this.state.person.name}
                   style={{
