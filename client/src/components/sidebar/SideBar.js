@@ -17,7 +17,7 @@ const SideBar = () => {
       }}
     >
       <a
-        href="mailto:dukecatalyst@gmail.com"
+        href="mailto:info@dukecatalyst.com"
         rel="noopener noreferrer"
         target="_blank"
       >

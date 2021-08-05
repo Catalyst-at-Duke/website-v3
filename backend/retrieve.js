@@ -35,6 +35,7 @@ const getMembers = (forceUpdatePhotos) => {
             linkedinurl: properties.LinkedIn || "",
             bio: properties.Bio ? properties.Bio : "",
             personalurl: properties["Personal Website"] || "",
+            catalystclass: properties["Catalyst Class"] || "",
           }));
 
         // members = members.slice(0, 10);
@@ -60,7 +61,7 @@ const getMembers = (forceUpdatePhotos) => {
           console.log(`Finished ${idx + 1}/${members.length}`);
         }
 
-        cleanUp();
+        // cleanUp();
         resolve(members);
       });
   });

@@ -30,6 +30,7 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-lazyload": "^3.1.0",
+    "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-switch": "^5.0.1",
@@ -44,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint \"**/*.js\" --fix --ignore-pattern node_modules/",
-    "predeploy": "yarn run build",
+    "predeploy": "yarn run build ",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

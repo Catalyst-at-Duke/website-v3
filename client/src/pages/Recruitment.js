@@ -2,7 +2,6 @@ import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 
-import { SideBar } from "components/sidebar";
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -13,18 +12,35 @@ import Green from "../images/finder_green.svg";
 import Home from "../images/rush_home.svg";
 // import Catalyst from "../images/logoNoTextNoBack.png";
 import Folder from "../images/folder.png";
+import Document from "../images/document.png";
+
+const HOME = "";
+const SCHEDULE = "schedule";
 
 export default class RecruitmentComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: true,
+      currPage: HOME,
     };
   }
 
-  closeFinder() {
+  closeFinder = () => {
     this.setState({ open: false });
-  }
+  };
+
+  setPage = (pageName) => {
+    this.setState({ currPage: pageName });
+  };
+
+  getPage = () => {
+    if (this.state.currPage === HOME) {
+      return <HomePage setPage={this.setPage} />;
+    } else if (this.state.currPage === SCHEDULE) {
+      return <SchedulePage setPage={this.setPage} />;
+    }
+  };
 
   render() {
     return (
@@ -72,7 +88,7 @@ export default class RecruitmentComponent extends React.Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "24vh",
+                    width: "20vh",
                     height: "100%",
                     backgroundColor: "#EBEBEB",
                     borderRadius: "10px 0px 0px 10px",
@@ -82,11 +98,10 @@ export default class RecruitmentComponent extends React.Component {
                     style={{
                       display: "flex",
                       flexDirection: "row",
-                      width: "24vh",
+                      width: "20vh",
                       height: "8vh",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginTop: "0.5vh",
                     }}
                   >
                     <div onClick={() => this.closeFinder()}>
@@ -94,9 +109,9 @@ export default class RecruitmentComponent extends React.Component {
                         src={Red}
                         alt="Close"
                         style={{
-                          marginLeft: "0.8vh",
-                          marginRight: "0.8vh",
-                          width: "4vh",
+                          marginLeft: "6px",
+                          marginRight: "6px",
+                          width: "25px",
                         }}
                       />
                     </div>
@@ -104,18 +119,18 @@ export default class RecruitmentComponent extends React.Component {
                       src={Yellow}
                       alt="Minimize"
                       style={{
-                        marginLeft: "0.8vh",
-                        marginRight: "0.8vh",
-                        width: "4vh",
+                        marginLeft: "6px",
+                        marginRight: "6px",
+                        width: "25px",
                       }}
                     />
                     <img
                       src={Green}
                       alt="Maximize"
                       style={{
-                        marginLeft: "0.8vh",
-                        marginRight: "0.8vh",
-                        width: "4vh",
+                        marginLeft: "6px",
+                        marginRight: "6px",
+                        width: "25px",
                       }}
                     />
                   </div>
@@ -123,20 +138,22 @@ export default class RecruitmentComponent extends React.Component {
                     style={{
                       color: "#A0A0A0",
                       fontWeight: fonts.weights.bold,
-                      marginTop: "4vh",
+                      marginTop: "2vh",
                       alignSelf: "flex-start",
-                      marginLeft: "4vh",
+                      marginLeft: "2vh",
                     }}
                   >
                     Favorites
                   </div>
                   <div
+                    onClick={() => this.setState({ currPage: "" })}
                     style={{
                       marginTop: "1vh",
-                      width: "22vh",
+                      width: "18vh",
                       marginLeft: "1vh",
                       backgroundColor: "#CBCAC9",
                       borderRadius: "5px",
+                      cursor: "pointer",
                     }}
                   >
                     <img src={Home} alt="Home" style={{ height: "4vh" }} />
@@ -146,7 +163,7 @@ export default class RecruitmentComponent extends React.Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "96vh",
+                    width: "100%",
                     height: "100%",
                   }}
                 >
@@ -157,7 +174,7 @@ export default class RecruitmentComponent extends React.Component {
                       justifyContent: "flex-start",
                       alignItems: "center",
                       height: "8vh",
-                      width: "96vh",
+                      width: "100vh",
                       backgroundColor: "#D8D8D8",
                       borderRadius: "0px 10px 0px 0px",
                     }}
@@ -165,12 +182,20 @@ export default class RecruitmentComponent extends React.Component {
                     <div
                       style={{
                         color: colors.black,
-                        fontWeight: fonts.weights.regular,
+                        fontWeight: 600,
                         fontSize: fonts.size.regular,
-                        marginLeft: "6vh",
+                        marginLeft: "4vh",
                       }}
                     >
-                      rush_s21
+                      <span
+                        onClick={() => {
+                          this.setPage(HOME);
+                        }}
+                        style={{ cursor: "pointer" }}
+                      >
+                        rush_s21
+                      </span>{" "}
+                      / {this.state.currPage}
                     </div>
                   </div>
                   <div
@@ -179,50 +204,110 @@ export default class RecruitmentComponent extends React.Component {
                       flexDirection: "row",
                       alignItems: "flex-start",
                       justifyContent: "flex-start",
-                      width: "96vh",
+                      width: "100%",
                       height: "56vh",
                       fontWeight: fonts.weights.regular,
                       fontSize: fonts.size.regular,
                       color: colors.black,
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        margin: "3vh",
-                      }}
-                    >
-                      <img
-                        src={Folder}
-                        alt="Folder"
-                        style={{
-                          height: "8vh",
-                          width: "10vh",
-                          textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                        }}
-                      />
-                      <div
-                        style={{
-                          fontSize: "0.4em",
-                          marginTop: "1vh",
-                          fontWeight: 600,
-                        }}
-                      >
-                        ComingSoon
-                      </div>
-                    </div>
+                    {this.getPage()}
                   </div>
                 </div>
               </div>
             </div>
           )}
         </div>
-
-        <SideBar />
       </div>
     );
   }
 }
+
+const HomePage = (props) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+      }}
+    >
+      <div
+        onClick={() => {
+          window.open("https://tinyurl.com/round2-cata-notion");
+        }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "3vh",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src={Document}
+          alt="Document"
+          style={{
+            width: "10.5vh",
+            textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+        />
+        <div
+          style={{
+            fontSize: "0.8em",
+            marginTop: "1vh",
+            fontWeight: 300,
+          }}
+        >
+          Notion.url
+        </div>
+      </div>
+      <div
+        onClick={() => {
+          props.setPage(SCHEDULE);
+        }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "3vh",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src={Folder}
+          alt="Folder"
+          style={{
+            width: "16vh",
+            textShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+        />
+        <div
+          style={{
+            fontSize: "0.8em",
+            marginTop: "1vh",
+            fontWeight: 300,
+          }}
+        >
+          Schedule
+        </div>
+      </div>
+    </div>
+  );
+};
+const SchedulePage = (props) => {
+  return (
+    <iframe
+      title="Rush Calendar"
+      src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=NXI0azk5dGRhb2U2aG44ZW8zZjkxaXI3MmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%234285F4&amp;mode=WEEK"
+      style={{ border: "solid 1px #777", margin: "1%" }}
+      width="98%"
+      height="95%"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  );
+};

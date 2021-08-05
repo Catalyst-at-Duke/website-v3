@@ -10,7 +10,6 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LanguageIcon from "@material-ui/icons/Language";
 import IconButton from "@material-ui/core/IconButton";
-
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -164,6 +163,8 @@ class ExecComponent extends React.Component {
           className="content-members"
           style={{
             display: "flex",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             flexDirection: "row",
             justifyContent: "center",
             flexWrap: "wrap",
@@ -225,6 +226,8 @@ class ExecComponent extends React.Component {
           style={{
             display: "flex",
             flexDirection: "row",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             justifyContent: "center",
             flexWrap: "wrap",
           }}

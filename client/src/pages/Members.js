@@ -10,7 +10,6 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LanguageIcon from "@material-ui/icons/Language";
 import IconButton from "@material-ui/core/IconButton";
-
 import { colors, fonts } from "styles/theme.js";
 import "styles/styles.css";
 
@@ -248,6 +247,8 @@ class ExecComponent extends React.Component {
           style={{
             display: "flex",
             flexDirection: "row",
+            paddingLeft: "5vw",
+            paddingRight: "5vw",
             justifyContent: "center",
             flexWrap: "wrap",
           }}
@@ -265,7 +266,11 @@ class ExecComponent extends React.Component {
                   <PolaroidFrame
                     name={person.name}
                     key={person.name}
-                    position={`Class of ${person.year}`}
+                    position={`${
+                      (person.catalystclass[0] === "F" ? "Fall " : "Spring ") +
+                      "'" +
+                      person.catalystclass.substring(1)
+                    } Rush Class`}
                     photo={person.photo}
                     message={person.bio}
                   />
@@ -307,6 +312,15 @@ class ExecComponent extends React.Component {
                   alignItems: "center",
                 }}
               >
+                {/* <div
+                  className="heart"
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "40%",
+                    fontSize: "3em",
+                  }}
+                ></div> */}
                 <img
                   alt={this.state.person.name}
                   style={{
@@ -332,6 +346,9 @@ class ExecComponent extends React.Component {
               </div>
               <img
                 alt={this.state.person.name}
+                onDoubleClick={() => {
+                  // this.animateLike();
+                }}
                 style={{
                   backgroundColor: colors.black,
                   width: "50vh",

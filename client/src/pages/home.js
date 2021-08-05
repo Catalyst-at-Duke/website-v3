@@ -2,9 +2,12 @@ import React from "react";
 import { About } from ".";
 import { Where } from ".";
 import { SideBar } from "components/sidebar";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { colors } from "styles/theme.js";
+import MediaQuery from "react-responsive";
+
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import CatalystLogo from "images/logoNoTextNoBack.png";
+
 import "styles/styles.css";
 import "styles/glitch.scss";
 
@@ -24,7 +27,6 @@ export default class HomeComponent extends React.Component {
               </div>
               <div className="glow">CATALYST</div>
             </div>
-            <SideBar />
           </div>
           <AnchorLink
             className="arrow-down"
@@ -32,8 +34,13 @@ export default class HomeComponent extends React.Component {
             href="#about"
           />
         </div>
+
         <About />
         <Where />
+        {/* Desktop */}
+        <MediaQuery minDeviceWidth={1224}>
+          <SideBar />
+        </MediaQuery>
       </div>
     );
   }

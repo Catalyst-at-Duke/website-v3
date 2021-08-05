@@ -1,7 +1,6 @@
 import React from "react";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
-import { SideBar } from "components/sidebar";
 import { colors } from "styles/theme.js";
 import { fonts } from "styles/theme.js";
 import "styles/styles.css";
@@ -269,7 +268,6 @@ export default class FaqComponent extends React.Component {
             {generateFaqComponent()}
           </div>
         </div>
-        <SideBar />
       </div>
     );
   }
