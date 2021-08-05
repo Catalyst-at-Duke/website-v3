@@ -89,13 +89,13 @@ class ExecComponent extends React.Component {
         return a.year - b.year;
       });
       membersArr.forEach((member) => {
-        if (member.year === "2021") {
+        if (member.year === "2022") {
           seniorMembers.push(member);
-        } else if (member.year === "2022") {
-          juniorMembers.push(member);
         } else if (member.year === "2023") {
-          sophomoreMembers.push(member);
+          juniorMembers.push(member);
         } else if (member.year === "2024") {
+          sophomoreMembers.push(member);
+        } else if (member.year === "2025") {
           freshmenMembers.push(member);
         }
       });
@@ -207,7 +207,7 @@ class ExecComponent extends React.Component {
             class={seniorDivClass}
             onClick={() => this.selectClass(4)}
           >
-            Class of 2021
+            Class of 2022
             {seniorUnderline}
           </div>
           <div
@@ -223,7 +223,7 @@ class ExecComponent extends React.Component {
             class={juniorDivClass}
             onClick={() => this.selectClass(3)}
           >
-            Class of 2022
+            Class of 2023
             {juniorUnderline}
           </div>
           <div
@@ -239,7 +239,7 @@ class ExecComponent extends React.Component {
             class={sophomoreDivClass}
             onClick={() => this.selectClass(2)}
           >
-            Class of 2023
+            Class of 2024
             {sophomoreUnderline}
           </div>
         </div>
