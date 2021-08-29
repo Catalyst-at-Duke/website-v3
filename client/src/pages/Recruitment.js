@@ -46,7 +46,7 @@ export default class RecruitmentComponent extends React.Component {
     return (
       <div className="app">
         <div className="body" style={{ backgroundColor: colors.pink }}>
-          <div class="title">
+          <div className="title">
             <TypistLoop interval={100}>
               {["recruitment", ""].map((text) => (
                 <Typist
@@ -306,7 +306,7 @@ const SchedulePage = (props) => {
       style={{ border: "solid 1px #777", margin: "1%" }}
       width="98%"
       height="95%"
-      frameborder="0"
+      frameBorder="0"
       scrolling="no"
     ></iframe>
   );

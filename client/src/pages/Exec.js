@@ -174,6 +174,7 @@ class ExecComponent extends React.Component {
             this.state.executiveLeadership.map((person) => {
               return (
                 <div
+                  key={person.Name}
                   onClick={() => this.handleOpen(person)}
                   style={{
                     margin: "30px",
@@ -237,6 +238,7 @@ class ExecComponent extends React.Component {
               return (
                 <div
                   onClick={() => this.handleOpen(person)}
+                  key={person.Name}
                   style={{
                     margin: "30px",
                     cursor: "pointer",
