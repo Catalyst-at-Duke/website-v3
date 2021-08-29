@@ -203,7 +203,7 @@ class ExecComponent extends React.Component {
               justifyContent: "center",
               cursor: "pointer",
             }}
-            class={seniorDivClass}
+            className={seniorDivClass}
             onClick={() => this.selectClass(4)}
           >
             Class of 2022
@@ -219,7 +219,7 @@ class ExecComponent extends React.Component {
               justifyContent: "center",
               cursor: "pointer",
             }}
-            class={juniorDivClass}
+            className={juniorDivClass}
             onClick={() => this.selectClass(3)}
           >
             Class of 2023
@@ -235,7 +235,7 @@ class ExecComponent extends React.Component {
               justifyContent: "center",
               cursor: "pointer",
             }}
-            class={sophomoreDivClass}
+            className={sophomoreDivClass}
             onClick={() => this.selectClass(2)}
           >
             Class of 2024
@@ -257,6 +257,7 @@ class ExecComponent extends React.Component {
             this.state.members.map((person) => {
               return (
                 <div
+                  key={person.Name}
                   onClick={() => this.handleOpen(person)}
                   style={{
                     margin: "30px",

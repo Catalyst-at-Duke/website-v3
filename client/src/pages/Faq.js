@@ -236,7 +236,7 @@ export default class FaqComponent extends React.Component {
             flexDirection: "column",
           }}
         >
-          <div class="title">
+          <div className="title">
             <TypistLoop interval={100}>
               {["faq", "frequently asked questions"].map((text) => (
                 <Typist
