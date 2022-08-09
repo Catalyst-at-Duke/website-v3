@@ -24,7 +24,6 @@
     "firebase": "^7.15.0",
     "gh-pages": "^3.1.0",
     "moment": "^2.26.0",
-    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.0.1",
@@ -36,6 +35,7 @@
     "react-switch": "^5.0.1",
     "react-typist": "^2.0.5",
     "react-typist-loop": "0.0.5",
+    "sass": "^1.54.3",
     "typescript": "^3.9.7"
   },
   "homepage": "https://dukecatalyst.com",
