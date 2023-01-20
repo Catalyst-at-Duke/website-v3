@@ -149,10 +149,12 @@ class ExecComponent extends React.Component {
     let seniorDivClass;
     let juniorDivClass;
     let sophomoreDivClass;
+    let freshmenDivClass;
 
     let seniorUnderline;
     let juniorUnderline;
     let sophomoreUnderline;
+    let freshmenUnderline;
     let underline = (
       <div
         style={{
@@ -164,19 +166,23 @@ class ExecComponent extends React.Component {
     if (this.state.currentClass === 4) {
       seniorUnderline = underline;
       seniorDivClass = "members-selected";
-      juniorUnderline = sophomoreUnderline = null;
-      juniorDivClass = sophomoreDivClass = "members-unselected";
+      juniorUnderline = sophomoreUnderline = freshmenUnderline = null;
+      juniorDivClass = sophomoreDivClass = freshmenDivClass =
+        "members-unselected";
     } else if (this.state.currentClass === 3) {
       juniorUnderline = underline;
       juniorDivClass = "members-selected";
-      seniorUnderline = sophomoreUnderline = null;
-      seniorDivClass = sophomoreDivClass = "members-unselected";
+      seniorUnderline = sophomoreUnderline = freshmenUnderline = null;
+      seniorDivClass = sophomoreDivClass = freshmenDivClass =
+        "members-unselected";
     } else if (this.state.currentClass === 2) {
       sophomoreUnderline = underline;
       sophomoreDivClass = "members-selected";
-      seniorUnderline = juniorUnderline = null;
-      seniorDivClass = juniorDivClass = "members-unselected";
+      seniorUnderline = juniorUnderline = freshmenUnderline = null;
+      seniorDivClass = juniorDivClass = freshmenDivClass = "members-unselected";
     } else if (this.state.currentClass === 1) {
+      freshmenUnderline = underline;
+      freshmenDivClass = "members-selected";
       seniorUnderline = juniorUnderline = sophomoreUnderline = null;
       seniorDivClass = juniorDivClass = sophomoreDivClass =
         "members-unselected";
@@ -240,6 +246,22 @@ class ExecComponent extends React.Component {
           >
             Class of 2025
             {sophomoreUnderline}
+          </div>
+          <div
+            style={{
+              marginLeft: "4vh",
+              marginRight: "4vh",
+              color: colors.white,
+              fontSize: fonts.size.normal,
+              flexDirection: "column",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+            class={freshmenDivClass}
+            onClick={() => this.selectClass(1)}
+          >
+            Class of 2026
+            {freshmenUnderline}
           </div>
         </div>
         <div
